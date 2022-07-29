@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,7 +93,7 @@ img {
               </span>
               <p class="u-text u-text-default u-text-3">${vo.brand }<br></p>
               <p class="u-text u-text-default u-text-4">${vo.name_eng }</p>
-              <p class="u-text u-text-default u-text-5">${vo.im_buy }원<br></p>
+              <p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p>
               <p class="u-text u-text-default u-text-6">즉시구매가<br></p>
             </div>
           </div>
@@ -311,7 +312,7 @@ img {
                 </span>
                 <p class="u-text u-text-default u-text-3">${vo.brand }<br></p>
                 <p class="u-text u-text-default u-text-4">${vo.name_eng }</p>
-                <p class="u-text u-text-default u-text-5">${vo.im_buy }원<br></p>
+                <p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p>
                 <p class="u-text u-text-default u-text-6">즉시구매가<br></p>
             </div>
           </div>
@@ -350,7 +351,7 @@ img {
               </span>
               <p class="u-text u-text-default u-text-3">${vo.brand }<br></p>
               <p class="u-text u-text-default u-text-4">${vo.name_eng }</p>
-              <p class="u-text u-text-default u-text-5">${vo.im_buy }원<br></p>
+              <p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p>
               <p class="u-text u-text-default u-text-6">즉시구매가<br></p>
             </div>
           </div>
