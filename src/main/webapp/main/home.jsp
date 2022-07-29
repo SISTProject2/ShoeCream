@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+img {
+	background-color: #f9f9f9;
+}
+</style>
 </head>
 <body>
   <section class="u-carousel u-slide u-block-24a1-1" id="carousel_1d20" data-interval="5000" data-u-ride="carousel">
