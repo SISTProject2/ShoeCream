@@ -10,6 +10,18 @@
 img {
 	background-color: #f9f9f9;
 }
+.u-text-3 {
+	font-size: 15px;
+	text-decoration : underline;
+	font-weight: bold;
+}
+.u-text-5 {
+	font-weight: bolder;
+}
+.u-text-6 {
+	font-size: 13px;
+	color: #A6A6A6;
+}
 </style>
 </head>
 <body>
