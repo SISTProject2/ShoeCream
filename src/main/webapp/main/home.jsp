@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +21,8 @@ img {
 }
 .u-text-6 {
 	font-size: 13px;
-	color: #A6A6A6;
 }
+
 </style>
 </head>
 <body>
@@ -67,15 +67,15 @@ img {
   <div style= "margin-top:100px"></div>
   <section class="u-clearfix u-section-2" id="sec-9192">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <p class="u-large-text u-text u-text-default u-text-variant u-text-1">Most Popular</p>
-      <p class="u-text u-text-default u-text-2">인기 상품</p>
+      <p class="u-large-text u-text u-text-default u-text-variant u-text-1" style="font-weight: 650">Most Popular</p>
+      <p class="u-text u-text-default u-text-2" style="color: #8C8C8C">인기 상품</p>
       <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
         <c:forEach var="vo" items="${list }" varStatus="s">
         <c:if test="${s.index>=0 && s.index<8 }">
           <div class="u-align-left u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265" >
+              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265" ></a>
               <span class="u-icon u-text-palette-1-base u-icon-1">
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-46bd"></use>
@@ -91,10 +91,10 @@ img {
 				  </path></g>
 			    </svg>
               </span>
-              <p class="u-text u-text-default u-text-3">${vo.brand }<br></p>
-              <p class="u-text u-text-default u-text-4">${vo.name_eng }</p>
-              <p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p>
-              <p class="u-text u-text-default u-text-6">즉시구매가<br></p>
+              <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+              <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
+              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
+              <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>
             </div>
           </div>
         </c:if>
@@ -287,15 +287,15 @@ img {
   <div style= "margin-top:100px"></div>
   <section class="u-clearfix u-section-2" id="sec-9192">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <p class="u-large-text u-text u-text-default u-text-variant u-text-1">New In</p>
-      <p class="u-text u-text-default u-text-2">최신 상품</p>
+      <p class="u-large-text u-text u-text-default u-text-variant u-text-1" style="font-weight: 650">New In</p>
+      <p class="u-text u-text-default u-text-2" style="color: #8C8C8C">최신 상품</p>
       <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
         <c:forEach var="vo" items="${list2 }" varStatus="s">
         <c:if test="${s.index>=0 && s.index<8 }">     
           <div class="u-align-left u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265">
+              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
                 <span class="u-icon u-text-palette-1-base u-icon-1">
                   <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-46bd"></use>
@@ -310,10 +310,10 @@ img {
 								c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"></path></g>
                   </svg>
                 </span>
-                <p class="u-text u-text-default u-text-3">${vo.brand }<br></p>
-                <p class="u-text u-text-default u-text-4">${vo.name_eng }</p>
-                <p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p>
-                <p class="u-text u-text-default u-text-6">즉시구매가<br></p>
+                <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+                <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
+                <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
+                <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>
             </div>
           </div>
         </c:if>
@@ -326,15 +326,15 @@ img {
   <div style= "margin-top:100px"></div>
   <section class="u-clearfix u-section-2" id="sec-9192">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <p class="u-large-text u-text u-text-default u-text-variant u-text-1">Most Premium</p>
-      <p class="u-text u-text-default u-text-2">프리미엄 상품</p>
+      <p class="u-large-text u-text u-text-default u-text-variant u-text-1" style="font-weight: 650">Most Premium</p>
+      <p class="u-text u-text-default u-text-2" style="color: #8C8C8C">프리미엄 상품</p>
       <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
         <c:forEach var="vo" items="${list3 }" varStatus="s3">
         <c:if test="${s3.index>=0 && s3.index<8 }">
           <div class="u-align-left u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265">
+              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
               <span class="u-icon u-text-palette-1-base u-icon-1">
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-46bd"></use>
@@ -349,10 +349,10 @@ img {
 								c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"></path></g>
                 </svg>
               </span>
-              <p class="u-text u-text-default u-text-3">${vo.brand }<br></p>
-              <p class="u-text u-text-default u-text-4">${vo.name_eng }</p>
-              <p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p>
-              <p class="u-text u-text-default u-text-6">즉시구매가<br></p>
+              <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+              <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
+              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
+              <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>
             </div>
           </div>
         </c:if>

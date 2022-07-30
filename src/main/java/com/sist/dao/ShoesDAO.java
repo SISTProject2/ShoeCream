@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.sist.vo.ShoesCategoryVO;
 import com.sist.vo.ShoesVO;
 
 
@@ -68,4 +69,35 @@ public class ShoesDAO {
 		
 		return list;
 	}
+
+	public static List<ShoesVO> shoesBrandListData(String brand) {
+		SqlSession session=null;
+		List<ShoesVO> list=null;
+		try {
+			session=ssf.openSession();
+			list=session.selectList("shoesBrandListData", brand);	
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return list;
+	}
+	
+	public static ShoesVO shoesDetailData(int goods_id) {	
+		SqlSession session=null;
+		ShoesVO vo=null;
+		try {
+			session=ssf.openSession();
+			vo=session.selectOne("shoesDetailData", goods_id);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return vo;		
+	}
+	
 }
