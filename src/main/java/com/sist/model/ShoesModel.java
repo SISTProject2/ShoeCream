@@ -34,7 +34,7 @@ public class ShoesModel {
 		cookie.setMaxAge(60*60*24);
 		response.addCookie(cookie);
 		
-		return "redirect:../shoes/shoes_detail.do?id="+goods_id;	
+		return "redirect:../shoes/shoes_detail.do?goods_id="+goods_id;	
 	}
 	
 	@RequestMapping("shoes/shoes_detail.do")
