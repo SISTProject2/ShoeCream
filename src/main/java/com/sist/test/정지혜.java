@@ -1,5 +1,5 @@
 package com.sist.test;
 
-public class Á¤ÁöÇı {
+public class ì •ì§€í˜œ{
 
 }
