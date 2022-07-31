@@ -20625,10 +20625,11 @@ section.u-dialog-block:not(.u-dialog-open) {
 .u-carousel-right .u-carousel-inner .u-active.u-carousel-item-left {
   transform: translate3d(100%, 0, 0);
 }
+/*
 [class*="u-border-"],
 .u-link[class*="u-border-"] {
   border-style: solid;
-}
+}*/
 .u-border-0,
 .u-separator-0:after,
 .u-text.u-border-0,
