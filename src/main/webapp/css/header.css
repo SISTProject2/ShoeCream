@@ -30,6 +30,7 @@ header {
 .logo {
     padding-left: 3%;
     line-height:60px;
+    width: 30%;
 }
 
 .logo img {
@@ -42,6 +43,7 @@ header {
 .search {
     width: 40%;
     line-height: 60px;
+    max-width: 450px;
 }
 .search input {
     width: 100%;
@@ -71,6 +73,7 @@ header ul {
     margin: 0px;
     display: flex;
     justify-content: flex-end;
+    width: 30%;
 }
 header li {
     list-style: none;  /*<li> 태그는 위의 이미지처럼 목록을 나타내는 점을 없앤다 */
