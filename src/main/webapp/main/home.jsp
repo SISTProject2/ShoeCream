@@ -26,7 +26,6 @@ img {
 </style>
 </head>
 <body>
-<div  class="home_margin" >
   <section class="u-carousel u-slide u-block-24a1-1" id="carousel_1d20" data-interval="5000" data-u-ride="carousel">
     <ol class="u-absolute-hcenter u-carousel-indicators u-block-24a1-2">
       <li data-u-target="#carousel_1d20" class="u-active u-grey-30" data-u-slide-to="0"></li>
@@ -65,6 +64,8 @@ img {
       </span>
     </a>
   </section>
+  
+  <div  class="home_margin" >
   <div style= "margin-top:100px"></div>
   <section class="u-clearfix u-section-2" id="sec-9192">
     <div class="u-clearfix u-sheet u-sheet-1">
