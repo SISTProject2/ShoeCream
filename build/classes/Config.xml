@@ -21,5 +21,6 @@
   </environments>
   <mappers>
     <mapper resource="com/sist/mapper/shoes-mapper.xml"/> 
+    <mapper resource="com/sist/mapper/nav-mapper.xml"/> 
   </mappers>
 </configuration>

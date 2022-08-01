@@ -9,10 +9,10 @@
 <body>
 	<nav>
 		<ul>
-			<li><a id='NEW' href="">NEW</a></li>
-			<li><a href="">MEN</a></li>
-			<li><a href="">WOMEN</a></li>
-			<li><a href="">KIDS</a></li>
+			<li><a id='NEW' href="../nav/nav_new.do">NEW</a></li>
+			<li><a href="../nav/nav_men.do">MEN</a></li>
+			<li><a href="../nav/nav_women.do">WOMEN</a></li>
+			<li><a href="../nav/nav_kids.do">KIDS</a></li>
 			<li>|</li>
 			<li><a href="">STYLE</a></li>
 			<li><a href="">BRAND</a></li>
