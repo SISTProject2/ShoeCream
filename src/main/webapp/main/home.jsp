@@ -119,22 +119,22 @@ img {
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <p class="u-custom-item u-text u-text-default u-text-3">#style</p>
+              <p class="u-custom-item u-text u-text-default u-text-3" style="font-size: 16px; text-decoration-line: none; font-weight: normal">#style</p>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-3">
-              <p class="u-custom-item u-text u-text-default u-text-4">#style</p>
+              <p class="u-custom-item u-text u-text-default u-text-4" style="font-size: 16px">#style</p>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-4">
-              <p class="u-custom-item u-text u-text-default u-text-5">#style</p>
+              <p class="u-custom-item u-text u-text-default u-text-5" style="font-size: 16px; font-weight: normal">#style</p>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-5">
-              <p class="u-custom-item u-text u-text-default u-text-6">#style</p>
+              <p class="u-custom-item u-text u-text-default u-text-6" style="font-size: 16px">#style</p>
             </div>
           </div>
         </div>
