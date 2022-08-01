@@ -10,6 +10,7 @@
 	<nav>
 		<ul>
 			<li><a id='NEW' href="">NEW</a></li>
+			<li><a href="">MEN</a></li>
 			<li><a href="">WOMEN</a></li>
 			<li><a href="">KIDS</a></li>
 			<li>|</li>
