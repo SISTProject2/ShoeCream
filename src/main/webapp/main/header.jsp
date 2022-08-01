@@ -15,7 +15,7 @@
 <body>
 	<header>
 		<div class="logo">
-			<img src="../images/logo_b.png" alt="">
+			<a href="../main/main.do"><img src="../images/logo_b.png" alt=""></a>
 		</div>
 
 		<div class="search">
