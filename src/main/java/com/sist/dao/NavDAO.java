@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.sist.vo.ShoesVO;
+import com.sist.vo.StyleVO;
 
 public class NavDAO {
 	private static SqlSessionFactory ssf;
@@ -81,4 +82,49 @@ public class NavDAO {
 		
 		return list;
 	}
+	
+	public static List<StyleVO> navStyleList() {	
+		SqlSession session=null;
+		List<StyleVO> list=null;
+		try {
+			session=ssf.openSession();
+			list=session.selectList("navStyleList");	
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return list;
+	}
+	
+	public static List<ShoesVO> navBrandList() {	
+		SqlSession session=null;
+		List<ShoesVO> list=null;
+		try {
+			session=ssf.openSession();
+			list=session.selectList("navBrandList");	
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return list;
+	}
+	
+	public static List<ShoesVO> navCalendarList() {	
+		SqlSession session=null;
+		List<ShoesVO> list=null;
+		try {
+			session=ssf.openSession();
+			list=session.selectList("navCalendarList");	
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return list;
+	}	
 }

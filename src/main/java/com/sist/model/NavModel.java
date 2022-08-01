@@ -9,6 +9,7 @@ import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
 import com.sist.dao.NavDAO;
 import com.sist.vo.ShoesVO;
+import com.sist.vo.StyleVO;
 
 @Controller
 public class NavModel {
@@ -48,6 +49,36 @@ public class NavModel {
 		List<ShoesVO> list = NavDAO.navKidsList();
 		request.setAttribute("list", list);
 		request.setAttribute("main_jsp", "../nav/nav_kids.jsp");
+		
+		return "../main/main.jsp";	
+	}
+	
+	@RequestMapping("nav/nav_style.do")
+	public String nav_style(HttpServletRequest request, HttpServletResponse response) {
+		
+		List<StyleVO> list = NavDAO.navStyleList();
+		request.setAttribute("list", list);
+		request.setAttribute("main_jsp", "../nav/nav_style.jsp");
+		
+		return "../main/main.jsp";	
+	}
+	
+	@RequestMapping("nav/nav_brand.do")
+	public String nav_brand(HttpServletRequest request, HttpServletResponse response) {
+		
+		List<ShoesVO> list = NavDAO.navBrandList();
+		request.setAttribute("list", list);
+		request.setAttribute("main_jsp", "../nav/nav_brand.jsp");
+		
+		return "../main/main.jsp";	
+	}
+	
+	@RequestMapping("nav/nav_calendar.do")
+	public String nav_calendar(HttpServletRequest request, HttpServletResponse response) {
+		
+		List<ShoesVO> list = NavDAO.navCalendarList();
+		request.setAttribute("list", list);
+		request.setAttribute("main_jsp", "../nav/nav_calendar.jsp");
 		
 		return "../main/main.jsp";	
 	}

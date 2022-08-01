@@ -14,9 +14,9 @@
 			<li><a href="../nav/nav_women.do">WOMEN</a></li>
 			<li><a href="../nav/nav_kids.do">KIDS</a></li>
 			<li>|</li>
-			<li><a href="">STYLE</a></li>
-			<li><a href="">BRAND</a></li>
-			<li><a href="">CALENDAR</a></li>
+			<li><a href="../nav/nav_style.do">STYLE</a></li>
+			<li><a href="../nav/nav_brand.do">BRAND</a></li>
+			<li><a href="../nav/nav_calendar.do">CALENDAR</a></li>
 		</ul>
 	</nav>
 </body>
