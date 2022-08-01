@@ -43,6 +43,7 @@ public class ShoesModel {
 
 		ShoesVO vo=ShoesDAO.shoesDetailData(Integer.parseInt(goods_id));
 
+		
 		request.setAttribute("vo", vo);
 		request.setAttribute("main_jsp", "../shoes/shoes_detail.jsp");
 		
