@@ -24,7 +24,7 @@
 		
 		<ul>
 			<li><a href="">LOGIN</a></li>
-			<li><a href="">JOIN</a></li>
+			<li><a id='JOIN' href="../account/join.jsp">JOIN</a></li>
 			<li><a id='NOTICE' href="../notice/notice.do">NOTICE</a></li>
 		</ul>
 		
