@@ -25,7 +25,7 @@
 		<ul>
 			<li><a href="">LOGIN</a></li>
 			<li><a href="">JOIN</a></li>
-			<li><a id='NOTICE' href="">NOTICE</a></li>
+			<li><a id='NOTICE' href="../notice/notice.do">NOTICE</a></li>
 		</ul>
 		
 	</header>
