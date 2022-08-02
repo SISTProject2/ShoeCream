@@ -605,6 +605,7 @@
   }
 }.u-section-4 .u-sheet-1 {
   min-height: 181px;
+  
 }
 
 .u-section-4 .u-text-1 {
@@ -618,8 +619,9 @@
 }
 
 .u-section-4 .u-list-1 {
-  width: 953px;
+  
   margin: -66px 27px 44px auto;
+  
 }
 
 .u-section-4 .u-repeater-1 {
@@ -627,6 +629,7 @@
   grid-auto-columns: 12.5%;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
   grid-gap: 0px 0px;
+  
 }
 
 .u-section-4 .u-container-layout-1 {

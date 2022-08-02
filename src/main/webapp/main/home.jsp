@@ -238,48 +238,56 @@ img {
   <div style= "margin-top:100px"></div>
   <section class="u-border-1 u-border-black u-border-no-left u-border-no-right u-clearfix u-section-4" id="sec-494d">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <p class="u-large-text u-text u-text-default u-text-variant u-text-1">Major Brands</p>
-      <p class="u-text u-text-default u-text-2">주요 브랜드</p>
+      <p class="u-large-text u-text u-text-default u-text-variant u-text-1" style="font-weight: 650" >Major Brands</p>
+      <p class="u-text u-text-default u-text-2" style="color:#8C8C8C">주요 브랜드</p>
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1">
-          <div class="u-container-style u-list-item u-repeater-item">
+          <div class="u-container-style u-list-item u-repeater-item" >
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <a href="https://nicepage.com/website-design" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-item u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-1">Button</a>
+              <a href="../shoes/shoes_list.do?brand=Nike">
+              <img src="../images/brand/brand_1.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a href="https://nicepage.com/website-design" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-item u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-2">Button</a>
+              <a href="../shoes/shoes_list.do?brand=Adidas">
+              <img src="../images/brand/brand_2.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-3">
-              <a href="https://nicepage.com/website-design" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-item u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-3">Button</a>
+              <a href="../shoes/shoes_list.do?brand=New Balance">
+              <img src="../images/brand/brand_3.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-4">
-              <a href="https://nicepage.com/website-design" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-item u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-4">Button</a>
+              <a href="../shoes/shoes_list.do?brand=Hoke One One">
+              <img src="../images/brand/brand_4.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-5">
-              <a href="https://nicepage.com/website-design" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-item u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-5">Button</a>
+              <a href="../shoes/shoes_list.do?brand=Asics">
+              <img src="../images/brand/brand_5.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-6">
-              <a href="https://nicepage.com/website-design" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-item u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-6">Button</a>
+              <a href="../shoes/shoes_list.do?brand=Mihara Yasuhiro">
+              <img src="../images/brand/brand_6.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-7">
-              <a href="https://nicepage.com/website-design" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-item u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-7">Button</a>
+              <a href="../shoes/shoes_list.do?brand=Autry">
+              <img src="../images/brand/brand_7.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-8">
-              <a href="https://nicepage.com/website-design" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-custom-item u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-8">Button</a>
+              <a href="../shoes/shoes_list.do?brand=Oofos">
+              <img src="../images/brand/brand_8.png" width="100px" height="55px" ></a>
             </div>
           </div>
         </div>
