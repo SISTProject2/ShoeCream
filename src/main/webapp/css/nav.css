@@ -33,7 +33,7 @@
     display: block;
 }
 
-#nav, #NEW {
+#nav .NEW {
     color: red;
     font-weight: 600;
 }
