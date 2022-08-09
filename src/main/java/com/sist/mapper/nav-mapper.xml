@@ -55,11 +55,25 @@
     FROM goods_2
   </select>
   
-  <!-- 전체 페이지 -->
+  <!-- new 전체 페이지 -->
   <select id="navTotalPage" resultType="int">
    SELECT CEIL(COUNT(*)/12.0)
    FROM goods_2
    WHERE release_date BETWEEN TO_DATE('2022-06-01', 'YYYY-MM-DD') 
                    AND TO_DATE('2022-07-31', 'YYYY-MM-DD')
+ </select>
+ 
+  <!-- men 전체 페이지 -->
+  <select id="navTotalPage2" resultType="int">
+   SELECT CEIL(COUNT(*)/12.0)
+   FROM goods_2
+   WHERE type='남자'
+ </select>
+ 
+  <!-- women 전체 페이지 -->
+  <select id="navTotalPage3" resultType="int">
+   SELECT CEIL(COUNT(*)/12.0)
+   FROM goods_2
+   WHERE type='여자'
  </select>
 </mapper>

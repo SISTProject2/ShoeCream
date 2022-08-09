@@ -9,7 +9,6 @@
 <meta charset="UTF-8">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<title>Insert title here</title>
 
 <!-- 부트스트랩 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,6 +16,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <!--  -->
 
+<title>Insert title here</title>
+<!-- <link rel="stylesheet" href="../home/nicepage2.css" media="screen"> -->
+<link rel="stylesheet" href="../home/Home2.css" media="screen">
+<!-- <script class="u-script" type="text/javascript" src="../home/jquery2.js" "="" defer=""></script>
+<script class="u-script" type="text/javascript" src="../home/nicepage2.js" "="" defer=""></script> -->
+<meta name="generator" content="Nicepage 4.15.8, nicepage.com">
+<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 <style type="text/css">
 @charset "UTF-8";
 
@@ -120,15 +126,16 @@ header a:hover {color: black;}
 header #NOTICE {
     padding: 20px 0 20px 20px;
 }
-</style>     
 
-<link rel="stylesheet" href="../home/nicepage2.css" media="screen">
-<link rel="stylesheet" href="../home/Home2.css" media="screen">
-<script class="u-script" type="text/javascript" src="../home/jquery2.js" "="" defer=""></script>
-<script class="u-script" type="text/javascript" src="../home/nicepage2.js" "="" defer=""></script>
-<meta name="generator" content="Nicepage 4.15.8, nicepage.com">
-<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-      
+.pagination{
+	display: block;
+	text-align: center;
+}
+
+.pagination > li > a{
+	float: none;
+}
+</style>      
       
 <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -145,7 +152,7 @@ header #NOTICE {
 <section class="u-clearfix u-section-1" id="sec-6bda">
   <div class="u-clearfix u-sheet u-sheet-1">
   <p class="u-text u-text-default u-text-1">WOMEN</p>
-  <p class="u-text u-text-default u-text-2">Home &gt; WOMAN &gt; 스니커즈</p>
+  <p class="u-text u-text-default u-text-2">Home &gt; WOMEN &gt; 스니커즈</p>
   <div class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
   <div class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-2"></div>
   <div class="u-list u-list-1">
@@ -154,7 +161,7 @@ header #NOTICE {
        	<c:if test="${s.index>=0 && s.index<12 }">
        	  <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <a href="../shoes/men_list.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
+              <a href="../shoes/shoes_list.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
               <span class="u-icon u-text-palette-1-base u-icon-1">
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-96b0">
@@ -200,13 +207,18 @@ header #NOTICE {
         </c:if>
       </c:forEach>
       <!--  -->
+                     
+      </div>
       
+      <div style= "margin-top:100px"></div>
+      
+           
       <nav aria-label="Page navigation example">
 		  <ul class="pagination">
 		    <li class="page-item">
 	      
 		      <c:if test="${startPage > 1 }">
-		      <a class="page-link" href="../nav/nav_men.do?page=${startPage-1 }" aria-label="Previous">
+		      <a class="page-link" href="../nav/nav_women.do?page=${startPage-1 }" aria-label="Previous">
 		        <span aria-hidden="true">&laquo;</span>
 		        <span class="sr-only">Previous</span>
 		      </a>
@@ -223,13 +235,13 @@ header #NOTICE {
 	              <c:set var="style" value=""/>
 	            </c:if>
 	            
-	            <li ${style }><a href="../nav/nav_men.do?page=${i }">${i }</a></li>
+	            <li ${style }><a href="../nav/nav_women.do?page=${i }">${i }</a></li>
 	       </c:forEach>
 
 		    <li class="page-item">
 		    
 		      <c:if test="${endPage < totalpage }">
-		      <a class="page-link" href="../nav/nav_men.do?page=${endPage+1 }" aria-label="Next">
+		      <a class="page-link" href="../nav/nav_women.do?page=${endPage+1 }" aria-label="Next">
 		        <span aria-hidden="true">&raquo;</span>
 		        <span class="sr-only">Next</span>
 		      </a>
@@ -238,11 +250,11 @@ header #NOTICE {
 		    </li>
 		  </ul>
 		</nav>
-            
-            
-      </div>
+		
+		   
     </div>
   </div>
+  
 </section>
 </body>
 </html>

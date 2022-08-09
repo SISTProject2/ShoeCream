@@ -68,9 +68,9 @@ public class NavModel {
 		map.put("start", start); // #{start}
 		map.put("end", end);
 		List<ShoesVO> list = NavDAO.navMenList(map);
-		int totalpage = NavDAO.navTotalPage(map);
+		int totalpage = NavDAO.navTotalPage2(map);
 		
-		final int BLOCK = 5;
+		final int BLOCK = 10;
 		int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
 		// [1] [2] [3] [4] [5]  => start = 1, 6, ... / end = 5, 10, ...
 		int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;
@@ -104,9 +104,9 @@ public class NavModel {
 		map.put("start", start); // #{start}
 		map.put("end", end);
 		List<ShoesVO> list = NavDAO.navWomenList(map);
-		int totalpage = NavDAO.navTotalPage(map);
+		int totalpage = NavDAO.navTotalPage3(map);
 		
-		final int BLOCK = 5;
+		final int BLOCK = 10;
 		int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
 		// [1] [2] [3] [4] [5]  => start = 1, 6, ... / end = 5, 10, ...
 		int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;

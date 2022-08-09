@@ -40,6 +40,40 @@ public class NavDAO {
       }
       return total;
    }
+   
+   public static int navTotalPage2(Map map)
+   {
+	   int total = 0;
+	   SqlSession session = null;
+	   
+	   try
+	   {
+		   session = ssf.openSession();
+		   total = session.selectOne("navTotalPage2", map);
+	   }catch(Exception ex) {
+		   ex.printStackTrace();
+	   }finally {
+		   if(session!=null) session.close();
+	   }
+	   return total;
+   }
+   
+   public static int navTotalPage3(Map map)
+   {
+	   int total = 0;
+	   SqlSession session = null;
+	   
+	   try
+	   {
+		   session = ssf.openSession();
+		   total = session.selectOne("navTotalPage3", map);
+	   }catch(Exception ex) {
+		   ex.printStackTrace();
+	   }finally {
+		   if(session!=null) session.close();
+	   }
+	   return total;
+   }
 
    public static List<ShoesVO> navNewList(Map map) {   
       SqlSession session=null;

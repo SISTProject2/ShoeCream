@@ -126,6 +126,15 @@ header a:hover {color: black;}
 header #NOTICE {
     padding: 20px 0 20px 20px;
 }
+
+.pagination{
+	display: block;
+	text-align: center;
+}
+
+.pagination > li > a{
+	float: none;
+}
 </style>      
       
 <script type="application/ld+json">{
@@ -152,7 +161,7 @@ header #NOTICE {
        	<c:if test="${s.index>=0 && s.index<12 }">
        	  <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <a href="../shoes/men_list.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
+              <a href="../shoes/shoes_list.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
               <span class="u-icon u-text-palette-1-base u-icon-1">
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-96b0">
@@ -200,6 +209,8 @@ header #NOTICE {
       <!--  -->
                      
       </div>
+      
+      <div style= "margin-top:100px"></div>
       
            
       <nav aria-label="Page navigation example">
