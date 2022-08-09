@@ -44,9 +44,13 @@
     width: 94%;
     height: 45px;
     border-radius: 4px;
-    border: solid 1px #707070;
+    border: solid 1px #D6D6D6;
     font-size: 14px;
     padding-left: 4%;
+}
+
+.join_input input::placeholder {
+	color: #D6D6D6;
 }
 
 .eye{
@@ -56,10 +60,13 @@
     background-position: 95% center;/*영역 안에서 이미지 위치 x축 y축 위치값*/
     padding-left: 1px;/*padding값이 없으면 placeholder="Add List"와 겹친다. */
 }
+
 .agree {
     color: #707070;
     margin: 16px 0;
     line-height: 25px;
+    font-size:14px;
+    padding:5px 0;
 }
 
 
@@ -88,4 +95,36 @@
     background-size: 18px;
     background-position: 155px 15.5px;/*영역 안에서 이미지 위치 x축 y축 위치값*/
     padding-left: 1px;/*padding값이 없으면 placeholder="Add List"와 겹친다. */
+}
+
+.login_check {
+	padding:5px 0;
+	font-size:14px;
+    color: #707070;
+    margin: 16px 0;
+    line-height: 25px;
+    width: 100%;
+    justify-content : space-between;
+    display: flex;
+}
+
+.login_check a {
+	text-decoration: none;
+	color: #707070;
+}
+
+.join_member {
+	font-size:14px;
+	text-decoration: none;
+    margin: 16px 0;
+    line-height: 25px;
+    width: 100%;
+    justify-content : space-between;
+    display: flex;
+}
+
+.join_member a {
+	text-decoration: none;
+	color: black;
+	font-weight: 400;
 }

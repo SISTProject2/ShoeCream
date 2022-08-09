@@ -23,7 +23,7 @@
 		</div>
 		
 		<ul>
-			<li><a href="">LOGIN</a></li>
+			<li><a id='LOGIN' href="../account/login.jsp">LOGIN</a></li>
 			<li><a id='JOIN' href="../account/join.jsp">JOIN</a></li>
 			<li><a id='NOTICE' href="../notice/notice.do">NOTICE</a></li>
 		</ul>
