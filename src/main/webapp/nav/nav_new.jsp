@@ -9,14 +9,124 @@
 <meta charset="UTF-8">
 <meta name="keywords" content="">
 <meta name="description" content="">
+
+<!-- 부트스트랩 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--  -->
+
 <title>Insert title here</title>
-<link rel="stylesheet" href="../home/nicepage2.css" media="screen">
+<!-- <link rel="stylesheet" href="../home/nicepage2.css" media="screen"> -->
 <link rel="stylesheet" href="../home/Home2.css" media="screen">
-<script class="u-script" type="text/javascript" src="../home/jquery2.js" "="" defer=""></script>
-<script class="u-script" type="text/javascript" src="../home/nicepage2.js" "="" defer=""></script>
+<!-- <script class="u-script" type="text/javascript" src="../home/jquery2.js" "="" defer=""></script>
+<script class="u-script" type="text/javascript" src="../home/nicepage2.js" "="" defer=""></script> -->
 <meta name="generator" content="Nicepage 4.15.8, nicepage.com">
 <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-      
+<style type="text/css">
+@charset "UTF-8";
+
+
+
+.nanumgothic * {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height:100%;
+    z-index: 9999999;
+}
+
+.wrapper {
+	padding-top: 120px; 
+	position: relative; 
+    min-height: 100%;
+    padding-bottom: 130px;
+    height: auto;
+}
+
+.container {
+	padding-top: 120px; 
+}
+
+header {
+	z-index:1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top:0;
+    width: 100%;
+    background-color: #fff;
+    height: 60px;
+}
+
+.logo {
+    padding-left: 3%;
+    line-height:60px;
+    width: 30%;
+}
+
+.logo img {
+    width: 90%;
+    max-width: 180px;
+    max-height:100%;
+    vertical-align:middle;
+}
+
+.search {
+    width: 40%;
+    line-height: 60px;
+    max-width: 450px;
+}
+.search input {
+    width: 100%;
+    height: 23px;
+    border-width: 0 0 3px;
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+    border-color: #000;
+    background-image: url("../images/search_b.png");
+    background-repeat: no-repeat;/*이미지 반복 없이 한 개만 출력*/
+    background-size: 16px;
+    background-position: 98% center;/*영역 안에서 이미지 위치 x축 y축 위치값*/
+    padding-left: 1px;/*padding값이 없으면 placeholder="Add List"와 겹친다. */
+}
+
+.search input::-webkit-input-placeholder { /*input창 placeholder 컬러 지정*/
+    color: black;
+}
+.search input:focus {
+    outline:none;
+} /*input창 선택시 border 제거*/
+
+
+header ul {
+    padding-right: 3%;
+    margin: 0px;
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+}
+header li {
+    list-style: none;  /*<li> 태그는 위의 이미지처럼 목록을 나타내는 점을 없앤다 */
+}
+header a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+    padding: 20px;
+}
+
+header a:hover {color: black;}
+
+header #NOTICE {
+    padding: 20px 0 20px 20px;
+}
+</style>      
       
 <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -88,11 +198,52 @@
         </c:if>
       </c:forEach>
       <!--  -->
-            
-            
+                     
       </div>
+      
+           
+      <nav aria-label="Page navigation example">
+		  <ul class="pagination">
+		    <li class="page-item">
+	      
+		      <c:if test="${startPage > 1 }">
+		      <a class="page-link" href="../nav/nav_new.do?page=${startPage-1 }" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		        <span class="sr-only">Previous</span>
+		      </a>
+		      </c:if>  
+		        
+		    </li>
+		    
+		    <c:forEach var="i" begin="${startPage }" end="${endPage }">            
+	            <c:if test="${i==curpage }">
+	              <c:set var="style" value="class=current"/>
+	            </c:if>
+	            
+	            <c:if test="${i!=curpage }">
+	              <c:set var="style" value=""/>
+	            </c:if>
+	            
+	            <li ${style }><a href="../nav/nav_new.do?page=${i }">${i }</a></li>
+	       </c:forEach>
+
+		    <li class="page-item">
+		    
+		      <c:if test="${endPage < totalpage }">
+		      <a class="page-link" href="../nav/nav_new.do?page=${endPage+1 }" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		        <span class="sr-only">Next</span>
+		      </a>
+		      </c:if>
+		      
+		    </li>
+		  </ul>
+		</nav>
+		
+		   
     </div>
   </div>
+  
 </section>
 </body>
 </html>
