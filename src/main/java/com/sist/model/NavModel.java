@@ -60,7 +60,7 @@ public class NavModel {
 		}
 		int curpage = Integer.parseInt(page);
 		Map map = new HashMap();
-		int rowSize = 16;
+		int rowSize = 12;
 		int start = (rowSize*curpage)-(rowSize-1); //rownum
 		int end = (rowSize*curpage);
 		
@@ -70,7 +70,7 @@ public class NavModel {
 		List<ShoesVO> list = NavDAO.navMenList(map);
 		int totalpage = NavDAO.navTotalPage(map);
 		
-		final int BLOCK = 10;
+		final int BLOCK = 5;
 		int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
 		// [1] [2] [3] [4] [5]  => start = 1, 6, ... / end = 5, 10, ...
 		int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;
@@ -96,7 +96,7 @@ public class NavModel {
 		}
 		int curpage = Integer.parseInt(page);
 		Map map = new HashMap();
-		int rowSize = 16;
+		int rowSize = 12;
 		int start = (rowSize*curpage)-(rowSize-1); //rownum
 		int end = (rowSize*curpage);
 		
@@ -106,7 +106,7 @@ public class NavModel {
 		List<ShoesVO> list = NavDAO.navWomenList(map);
 		int totalpage = NavDAO.navTotalPage(map);
 		
-		final int BLOCK = 10;
+		final int BLOCK = 5;
 		int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
 		// [1] [2] [3] [4] [5]  => start = 1, 6, ... / end = 5, 10, ...
 		int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;
