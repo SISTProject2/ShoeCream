@@ -229,7 +229,7 @@ header #NOTICE {
 		    
 		    <c:forEach var="i" begin="${startPage }" end="${endPage }">            
 	            <c:if test="${i==curpage }">
-	              <c:set var="style" value="class=current"/>
+	              <c:set var="style" value="class=active"/>
 	            </c:if>
 	            
 	            <c:if test="${i!=curpage }">
