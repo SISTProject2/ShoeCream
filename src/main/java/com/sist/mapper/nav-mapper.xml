@@ -50,9 +50,36 @@
   </select>
   
   <!-- Calendar -->
-  <select id="navCalendarList" resultType="ShoesVO">
-    SELECT *
+  <select id="navCalendarList" resultType="ShoesVO" parameterType="hashmap">
+    
+    SELECT img, name_kor, brand, 
+    release_date, SUBSTR(release_date, 7, 2) as dbday, 
+    release_date, SUBSTR(release_date, 4, 2) as dbmonth,
+    release_date, SUBSTR(release_date, 1, 5) as regdate  
+    
+    FROM (SELECT img, name_kor, brand, release_date, rownum as num
+    FROM (SELECT img, name_kor, brand, release_date
     FROM goods_2
+     
+    WHERE SUBSTR(release_date, 1, 5)=#{regdate} )) 
+    WHERE num BETWEEN #{start} AND #{end}
+    ORDER BY dbday ASC
+    
+    
+  </select>
+  
+  <!-- Calendar TBA -->
+  <select id="navCalendarTba" resultType="ShoesVO" parameterType="hashmap">
+    
+    SELECT img, brand, name_kor 
+    
+    FROM (SELECT img, name_kor, brand, rownum as num
+    FROM (SELECT img, name_kor, brand
+    FROM goods_2
+     
+    WHERE release_date = '23/01/01' ))
+    WHERE num BETWEEN #{start} AND #{end}
+    
   </select>
   
   <!-- new 전체 페이지 -->
@@ -76,4 +103,19 @@
    FROM goods_2
    WHERE type='여자'
  </select>
+
+  <!-- 캘린더 전체 페이지  --> 
+  <select id="navTotalPage4" resultType="int">
+   SELECT CEIL(COUNT(*)/10.0)
+   FROM goods_2
+   WHERE SUBSTR(release_date, 1, 5)=#{regdate}
+ </select>
+
+  <!-- TBA 전체 페이지  --> 
+  <select id="navTotalPage5" resultType="int">
+   SELECT CEIL(COUNT(*)/10.0)
+   FROM goods_2
+   WHERE release_date = '23/01/01'
+  </select>
+ 
 </mapper>

@@ -22,7 +22,7 @@ CATEGORY_ID   NOT NULL NUMBER
  */
 public class ShoesVO {
 	private int goods_id, rt_price, im_sell, im_buy, bookmark, category_id;
-	private String name_kor, name_eng, img, brand, sku, color, type, variance, release_price;
+	private String name_kor, name_eng, img, brand, sku, color, type, variance, release_price, dbmonth, dbday, regdate;
 	private Date release_date;
 	
 	public int getGoods_id() {
@@ -120,6 +120,24 @@ public class ShoesVO {
 	}
 	public void setRelease_date(Date release_date) {
 		this.release_date = release_date;
+	}
+	public String getDbday() {
+		return dbday;
+	}
+	public void setDbday(String dbday) {
+		this.dbday = dbday;
+	}
+	public String getDbmonth() {
+		return dbmonth;
+	}
+	public void setDbmonth(String dbmonth) {
+		this.dbmonth = dbmonth;
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 	
 }
