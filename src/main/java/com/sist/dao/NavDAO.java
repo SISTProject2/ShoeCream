@@ -141,6 +141,7 @@ public class NavDAO {
       return list;
    }
    
+   
    public static List<ShoesVO> navWomenList(Map map) {   
       SqlSession session=null;
       List<ShoesVO> list=null;

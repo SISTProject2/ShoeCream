@@ -22,7 +22,7 @@ CATEGORY_ID   NOT NULL NUMBER
  */
 public class ShoesVO {
 	private int goods_id, rt_price, im_sell, im_buy, bookmark, category_id;
-	private String name_kor, name_eng, img, brand, sku, color, type, variance, release_price, dbmonth, dbday, regdate;
+	private String name_kor, name_eng, img, brand, sku, color, type, variance, release_price, dbmonth, dbday, dbyear, regdate;
 	private Date release_date;
 	
 	public int getGoods_id() {
@@ -139,5 +139,10 @@ public class ShoesVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
+	public String getDbyear() {
+		return dbyear;
+	}
+	public void setDbyear(String dbyear) {
+		this.dbyear = dbyear;
+	}
 }
