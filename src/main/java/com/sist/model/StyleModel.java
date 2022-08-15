@@ -2,6 +2,7 @@ package com.sist.model;
 
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -50,5 +51,36 @@ public class StyleModel {
 		StyleDAO.styleInsert(vo);
 		
 		return "redirect:../nav/nav_style.do";
+	}
+	
+	@RequestMapping("style/style_detail_before.do")
+	public String style_detail_before(HttpServletRequest request, HttpServletResponse response) {
+		String style_id=request.getParameter("style_id");
+		Cookie cookie=new Cookie("style"+style_id, style_id);
+		cookie.setPath("/");
+		cookie.setMaxAge(60*60*24);
+		response.addCookie(cookie);
+
+		return "redirect:../style/detail.do?style_id="+style_id;	
+	}
+	
+	@RequestMapping("style/detail.do")
+	public String style_detail(HttpServletRequest request, HttpServletResponse response) {
+		String style_id=request.getParameter("style_id");
+
+		StyleVO vo=StyleDAO.styleDetailData(Integer.parseInt(style_id));
+
+		request.setAttribute("vo", vo);
+		
+		String content = vo.getContent();
+		String[] tag = content.split("#");
+	    
+		request.setAttribute("tag", tag);
+		
+		
+		request.setAttribute("main_jsp", "../style/detail.jsp");
+		
+		return "../main/main.jsp";
+		
 	}
 }

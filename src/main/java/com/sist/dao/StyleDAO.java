@@ -40,9 +40,8 @@ public class StyleDAO {
 	public static void styleInsert(StyleVO vo) {
 		SqlSession session=null;
 		try {
-			session=ssf.openSession(true);	// true 없으면 commit(x) => autocommit false
+			session=ssf.openSession(true);	
 			session.insert("styleInsert",vo);
-//			session.commit(); // true 안 적었을 경우
 		} catch(Exception ex) {
 			System.out.println("styleInsert error : ");
 			ex.printStackTrace();
@@ -51,5 +50,21 @@ public class StyleDAO {
 				session.close();
 		
 		}
+	}
+	
+	public static StyleVO styleDetailData(int style_id) {	
+		SqlSession session=null;
+		StyleVO vo=null;
+		try {
+			session=ssf.openSession();
+			vo=session.selectOne("styleDetailData", style_id);
+		} catch(Exception ex) {
+			System.out.println("styleDetailData error : ");
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return vo;		
 	}
 }

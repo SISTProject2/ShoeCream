@@ -100,7 +100,7 @@
                       <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-6">shoe_style</h6>
                         <input type="hidden" name=style_id value="${vo.style_id }">
                         <div style="clear: both;"></div>
-                        <p class="u-align-left u-small-text u-text u-text-variant u-text-7" style="margin: 15px 16px 0;"><a href="#">${vo.content }</a><br></p>
+                        <p class="u-align-left u-small-text u-text u-text-variant u-text-7" style="margin: 15px 16px 0;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }">${vo.content }</a><br></p>
                         <p class="u-small-text u-text u-text-default u-text-variant u-text-8">12&nbsp;</p>
                         <p class="u-small-text u-text u-text-default u-text-variant u-text-9" style="margin: -19px auto 0 85px;">${vo.rcount }&nbsp;</p>
                         <span class="u-file-icon u-icon u-icon-2"><img src="../images/style/heart.png" alt=""></span>

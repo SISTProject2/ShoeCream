@@ -91,19 +91,6 @@
 </style>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
-/* $(function(){
-	$('#writeBtn').click(function(){
-		
-		let content=$('#content').val(); 	// 입력한 값 가져오기
-		if (content.trim()=="") {
-			$('#content').focus();
-			return;
-		} 
-		
-		$('#frm').submit();	// 데이터 보내기
-	})
-}) */
-
 			
  $(function(){
 	$('#writeBtn').click(function(){
@@ -123,30 +110,6 @@
 	})
 }) 
 		
-/*  $(function(){
-	$('#sendButton').click(function(){
-		
-		var fileValue = $("#file").val().split("\\");
-	    var fileName = fileValue[fileValue.length-1]; // 파일명
-		
-		console.log(fileName);
-	    
-	    let img=fileName;
-	    if (img.trim()==""){
-	    	$('#file').focus();
-	    }
-	    
-	    $('.frm2').submit(); 
-	    
-	    let img=$('#').val(); 	// 입력한 값 가져오기
-		if (img.trim()=="") {
-			$('#file').focus();
-			return;
-		}
-	}) 
-}) */ 
-
-
 </script>
 </head>
 <iframe name='blankifr' style='display:none;'></iframe>
@@ -165,63 +128,28 @@
            <form method=post action="../style/input_ok.jsp" class="frm" enctype="multipart/form-data" target="blankifr" id="frm2">
             <div class="u-border-1 u-border-grey-75 u-border-no-top u-container-style u-group u-group-3" style="width: 650px; min-height: 82px; height: auto; margin: 0 auto; border-bottom: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
               <div class="custom-file-upload" style="margin-left: 175px;">
-              <!--  <form action="../style/insert_ok.do" method="POST" id="frm1" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form"  style="padding: 15px; height: 64px; margin: 13px 151px 0 0;" source="file"> -->
                 <div class="u-container-layout u-container-layout-3" style="padding-left: 30px; padding-right: 30px;">
                   <div class="u-form u-form-1" style="height: 64px; margin: 13px 0 0 0;">
-                      <!-- <div class="u-form-group u-form-name u-label-top"  >
-                        <label for="name-558c" class="u-form-control-hidden u-label"></label>
-                        <input type="text" placeholder="파일" id="name-558c" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-input-1" style="height: 32px;font-size: 0.875rem; border:1px solid #c0c0c0; width: 315px;" required="">
-                      </div> -->
-		  			  <!--<label for="file">File: </label>--> 
-		  			  <%-- <%=application.getRealPath("/") %> --%>
     			      <input type="file" id="file" name="myfiles[]" multiple="" class="custom-file-upload-hidden" tabindex="-1" style="position: absolute; left: -9999px;">
-    		  	      <!-- <button class="u-black u-border-1 u-border-black u-btn u-button-style" style="text-transform: uppercase;letter-spacing: 1px; background-image: none;border-style: solid;margin: -68px 0 56px 260px;padding: 5px 20px 4px; font-size: 0.875rem;" >FILE UPLOAD</button> --> 
-    			      <!-- <button id="sendButton" style="text-transform: uppercase;letter-spacing: 1px; background-image: none;border-style: solid 1px black;margin: -68px 0 56px 260px;padding: 3px 20px 4px; background-color:black; color:white; font-size: 0.875rem; display: inline-block;">
-		                    FILE&nbsp;UPLOAD
-		                    <span style="font-size: 0.75rem;"></span>
-		                    <span style="font-size: 0.875rem;">FILE&nbsp;UPLOAD</span>
-		                  </button> -->
 				  	  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 					  <script  src="../home/style/script.js"></script>
-                      <!-- <div class="u-form-group u-form-submit" style="weight:100px;">
-                        <a href="#" class="u-border-1 u-border-black u-btn u-btn-submit u-button-style u-text-black u-white u-btn-1" style="font-size: 0.875rem;border-style: solid;background-image: none;font-weight: 700;padding: 5px 10px;">파일 선택<br>
-                        </a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
-                      </div> -->
-                      <!-- <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
-                      <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
-                      <input type="hidden" value="" name="recaptchaResponse"> -->
-	                  <!-- <a href="#" class="u-black u-border-1 u-border-black u-btn u-button-style u-btn-2" style="text-transform: uppercase;letter-spacing: 1px; background-image: none;border-style: solid;margin: -50px 0 16px auto;padding: 3px 20px 4px;">
-	                    <span style="font-size: 0.75rem;"></span>
-	                    <span style="font-size: 0.875rem;">file upload</span>
-	                  </a> -->
                   </div>
                 </div>
-               <!-- </form> --> 
 			  </div>
 			  <input type="submit" class="u-black u-border-1 u-border-black u-btn u-button-style u-btn-2" value="File Upload" id="sendButton" style="text-transform: uppercase;letter-spacing: 1px; background-image: none;border-style: solid;margin: 43px 0 16px 77px;padding: 3px 20px 4px;">
-	            <!-- <span style="font-size: 0.75rem;"></span>
-	            <span style="font-size: 0.875rem;">file upload</span> -->
-	         <!--  </a> -->
             </div>
 			</form>
 			<form method=post action="../style/insert_ok.do" class="frm" id="frm1" target="blankifr">
             <div class="u-form u-form-2" style="height: 214px;width: 655px;margin: 39px auto 0;">
-             <!--  <form action="../style/insert_ok.do" method="POST" id="frm2"  class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="email" name="form"> -->
                 <div class="u-form-group u-form-message u-form-group-3" style="margin-top: 0; margin-bottom: 10px;">
                   <label for="message-f2a8" class="u-label u-label-2" style="font-weight: 700;">Content</label>
                   <textarea placeholder="문구 입력..." rows="4" cols="50" id="content2" name="content2" class="u-border-1 u-border-grey-75 u-input u-input-rectangle" style="border:1px solid #404040" required=""></textarea>
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
-                 <!--  <a href="#" class="u-black u-btn u-btn-rectangle u-btn-submit u-button-style u-btn-3" id="writeBtn" style="background-image: none; border-style: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top:22px;" >WRITE<br> -->
                   <a href="#" class="u-form-control-hidden" style="background-image: none; border-style: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top:22px;" >WRITE<br>
                   </a>
                   <input type="submit" value="submit" class="u-form-control-hidden">
                 </div>
-               <!--  <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                <input type="hidden" value="" name="recaptchaResponse"> -->
-              <!-- </form> -->
             </div>
             </form>
             <form method=post action="../style/insert_ok.do" class="frm" id="frm3">
@@ -237,7 +165,6 @@
           </div>
         </div>
       </div>
-      <!-- </form> -->
     </section>
     
     
