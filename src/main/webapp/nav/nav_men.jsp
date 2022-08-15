@@ -186,24 +186,24 @@ header #NOTICE {
         <div class="u-repeater u-repeater-1" style="display: flex; position: relative; bottom: -75px;">
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a href="https://nicepage.com/wordpress-website-builder" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-1" style="font-size: 12pt; z-index: 1">운동화&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a href="../nav/nav_men_category.do?category_id=2" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-1" style="font-size: 12pt; z-index: 1">운동화&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a href="https://nicepage.com/wordpress-website-builder" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt; z-index: 1">스니커즈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a href="../nav/nav_men_category.do?category_id=1" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt; z-index: 1">스니커즈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a href="https://nicepage.com/wordpress-website-builder" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt; z-index: 1;">샌들&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a href="../nav/nav_men_category.do?category_id=3" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt; z-index: 1;">샌들&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a href="https://nicepage.com/wordpress-website-builder" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt; z-index: 1">부츠&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a href="../nav/nav_men_category.do?category_id=4" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt; z-index: 1">부츠&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a href="https://nicepage.com/wordpress-website-builder" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt; z-index: 1">로퍼/플랫&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a href="../nav/nav_men_category.do?category_id=5" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt; z-index: 1">로퍼/플랫&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a href="https://nicepage.com/wordpress-website-builder" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt">장화</a>
+              <a href="../nav/nav_men_category.do?category_id=6" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-text-hover-black u-btn-2" style="font-size: 12pt">장화</a>
             </div>
           </div>
         </div>

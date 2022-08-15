@@ -24,6 +24,7 @@ public class NavDAO {
       }
    }
    
+   // new 페이징
    public static int navTotalPage(Map map)
    {
       int total = 0;
@@ -41,6 +42,7 @@ public class NavDAO {
       return total;
    }
    
+   // men 페이징
    public static int navTotalPage2(Map map)
    {
 	   int total = 0;
@@ -58,6 +60,7 @@ public class NavDAO {
 	   return total;
    }
    
+   // women 페이징
    public static int navTotalPage3(Map map)
    {
 	   int total = 0;
@@ -93,7 +96,7 @@ public class NavDAO {
 	   return total;
    }
    
-   // 캘린더 페이징
+   // 캘린더 TBA 페이징
    public static int navTotalPage5(Map map)
    {
 	   int total = 0;
@@ -140,6 +143,7 @@ public class NavDAO {
       
       return list;
    }
+   
    
    
    public static List<ShoesVO> navWomenList(Map map) {   

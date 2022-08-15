@@ -64,10 +64,6 @@ public class NavModel {
 		
 		String page = request.getParameter("page");
 		String category_id = request.getParameter("category_id");
-		String brand = request.getParameter("brand");
-		String im_buy = request.getParameter("im_buy");
-		String year = request.getParameter("year");
-		String color = request.getParameter("color");
 		
 		if(page == null) {
 			page = "1";
@@ -76,16 +72,13 @@ public class NavModel {
 		Map map = new HashMap();
 		int rowSize = 12;
 		int start = (rowSize*curpage)-(rowSize-1); //rownum
-		int end = (rowSize*curpage);	
+		int end = (rowSize*curpage);
+		
 		
 		map.put("table_name", "nav_men");// ${table_name}
 		map.put("start", start); // #{start}
 		map.put("end", end);
 		map.put("category_id", category_id);
-		map.put("brand", brand);
-		map.put("im_buy", im_buy);
-		map.put("year", year);
-		map.put("color", color);
 		
 		List<ShoesVO> list = NavDAO.navMenList(map);
 		int totalpage = NavDAO.navTotalPage2(map);
@@ -101,18 +94,14 @@ public class NavModel {
 		request.setAttribute("totalpage", totalpage);
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
-		
-		request.setAttribute("category_id", category_id);
-		request.setAttribute("brand", brand);
-		request.setAttribute("im_buy", im_buy);
-		request.setAttribute("year", year);
-		request.setAttribute("color", color);	
+		request.setAttribute("category_id", category_id);		
 		
 		request.setAttribute("list", list);
 		request.setAttribute("main_jsp", "../nav/nav_men.jsp");
 		
 		return "../main/main.jsp";		
 	}
+	
 	
 	@RequestMapping("nav/nav_women.do")
 	public String nav_women(HttpServletRequest request, HttpServletResponse response) 

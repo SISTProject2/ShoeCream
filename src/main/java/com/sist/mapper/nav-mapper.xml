@@ -14,12 +14,18 @@
   
   <!-- Men -->
   <select id="navMenList" resultType="ShoesVO" parameterType="hashmap">
-    SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark, num
-    FROM (SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark, rownum as num
-    FROM (SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark
-    FROM goods_2 WHERE type='남자'))
+    SELECT goods_id, category_id, brand, name_kor, name_eng, img, im_buy, bookmark, 
+    release_date, SUBSTR(release_date, 1, 2) as dbyear
+    
+    FROM (SELECT goods_id, category_id, brand, name_kor, name_eng, img, im_buy, release_date, bookmark, rownum as num
+    FROM (SELECT goods_id, category_id, brand, name_kor, name_eng, img, im_buy, release_date, bookmark
+    FROM goods_2 
+    
+    WHERE type='남자' ))
+    
     WHERE num BETWEEN #{start} AND #{end}
   </select>
+  
   
   <!-- Women -->
   <select id="navWomenList" resultType="ShoesVO">
