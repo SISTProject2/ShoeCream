@@ -12,8 +12,8 @@ import java.util.Date;
  */
 
 public class StyleVO {
-	private int style_id, bookmark, user_id;
-	private String img, content;
+	private int style_id, bookmark, user_id, rcount;
+	private String img, content, dbday;
 	private Date rgdate;
 	
 	public int getStyle_id() {
@@ -51,6 +51,18 @@ public class StyleVO {
 	}
 	public void setRgdate(Date rgdate) {
 		this.rgdate = rgdate;
+	}
+	public int getRcount() {
+		return rcount;
+	}
+	public void setRcount(int rcount) {
+		this.rcount = rcount;
+	}
+	public String getDbday() {
+		return dbday;
+	}
+	public void setDbday(String dbday) {
+		this.dbday = dbday;
 	}
 	
 	

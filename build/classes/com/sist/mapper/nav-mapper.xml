@@ -47,6 +47,7 @@
   <select id="navStyleList" resultType="StyleVO">
     SELECT *
     FROM style_2
+    ORDER BY style_id DESC
   </select>
   
   <!-- Brand -->
