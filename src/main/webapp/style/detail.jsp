@@ -65,28 +65,14 @@ $(function(){
 	})
 }) 
 
-$(function(){
-	$('.con').click(function(){
-		let id=$(this).attr("data-no");
-		console.log(id);
-		var jbString=$('#content${vo.style_id }').val();
-		console.log(jbString)
-		
-		
-		
-	})
-})	
-
 
 function tagToLink(str){
     var newText = str.replace(/<br>/g, "\r\n");
     var txt = newText.replace(/#[^#\s,;]+/gm, function(tag2) {
         var tag = tag2.replace(/#/g, ""); 		
-        console.log(tag);
         return '<a href="../style/tag.do?tag=' + tag + '">' + tag2 + '</a>'
     });
     txt = txt.replace(/\n/g, "<br>")
-    console.log(txt);
     $('.content').html(txt)
     
     return txt;
@@ -132,7 +118,7 @@ function tagToLink(str){
                     <img class="u-image u-image-circle u-image-1 profile" src="../images/style/64572.png"  style="  width: 46px;  height: 46px;">
                   </c:if>
                 </td>
-                <td width="70%" class="re" data-no="${svo.id }"  style="vertical-align: text-bottom;"">
+                <td width="70%" class="re" data-no="${svo.sreply_id }"  style="vertical-align: text-bottom;"">
                   <c:if test="${svo.group_tab==1 }">
 		              <h6 class="u-text u-text-default u-text-1 name" style="  font-weight: 700; display:inline; margin-left:10px;">${svo.name }</h6>
 		              <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-2 content" style=" font-size: 0.875rem;display:inline; margin-left: 5px; ">${svo.content }</h6>
@@ -148,35 +134,34 @@ function tagToLink(str){
                 </td>
               </tr>
               <tr>
-                <td width="70%" class="re" data-no="${svo.id }">
+                <td width="70%" class="re" data-no="${svo.sreply_id }">
                   <c:if test="${svo.group_tab==1 }">
                       <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default  u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; margin-left:10px; font-weight: 800; color: #425465">수정</a>
 		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default  u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #a97275">삭제</a>
                    </div>
                   </c:if>
                   <c:if test="${svo.group_tab==0 }">
-		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-palette-1-dark-1 u-text-3 reply" id="writerp${svo.id }" data-no="${svo.id }" onclick="return false" style="font-weight: 800; font-size: 0.75rem; margin-top:5px; display:inline;">답글</a>
+		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-palette-1-dark-1 u-text-3 reply" id="writerp${svo.sreply_id }" data-no="${svo.sreply_id }" onclick="return false" style="font-weight: 800; font-size: 0.75rem; margin-top:5px; display:inline;">답글</a>
 		              &nbsp;
 		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #425465">수정</a>
 		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #a97275"">삭제</a>
                   </c:if>
                 </td> 
                 <td width="20%" style="float: right;">
-                  <%-- <span class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-4" style="font-weight: 400; font-size: 0.9rem; width: 370px;">${svo.dbday }</span> --%>
                 </td>
               
               </tr>
               <form method=post action="../stylereply/rereply_insert.do">
-                <tr id="reply${svo.id }" style="display:none" class="rereply">
+                <tr id="reply${svo.sreply_id }" style="display:none" class="rereply">
                   <td colspan="3" class="text-right inline" style="text-align: -webkit-center;">
                     <input type=hidden name=sid value="${vo.style_id }">
-                    <input type=hidden name=style_id value="${svo.id }">
+                    <input type=hidden name=style_id value="${svo.sreply_id }">
                     <input type=hidden name=group_id value="${svo.group_id }">
                     <input type=hidden name=group_step value="${svo.group_step }">
                     <input type=hidden name=group_tab value="${svo.group_tab }">
                     <input type=hidden name=name value="shim">
                     <textarea placeholder="댓글 입력.." id="message-6797" name="content" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-input-1" required="required" rows="1" style="font-size: 0.875rem; width: 496px; margin-left: -23px; border: 1px solid lightgrey"></textarea>
-                    <input type="submit" class="u-black u-border-none u-btn u-btn-submit u-button-style u-btn-1" value="작성" id="writeBtn${svo.id }" data-no="${svo.id }" style="background-image: none; font-size: 0.875rem; padding: 8px 10px; margin-top: -53px; margin-left: 550px;">
+                    <input type="submit" class="u-black u-border-none u-btn u-btn-submit u-button-style u-btn-1" value="작성" id="writeBtn${svo.sreply_id }" data-no="${svo.sreply_id }" style="background-image: none; font-size: 0.875rem; padding: 8px 10px; margin-top: -53px; margin-left: 550px;">
                   </td>
                 </tr>
               </form>

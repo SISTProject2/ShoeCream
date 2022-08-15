@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
 import com.sist.dao.StyleDAO;
+import com.sist.dao.StyleReplyDAO;
+import com.sist.vo.StyleReplyVO;
 import com.sist.vo.StyleVO;
 
 @Controller
@@ -71,12 +73,17 @@ public class StyleModel {
 		StyleVO vo=StyleDAO.styleDetailData(Integer.parseInt(style_id));
 
 		request.setAttribute("vo", vo);
+
+		StyleReplyVO svo=new StyleReplyVO();
+		svo.setSid(vo.getStyle_id());
+		List<StyleReplyVO> list=StyleReplyDAO.styleReplyListData(svo);
 		
 		String content = vo.getContent();
 		String[] tag = content.split("#");
 	    
 		request.setAttribute("tag", tag);
 		
+		request.setAttribute("list", list);
 		
 		request.setAttribute("main_jsp", "../style/detail.jsp");
 		

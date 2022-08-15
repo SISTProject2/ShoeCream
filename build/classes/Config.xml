@@ -13,6 +13,7 @@
     <typeAlias type="com.sist.vo.CsVO" alias="CsVO"/>
     <typeAlias type="com.sist.vo.NoticeVO" alias="NoticeVO"/>
     <typeAlias type="com.sist.vo.UserVO" alias="UserVO"/>
+    <typeAlias type="com.sist.vo.StyleReplyVO" alias="StyleReplyVO"/>
     
   </typeAliases>
   <environments default="development">
@@ -31,6 +32,7 @@
     <mapper resource="com/sist/mapper/nav-mapper.xml"/>
     <mapper resource="com/sist/mapper/mypage-mapper.xml"/> 
     <mapper resource="com/sist/mapper/style-mapper.xml"/> 
+    <mapper resource="com/sist/mapper/style_reply-mapper.xml"/> 
   </mappers>
 
   
