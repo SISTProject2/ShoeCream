@@ -59,6 +59,7 @@ public class StyleReplyDAO {
 		 SqlSession session=null; 
 		 try { 
 			 session=ssf.openSession(false);
+			 session.update("countIncrement",vo);
 			 session.selectOne("styleRereplyInsert",vo);
 			 session.update("stepIncrement",vo); 
 			 session.insert("styleRereplyInsert2",vo);
