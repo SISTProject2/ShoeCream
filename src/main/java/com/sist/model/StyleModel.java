@@ -83,4 +83,22 @@ public class StyleModel {
 		return "../main/main.jsp";
 		
 	}
+	
+	@RequestMapping("style/tag.do")
+	public String shoesFind(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch(Exception ex) {}
+		
+		String tag=request.getParameter("tag");
+
+		
+		List<StyleVO> list=StyleDAO.styleTagData(tag);
+		
+		request.setAttribute("tag", tag);
+		request.setAttribute("list", list);
+		request.setAttribute("main_jsp", "../style/tag.jsp");
+		
+		return "../main/main.jsp";
+	}
 }

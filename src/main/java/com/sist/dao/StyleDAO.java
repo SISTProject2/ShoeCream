@@ -67,4 +67,20 @@ public class StyleDAO {
 		
 		return vo;		
 	}
+	
+	public static List<StyleVO> styleTagData(String tag) {
+		
+		SqlSession session=null;
+		List<StyleVO> list=null;
+		try {
+			session=ssf.openSession();
+			list=session.selectList("styleTagData", tag);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+		
+	}
 }
