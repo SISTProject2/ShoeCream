@@ -12,20 +12,20 @@
 <!-- 추가 -->
  <insert id="styleReplyInsert" parameterType="StyleReplyVO">
   <selectKey keyProperty="sreply_id" resultType="int" order="BEFORE">
-    SELECT NVL(MAX(sreply_id)+1,1) as sreply_id FROM stylereply_2
+    SELECT NVL(MAX(sreply_id)+1,1) as sreply_id FROM style_reply_2
   </selectKey>
-  INSERT INTO stylereply_2(sreply_id, sid, name, content, regdate, group_id) VALUES(
+  INSERT INTO style_reply_2(sreply_id, sid, name, content, regdate, group_id) VALUES(
     #{sreply_id},
     #{sid},
     #{name},
     #{content},
     SYSDATE,
-    (SELECT NVL(MAX(group_id)+1,1) FROM stylereply_2)
+    (SELECT NVL(MAX(group_id)+1,1) FROM style_reply_2)
   )
 </insert>
 
 <update id="tabIncrement" parameterType="StyleReplyVO">
-  UPDATE stylereply_2 SET
+  UPDATE style_reply_2 SET
   group_tab=group_tab+1
   WHERE sreply_id=#{sid}
 </update>
@@ -34,31 +34,31 @@
 <select id="styleReplyListData" resultType="StyleReplyVO">
   SELECT sreply_id, sid, name, content, TO_CHAR(regdate,'YYYY-MM-DD') as dbday, group_id, group_tab, num
   FROM (SELECT sreply_id, sid, name, content, regdate,  group_id, group_tab, rownum as num
-  FROM (SELECT /*+INDEX_ASC(stylereply_2 sr_sreply_id_pk)*/ sreply_id, sid, name, content, regdate,  group_id, group_tab
-  FROM stylereply_2 ORDER BY group_id ASC, CASE WHEN group_step=0 THEN group_step END ASC, CASE WHEN group_step!=0 THEN group_step END DESC))
+  FROM (SELECT /*+INDEX_ASC(style_reply_2 sr_sreply_id_pk)*/ sreply_id, sid, name, content, regdate,  group_id, group_tab
+  FROM style_reply_2 ORDER BY group_id ASC, CASE WHEN group_step=0 THEN group_step END ASC, CASE WHEN group_step!=0 THEN group_step END DESC))
   WHERE sid=#{sid}
 </select>
 
 <!-- 대댓글 추가 -->
 <select id="styleRereplyInsert" resultType="StyleReplyVO" parameterType="StyleReplyVO">
   SELECT group_id, group_step, group_tab
-  FROM stylereply_2
+  FROM style_reply_2
   WHERE sreply_id=#{sreply_id}
 </select>
 <update id="stepIncrement" parameterType="StyleReplyVO">
-  UPDATE stylereply_2 SET
+  UPDATE style_reply_2 SET
   group_step=group_step+1
   WHERE group_id=#{group_id}
 </update>
 <insert id="styleRereplyInsert2" parameterType="StyleReplyVO">
   <selectKey keyProperty="sreply_id" resultType="int" order="BEFORE">
-    SELECT NVL(MAX(sreply_id)+1,1) as sreply_id FROM stylereply_2
+    SELECT NVL(MAX(sreply_id)+1,1) as sreply_id FROM style_reply_2
   </selectKey>
-  INSERT INTO stylereply_2(sreply_id, sid, name, content, regdate, group_id, group_step, group_tab, root) VALUES (
+  INSERT INTO style_reply_2(sreply_id, sid, name, content, regdate, group_id, group_step, group_tab, root) VALUES (
   #{sreply_id}, #{sid}, #{name}, #{content}, SYSDATE, #{group_id}, #{group_step}+1, #{group_tab}+1, #{root})
 </insert>
 <update id="depthIncrement" parameterType="StyleReplyVO">
-  UPDATE stylereply_2 SET
+  UPDATE style_reply_2 SET
   depth=depth+1
   WHERE sreply_id=#{sreply_id}
 </update>
