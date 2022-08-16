@@ -14,79 +14,69 @@ import com.sist.vo.ShoesVO;
 @Controller
 public class MyPage {
 	
-	@RequestMapping("mypage/mypage.do")
-	public String mypage(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping("mypage/my_mypage.do")
+	public String my_mypage(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "../mypage/mypage.jsp";
+		return "../mypage/my_mypage.jsp";
 	}
 	
-	@RequestMapping("mypage/purchase_list.do")
-	public String purchase_list(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping("mypage/my_purchase_list.do")
+	public String my_purchase_list(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "../mypage/purchase_list.jsp";	 
+		return "../mypage/my_purchase_list.jsp";	 
 	}
 	
-	@RequestMapping("mypage/purchase_list2.do")
-	public String purchase_list2(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping("mypage/my_sell_list.do")
+	public String my_sell_list(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "../mypage/purchase_list2.jsp";	 
+		return "../mypage/my_sell_list.jsp";
 	}
 	
-	@RequestMapping("mypage/purchase_list3.do")
-	public String purchase_list3(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "../mypage/purchase_list3.jsp";	 
+	@RequestMapping("mypage/my_bookmark.do")
+	public String my_bookmark(HttpServletRequest request, HttpServletResponse response) {
+	
+		return "../mypage/my_bookmark.jsp";
 	}
 	
-	@RequestMapping("mypage/sell_list.do")
-	public String sell_list(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "../mypage/sell_list.jsp";
-	}
+	@RequestMapping("mypage/my_recently_viewed.do")
+	public String my_recently_viewed(HttpServletRequest request, HttpServletResponse response) {
 	
-	@RequestMapping("mypage/sell_list2.do")
-	public String sell_list2(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "../mypage/sell_list2.jsp";
-	}
-	
-	@RequestMapping("mypage/sell_list3.do")
-	public String sell_list3(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "../mypage/sell_list3.jsp";
-	}
-	
-	@RequestMapping("mypage/bookmark.do")
-	public String bookmark(HttpServletRequest request, HttpServletResponse response) {
-	
-		return "../mypage/bookmark.jsp";
-	}
-	
-	@RequestMapping("mypage/profile.do")
-	public String profile(HttpServletRequest request, HttpServletResponse response) {
-	
-		return "../mypage/profile.jsp";
-	}
-	
-	@RequestMapping("mypage/addressbook.do")
-	public String addressbook(HttpServletRequest request, HttpServletResponse response) {
-	
-		return "../mypage/addressbook.jsp";
-	}
-	
-	@RequestMapping("mypage/pay_card.do")
-	public String pay_card(HttpServletRequest request, HttpServletResponse response) {
-	
-		return "../mypage/pay_card.jsp";
-	}
-	
-	@RequestMapping("mypage/pay_account.do")
-	public String pay_account(HttpServletRequest request, HttpServletResponse response) {
-	
-		return "../mypage/pay_account.jsp";
+		return "../mypage/my_recently_viewed.jsp";
 	}
 	
 	
+	
+	@RequestMapping("mypage/my_profile.do")
+	public String my_profile(HttpServletRequest request, HttpServletResponse response) {
+	
+		return "../mypage/my_profile.jsp";
+	}
+	
+	@RequestMapping("mypage/my_addressbook.do")
+	public String my_addressbook(HttpServletRequest request, HttpServletResponse response) {
+	
+		return "../mypage/my_addressbook.jsp";
+	}
+	
+	@RequestMapping("mypage/my_pay_card.do")
+	public String my_pay_card(HttpServletRequest request, HttpServletResponse response) {
+	
+		return "../mypage/my_pay_card.jsp";
+	}
+	
+	@RequestMapping("mypage/my_pay_account.do")
+	public String my_pay_account(HttpServletRequest request, HttpServletResponse response) {
+	
+		return "../mypage/my_pay_account.jsp";
+	}
+	
+	@RequestMapping("mypage/my_style.do")
+	public String my_style(HttpServletRequest request, HttpServletResponse response) {
+	
+		return "../mypage/my_style.jsp";
+	}
+	
+
 	
 	
 	
