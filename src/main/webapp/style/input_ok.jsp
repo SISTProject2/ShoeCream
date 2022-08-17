@@ -3,7 +3,8 @@
 <%@ page import="com.oreilly.servlet.multipart.*" %>
 
 <%
-	String path = "C:\\webDev\\webStudy\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\ShoeCream\\style\\image";
+	ServletContext context = getServletContext();
+	String path = context.getRealPath("\\style\\image");
 	MultipartRequest mr = new MultipartRequest(request, path, 1024*1024*100, "UTF-8", new DefaultFileRenamePolicy());
 
 	// 화면 이동
