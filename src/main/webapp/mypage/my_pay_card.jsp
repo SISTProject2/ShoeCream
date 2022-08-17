@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Post 6 Headline, Post 5 Headline, Post 4 Headline">
     <meta name="description" content="">
-    <title>pay_card</title>
+    <title>my_pay_card</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="pay_card.css" media="screen">
+<link rel="stylesheet" href="my_pay_card.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.15.11, nicepage.com">
@@ -21,7 +21,7 @@
 		"name": "MyPage"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="pay_card">
+    <meta property="og:title" content="my_pay_card">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
@@ -33,23 +33,27 @@
       <div class="u-list u-list-2">
         <div class="u-repeater u-repeater-2"></div>
       </div>
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
           <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-12 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
+            <div class="u-align-left u-container-style u-layout-cell u-size-12 u-layout-cell-1">
+              <div class="u-container-layout u-valign-top u-container-layout-1">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
                   <div class="u-container-layout u-container-layout-2">
-                    <h1 class="u-text u-text-default u-text-1"><a href="../mypage/mypage.do">마이 페이지</a></h1>
+                    <h1 class="u-text u-text-default u-text-1">
+                      <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="my_mypage.do" data-page-id="1289201052">마이 페이지</a>
+                    </h1>
                     <h3 class="u-text u-text-default u-text-2">쇼핑 정보</h3>
-                    <h3 class="u-text u-text-default u-text-3"><a href="../mypage/purchase_list.do">구매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-4"><a href="../mypage/sell_list.do">판매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/bookmark.do">관심 상품</a></h3>
-                    <h3 class="u-text u-text-default u-text-6">내 정보</h3>
-                    <h3 class="u-text u-text-default u-text-7"><a href="../mypage/profile.do">프로필 정보</a></h3>
-                    <h3 class="u-text u-text-default u-text-8"><a href="../mypage/addressbook.do">주소록</a></h3>
-                    <h3 class="u-text u-text-default u-text-9"><a href="../mypage/pay_card.do">결제 정보</a></h3>
-                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/pay_account.do">판매 정산 계좌</a></h3>
+                    <h3 class="u-text u-text-default u-text-3"><a href="../mypage/my_purchase_list.do">구매 내역</a></h3>
+                    <h3 class="u-text u-text-default u-text-4"><a href="../mypage/my_sell_list.do">판매 내역</a></h3>
+                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/my_bookmark.do">관심 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-6"><a href="../mypage/my_recently_viewed.do">최근 본 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-7">내 정보</h3>
+                    <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.do">프로필 정보</a></h3>
+                    <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.do">주소록</a></h3>
+                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_card.do">결제 정보</a></h3>
+                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_pay_account.do">판매 정산 계좌</a></h3>
+                    <h3 class="u-text u-text-default u-text-12"><a href="../mypage/my_style.do">스타일</a></h3>
                   </div>
                 </div>
               </div>
@@ -58,30 +62,27 @@
               <div class="u-container-layout u-container-layout-3">
                 <div class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
-                    <h3 class="u-text u-text-default u-text-11">주소록</h3>
-                    <a href="https://nicepage.review" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-1">+ 새 카드 추가하기</a>
+                    <h3 class="u-text u-text-default u-text-13">주소록</h3>
+                    <a href="https://nicepage.review" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-2">+ 새 카드 추가하기</a>
                   </div>
                 </div>
                 <div class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-container-style u-group u-shape-rectangle u-white u-group-3">
                   <div class="u-container-layout u-valign-middle u-container-layout-5">
-                    <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-2">****-****-****-1234</a>
-                    <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-light-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-white u-none u-radius-8 u-text-body-color u-btn-3">하나</a>
-                    <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-dark-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-4">삭제</a>
+                    <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-3">****-****-****-1234</a>
+                    <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-light-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-white u-none u-radius-8 u-text-body-color u-btn-4">하나</a>
+                    <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-dark-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-5">삭제</a>
                   </div>
                 </div>
-                <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-group u-shape-rectangle u-white u-group-4">
+                <div class="u-container-style u-group u-shape-rectangle u-white u-group-4">
                   <div class="u-container-layout u-container-layout-6">
                     <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-white u-group-5">
                       <div class="u-container-layout u-valign-middle u-container-layout-7">
-                        <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-5">****-****-****-1234</a>
-                        <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-light-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-white u-none u-radius-8 u-text-body-color u-btn-6">우리</a>
-                        <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-dark-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-7">삭제</a>
+                        <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-6">****-****-****-1234</a>
+                        <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-light-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-white u-none u-radius-8 u-text-body-color u-btn-7">우리</a>
+                        <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-dark-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-8">삭제</a>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="u-container-style u-group u-shape-rectangle u-white u-group-6">
-                  <div class="u-container-layout u-container-layout-8"></div>
                 </div>
               </div>
             </div>

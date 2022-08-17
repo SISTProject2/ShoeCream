@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Post 6 Headline, Post 5 Headline, Post 4 Headline">
     <meta name="description" content="">
-    <title>pay_account</title>
+    <title>my_pay_account</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="pay_account.css" media="screen">
+<link rel="stylesheet" href="my_pay_account.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.15.11, nicepage.com">
@@ -21,7 +21,7 @@
 		"name": "MyPage"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="pay_account">
+    <meta property="og:title" content="my_pay_account">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
@@ -33,23 +33,27 @@
       <div class="u-list u-list-2">
         <div class="u-repeater u-repeater-2"></div>
       </div>
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
           <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-12 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
+            <div class="u-align-left u-container-style u-layout-cell u-size-12 u-layout-cell-1">
+              <div class="u-container-layout u-valign-top u-container-layout-1">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
                   <div class="u-container-layout u-container-layout-2">
-                    <h1 class="u-text u-text-default u-text-1"><a href="../mypage/mypage.do">마이 페이지</a></h1>
+                    <h1 class="u-text u-text-default u-text-1">
+                      <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="my_mypage.do" data-page-id="1289201052">마이 페이지</a>
+                    </h1>
                     <h3 class="u-text u-text-default u-text-2">쇼핑 정보</h3>
-                    <h3 class="u-text u-text-default u-text-3"><a href="../mypage/purchase_list.do">구매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-4"><a href="../mypage/sell_list.do">판매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/bookmark.do">관심 상품</a></h3>
-                    <h3 class="u-text u-text-default u-text-6">내 정보</h3>
-                    <h3 class="u-text u-text-default u-text-7"><a href="../mypage/profile.do">프로필 정보</a></h3>
-                    <h3 class="u-text u-text-default u-text-8"><a href="../mypage/addressbook.do">주소록</a></h3>
-                    <h3 class="u-text u-text-default u-text-9"><a href="../mypage/pay_card.do">결제 정보</a></h3>
-                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/pay_account.do">판매 정산 계좌</a></h3>
+                    <h3 class="u-text u-text-default u-text-3"><a href="../mypage/my_purchase_list.do">구매 내역</a></h3>
+                    <h3 class="u-text u-text-default u-text-4"><a href="../mypage/my_sell_list.do">판매 내역</a></h3>
+                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/my_bookmark.do">관심 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-6"><a href="../mypage/my_recently_viewed.do">최근 본 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-7">내 정보</h3>
+                    <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.do">프로필 정보</a></h3>
+                    <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.do">주소록</a></h3>
+                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_card.do">결제 정보</a></h3>
+                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_pay_account.do">판매 정산 계좌</a></h3>
+                    <h3 class="u-text u-text-default u-text-12"><a href="../mypage/my_style.do">스타일</a></h3>
                   </div>
                 </div>
               </div>
@@ -58,41 +62,39 @@
               <div class="u-container-layout u-container-layout-3">
                 <div class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
-                    <h3 class="u-text u-text-default u-text-11">판매 정산 계좌</h3>
-                    <a href="https://nicepage.review" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-1">+ 새 카드 추가하기</a>
-                    <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-dark-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-2">삭제</a>
-                    <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-light-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-white u-none u-radius-8 u-text-body-color u-btn-3">하나</a>
+                    <h3 class="u-text u-text-default u-text-13">판매 정산 계좌</h3>
                   </div>
                 </div>
                 <div class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-container-style u-group u-shape-rectangle u-white u-group-3">
                   <div class="u-container-layout u-container-layout-5">
                     <div class="u-border-1 u-border-palette-5-light-1 u-container-style u-group u-opacity u-opacity-45 u-palette-5-light-2 u-radius-30 u-shape-round u-group-4">
                       <div class="u-container-layout u-container-layout-6">
-                        <h4 class="u-text u-text-default u-text-palette-5-dark-2 u-text-12">등록된 계좌 번호 <span style="font-weight: 700;"></span>
+                        <h4 class="u-text u-text-default u-text-palette-5-dark-2 u-text-14">등록된 계좌 번호 <span style="font-weight: 700;"></span>
                         </h4>
-                        <h4 class="u-text u-text-default u-text-palette-5-dark-2 u-text-13"> 하나은행 4419********** / 김**</h4>
+                        <h4 class="u-text u-text-default u-text-palette-5-dark-2 u-text-15"> 하나은행 4419********** / 김**</h4>
                       </div>
                     </div>
+                    <a href="https://nicepage.review" class="u-border-2 u-border-active-palette-5-dark-1 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-2">삭제</a>
                   </div>
                 </div>
-                <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-group u-shape-rectangle u-white u-group-5">
+                <div class="u-container-style u-group u-shape-rectangle u-white u-group-5">
                   <div class="u-container-layout u-container-layout-7">
                     <div class="u-form u-form-1">
                       <form action="//publish.nicepage.com/Form/Process" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
                         <div class="u-form-group u-form-name">
                           <label for="name-1a6e" class="u-label">은행명</label>
-                          <input type="text" placeholder="은행명 입력" id="name-1a6e" name="bank_name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                          <input type="text" placeholder="ㅁㄴㅇㄴㅁㅇ" id="name-1a6e" name="bank_name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                         </div>
                         <div class="u-form-email u-form-group">
                           <label for="email-1a6e" class="u-label">계좌번호</label>
-                          <input type="email" placeholder="- 없이 입력하세요" id="email-1a6e" name="bank_account" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                          <input type="email" placeholder="asdasdasdas" id="email-1a6e" name="bank_account" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                         </div>
                         <div class="u-form-group u-form-message">
                           <label for="message-1a6e" class="u-label">예금주</label>
-                          <textarea placeholder="예금주" rows="1" cols="50" id="message-1a6e" name="bank_holder" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
+                          <textarea placeholder="asdasdasda" rows="1" cols="50" id="message-1a6e" name="bank_holder" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
                         </div>
                         <div class="u-align-center u-form-group u-form-submit">
-                          <a href="#" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-32 u-btn-4">변경하기</a>
+                          <a href="#" class="u-active-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-grey-50 u-hover-black u-radius-32 u-btn-3">변경하기</a>
                           <input type="submit" value="submit" class="u-form-control-hidden">
                         </div>
                         <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
@@ -101,9 +103,6 @@
                       </form>
                     </div>
                   </div>
-                </div>
-                <div class="u-container-style u-group u-shape-rectangle u-white u-group-6">
-                  <div class="u-container-layout u-container-layout-8"></div>
                 </div>
               </div>
             </div>
