@@ -94,6 +94,55 @@ $(function(){
   <div style= "margin-top:100px"></div>
   <section class="u-clearfix u-section-2" id="sec-9192">
     <div class="u-clearfix u-sheet u-sheet-1">
+    
+	<!-- 신발 종류 -->
+	<p class="u-large-text u-text u-text-default u-text-variant u-text-1" style="font-weight: 650">Category</p>
+    <p class="u-text u-text-default u-text-2" style="color: #8C8C8C">카테고리</p>
+    <div class="u-list u-list-199" style="left: 2% ">
+        <div class="u-repeater u-repeater-1" style="display: flex">
+          <div class="u-container-style u-list-item u-repeater-item" >
+            <div class="u-container-layout u-similar-container u-container-layout-1">
+              <a href="../shoes/shoes_kinds.do?category_id=1">
+              <img src="../images/shoes/sneakers.png" width="150px" height="150px" ></a>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-2">
+              <a href="../shoes/shoes_kinds.do?category_id=2">
+              <img src="../images/shoes/jogging.png" width="150px" height="150px" ></a>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-3">
+              <a href="../shoes/shoes_kinds.do?category_id=3">
+              <img src="../images/shoes/sandal.png" width="150px" height="150px" ></a>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-4">
+              <a href="../shoes/shoes_kinds.do?category_id=4">
+              <img src="../images/shoes/boots.png" width="150px" height="150px" ></a>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-5">
+              <a href="../shoes/shoes_kinds.do?category_id=5">
+              <img src="../images/shoes/loafer.png" width="150px" height="150px" ></a>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-6">
+              <a href="../shoes/shoes_kinds.do?category_id=6">
+              <img src="../images/shoes/rainboots.png" width="150px" height="150px" ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    
+	<!-- 인기 상품 -->    
       <p class="u-large-text u-text u-text-default u-text-variant u-text-1" style="font-weight: 650">Most Popular</p>
       <p class="u-text u-text-default u-text-2" style="color: #8C8C8C">인기 상품</p>
       <div class="u-expanded-width u-list u-list-1">
@@ -295,59 +344,58 @@ $(function(){
   <div style= "margin-top:100px"></div>
   <section class="u-border-1 u-border-black u-border-no-left u-border-no-right u-clearfix u-section-4" id="sec-494d">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <p class="u-large-text u-text u-text-default u-text-variant u-text-1" style="font-weight: 650" >Major Brands</p>
-      <p class="u-text u-text-default u-text-2" style="color:#8C8C8C">주요 브랜드</p>
-      <div class="u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
+      <p class="u-large-text u-text u-text-default u-text-variant u-text-1" style="font-weight: 650;">Top Brands</p>
+      <p class="u-text u-text-default u-text-2" style="color: #8C8C8C">주요 브랜드</p>
+
+       <div class="u-repeater u-repeater-1" style="display: flex">
           <div class="u-container-style u-list-item u-repeater-item" >
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <a href="../shoes/shoes_list.do?brand=Nike">
+              <a href="../shoes/shoes_brand.do?brand=Nike">
               <img src="../images/brand/brand_1.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <a href="../shoes/shoes_list.do?brand=Adidas">
+              <a href="../shoes/shoes_brand.do?brand=Adidas">
               <img src="../images/brand/brand_2.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-3">
-              <a href="../shoes/shoes_list.do?brand=New Balance">
+              <a href="../shoes/shoes_brand.do?brand=New Balance">
               <img src="../images/brand/brand_3.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-4">
-              <a href="../shoes/shoes_list.do?brand=Hoke One One">
+              <a href="../shoes/shoes_brand.do?brand=Hoka One One">
               <img src="../images/brand/brand_4.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-5">
-              <a href="../shoes/shoes_list.do?brand=Asics">
+              <a href="../shoes/shoes_brand.do?brand=Asics">
               <img src="../images/brand/brand_5.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-6">
-              <a href="../shoes/shoes_list.do?brand=Mihara Yasuhiro">
+              <a href="../shoes/shoes_brand.do?brand=Mihara Yasuhiro">
               <img src="../images/brand/brand_6.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-7">
-              <a href="../shoes/shoes_list.do?brand=Autry">
+              <a href="../shoes/shoes_brand.do?brand=Autry">
               <img src="../images/brand/brand_7.png" width="100px" height="55px" ></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-8">
-              <a href="../shoes/shoes_list.do?brand=Oofos">
+              <a href="../shoes/shoes_brand.do?brand=Oofos">
               <img src="../images/brand/brand_8.png" width="100px" height="55px" ></a>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </section>

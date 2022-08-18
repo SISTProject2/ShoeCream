@@ -6,8 +6,9 @@
     SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark, num
     FROM (SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark, rownum as num
     FROM (SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark
-    FROM goods_2 WHERE release_date BETWEEN TO_DATE('2022-06-01', 'YYYY-MM-DD') 
-                   AND TO_DATE('2022-07-31', 'YYYY-MM-DD') ORDER BY release_date DESC ))
+    FROM goods_2 
+    WHERE release_date BETWEEN '22/06/01' AND '22-07-31' 
+    ORDER BY ${column}, release_date DESC ))
     WHERE num BETWEEN #{start} AND #{end}
     
    </select>
@@ -21,7 +22,8 @@
     FROM (SELECT goods_id, category_id, brand, name_kor, name_eng, img, im_buy, release_date, bookmark
     FROM goods_2 
     
-    WHERE type='남자' ))
+    WHERE type='남자' AND NOT name_eng IS NULL <!-- NOT name_eng IS NULL : 캘린더 상품 거르기 -->
+    ORDER BY ${column} ))
     
     WHERE num BETWEEN #{start} AND #{end}
   </select>
@@ -32,7 +34,9 @@
     SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark, num
     FROM (SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark, rownum as num
     FROM (SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark
-    FROM goods_2 WHERE type='여자'))
+    FROM goods_2 
+    WHERE type='여자' ORDER BY ${column} ))
+    
     WHERE num BETWEEN #{start} AND #{end}
   </select>
   
@@ -40,7 +44,7 @@
   <select id="navKidsList" resultType="ShoesVO">
     SELECT *
     FROM goods_2
-    WHERE type='키즈'
+    WHERE type='키즈' ORDER BY ${column}
   </select>
   
   <!-- Style -->

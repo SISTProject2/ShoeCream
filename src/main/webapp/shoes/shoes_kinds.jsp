@@ -154,19 +154,19 @@ header #NOTICE {
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en">
-    <section class="u-clearfix u-section-1" id="sec-aa34">
-      <img class="u-expanded-width u-image u-image-default u-image-1" style="margin-top: 110px;" src="../home/nav_men/images/men.png" alt="" data-image-width="694" data-image-height="324">
+    <section class="u-clearfix u-section-1" id="sec-aa34" style="bottom: 10% ">
+      <img class="u-expanded-width u-image u-image-default u-image-1" style="margin-top: 180px;" src="../images/shoes/kinds.png" alt="" data-image-width="694" data-image-height="324">
 
  
       <h2 class="u-text u-text-default u-text-2" style="position: relative; top: 40px"></h2>
       
       <!-- 필터 버튼 -->
       <div class="container"  style="left: 44%; ">
-	 	 <a href="../nav/nav_men.do?no=1"><button type="button" class="btn btn-outline-dark" style="color: black">인기 순</button></a> 
-	 	 <a href="../nav/nav_men.do?no=2"><button type="button" class="btn btn-outline-dark" style="color: black">높은 가격 순</button></a> 
-	 	 <a href="../nav/nav_men.do?no=3"><button type="button" class="btn btn-outline-dark" style="color: black">낮은 가격 순</button></a> 
-	 	 <a href="../nav/nav_men.do?no=4"><button type="button" class="btn btn-outline-dark" style="color: black">최신 발매 순</button></a> 
-	 	 <a href="../nav/nav_men.do?no=5"><button type="button" class="btn btn-outline-dark" style="color: black">오래된 발매 순</button></a>
+	 	 <a href="../shoes/shoes_kinds.do?category_id=${category_id }&no=1"><button type="button" class="btn btn-outline-dark" style="color: black">인기 순</button></a> 
+	 	 <a href="../shoes/shoes_kinds.do?category_id=${category_id }&no=2"><button type="button" class="btn btn-outline-dark" style="color: black">높은 가격 순</button></a> 
+	 	 <a href="../shoes/shoes_kinds.do?category_id=${category_id }&no=3"><button type="button" class="btn btn-outline-dark" style="color: black">낮은 가격 순</button></a> 
+	 	 <a href="../shoes/shoes_kinds.do?category_id=${category_id }&no=4"><button type="button" class="btn btn-outline-dark" style="color: black">최신 발매 순</button></a> 
+	 	 <a href="../shoes/shoes_kinds.do?category_id=${category_id }&no=5"><button type="button" class="btn btn-outline-dark" style="color: black">오래된 발매 순</button></a>
 	 </div>
 				
       <div class="u-border-2 u-border-grey-blue-1 u-line u-line-horizontal u-line-1"></div>
@@ -204,14 +204,14 @@ header #NOTICE {
    			
    			<div style= "margin-top:100px"></div>
         </div>
-      </div>
-      
-      <nav aria-label="Page navigation example">
+        
+        
+        <nav aria-label="Page navigation example">
 		  <ul class="pagination">
 		    <li class="page-item">
 	      
 		      <c:if test="${startPage > 1 }">
-		      <a class="page-link" href="../nav/nav_men.do?no=${no }&page=${startPage-1 }" aria-label="Previous">
+		      <a class="page-link" href="../shoes/shoes_kinds.do?category_id=${category_id }&no=${no }&page=${startPage-1 }" aria-label="Previous">
 		        <span aria-hidden="true">&laquo;</span>
 		        <span class="sr-only">Previous</span>
 		      </a>
@@ -228,13 +228,13 @@ header #NOTICE {
 	              <c:set var="style" value=""/>
 	            </c:if>
 	            
-	            <li ${style }><a href="../nav/nav_men.do?no=${no }&page=${i }">${i }</a></li>
+	             <li ${style }><a href="../shoes/shoes_kinds.do?category_id=${category_id }&no=${no }&page=${i }">${i }</a></li>
 	       </c:forEach>
 
 		    <li class="page-item">
 		    
 		      <c:if test="${endPage < totalpage }">
-		      <a class="page-link" href="../nav/nav_men.do?no=${no }&page=${endPage+1 }" aria-label="Next">
+		      <a class="page-link" href="../shoes/shoes_kinds.do?category_id=${category_id }&no=${no }&page=${endPage+1 }" aria-label="Next">
 		        <span aria-hidden="true">&raquo;</span>
 		        <span class="sr-only">Next</span>
 		      </a>
@@ -245,16 +245,12 @@ header #NOTICE {
 		  
 		  
 		</nav>
+      </div>
+      
+      
 		
 		
     </section>
-    
-    
-    
-		
-		
-		
-    
     
 
   

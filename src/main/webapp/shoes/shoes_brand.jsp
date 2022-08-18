@@ -132,7 +132,7 @@ header #NOTICE {
 }
 
 .u-border-2 {
-	color: #8C8C8C;
+	color: black;
 }
 
 </style>      
@@ -155,21 +155,23 @@ header #NOTICE {
   </head>
   <body class="u-body u-xl-mode" data-lang="en">
     <section class="u-clearfix u-section-1" id="sec-aa34">
-      <img class="u-expanded-width u-image u-image-default u-image-1" style="margin-top: 110px;" src="../home/nav_men/images/men.png" alt="" data-image-width="694" data-image-height="324">
+      <img class="u-expanded-width u-image u-image-default u-image-1" style="margin-top: 110px;" src="../images/brand/brand.png" alt="" data-image-width="694" data-image-height="324">
 
- 
+ 		
       <h2 class="u-text u-text-default u-text-2" style="position: relative; top: 40px"></h2>
       
       <!-- 필터 버튼 -->
       <div class="container"  style="left: 44%; ">
-	 	 <a href="../nav/nav_men.do?no=1"><button type="button" class="btn btn-outline-dark" style="color: black">인기 순</button></a> 
-	 	 <a href="../nav/nav_men.do?no=2"><button type="button" class="btn btn-outline-dark" style="color: black">높은 가격 순</button></a> 
-	 	 <a href="../nav/nav_men.do?no=3"><button type="button" class="btn btn-outline-dark" style="color: black">낮은 가격 순</button></a> 
-	 	 <a href="../nav/nav_men.do?no=4"><button type="button" class="btn btn-outline-dark" style="color: black">최신 발매 순</button></a> 
-	 	 <a href="../nav/nav_men.do?no=5"><button type="button" class="btn btn-outline-dark" style="color: black">오래된 발매 순</button></a>
+	 	 <a href="../shoes/shoes_brand.do?brand=${brand }&no=1"><button type="button" class="btn btn-outline-dark" style="color: black">인기 순</button></a> 
+	 	 <a href="../shoes/shoes_brand.do?brand=${brand }&no=2"><button type="button" class="btn btn-outline-dark" style="color: black">높은 가격 순</button></a> 
+	 	 <a href="../shoes/shoes_brand.do?brand=${brand }&no=3"><button type="button" class="btn btn-outline-dark" style="color: black">낮은 가격 순</button></a> 
+	 	 <a href="../shoes/shoes_brand.do?brand=${brand }&no=4"><button type="button" class="btn btn-outline-dark" style="color: black">최신 발매 순</button></a> 
+	 	 <a href="../shoes/shoes_brand.do?brand=${brand }&no=5"><button type="button" class="btn btn-outline-dark" style="color: black">오래된 발매 순</button></a>
 	 </div>
 				
-      <div class="u-border-2 u-border-grey-blue-1 u-line u-line-horizontal u-line-1"></div>
+      <div class="u-border-2 u-border-grey-black-1 u-line u-line-horizontal u-line-1"></div>
+      
+      
       <div class="u-align-center u-list u-list-7">
         <div class="u-repeater u-repeater-7">
         <c:forEach var="vo" items="${list }" varStatus="s">
@@ -183,11 +185,11 @@ header #NOTICE {
               
               <h4 class="u-text u-text-default u-text-6">
               <c:if test="${vo.im_buy!=0}">
-              	<fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원</h4>
-              	<h5 class="u-text u-text-default u-text-7">즉시 구매가</h5>
+	              <fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원</h4>
+	              <h5 class="u-text u-text-default u-text-7">즉시 구매가</h5>
               </c:if>
               <c:if test="${vo.im_buy==0}">
-              	입찰 준비 중</h4>
+	              입찰 준비 중</h4>
               </c:if>
               <h5 class="u-text u-text-default u-text-8">${vo.bookmark }</h5><span class="u-icon u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-77d5"></use></svg><svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-77d5" style="enable-background:new 0 0 51.997 51.997;"><g><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
 		c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
@@ -206,12 +208,13 @@ header #NOTICE {
         </div>
       </div>
       
+      
       <nav aria-label="Page navigation example">
 		  <ul class="pagination">
 		    <li class="page-item">
 	      
 		      <c:if test="${startPage > 1 }">
-		      <a class="page-link" href="../nav/nav_men.do?no=${no }&page=${startPage-1 }" aria-label="Previous">
+		      <a class="page-link" href="../shoes/shoes_brand.do?brand=${brand }&no=${no }&page=${startPage-1 }" aria-label="Previous">
 		        <span aria-hidden="true">&laquo;</span>
 		        <span class="sr-only">Previous</span>
 		      </a>
@@ -228,13 +231,13 @@ header #NOTICE {
 	              <c:set var="style" value=""/>
 	            </c:if>
 	            
-	            <li ${style }><a href="../nav/nav_men.do?no=${no }&page=${i }">${i }</a></li>
+	             <li ${style }><a href="../shoes/shoes_brand.do?brand=${brand }&no=${no }&page=${i }">${i }</a></li>
 	       </c:forEach>
 
 		    <li class="page-item">
 		    
 		      <c:if test="${endPage < totalpage }">
-		      <a class="page-link" href="../nav/nav_men.do?no=${no }&page=${endPage+1 }" aria-label="Next">
+		      <a class="page-link" href="../shoes/shoes_brand.do?brand=${brand }&no=${no }&page=${endPage+1 }" aria-label="Next">
 		        <span aria-hidden="true">&raquo;</span>
 		        <span class="sr-only">Next</span>
 		      </a>
@@ -248,13 +251,6 @@ header #NOTICE {
 		
 		
     </section>
-    
-    
-    
-		
-		
-		
-    
     
 
   

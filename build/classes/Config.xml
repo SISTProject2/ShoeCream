@@ -33,6 +33,7 @@
     <mapper resource="com/sist/mapper/mypage-mapper.xml"/> 
     <mapper resource="com/sist/mapper/style-mapper.xml"/> 
     <mapper resource="com/sist/mapper/style_reply-mapper.xml"/> 
+    <mapper resource="com/sist/mapper/category-mapper.xml"/> 
   </mappers>
 
   

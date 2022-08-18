@@ -161,12 +161,12 @@ public class NavDAO {
       return list;
    }
    
-   public static List<ShoesVO> navKidsList() {   
+   public static List<ShoesVO> navKidsList(Map map) {   
       SqlSession session=null;
       List<ShoesVO> list=null;
       try {
          session=ssf.openSession();
-         list=session.selectList("navKidsList");   
+         list=session.selectList("navKidsList", map);   
       } catch(Exception ex) {
          ex.printStackTrace();
       } finally {

@@ -168,7 +168,6 @@ header #NOTICE {
    		</c:forEach>
 	     </div>  
        </div> 
-     </div>
       	
       
       

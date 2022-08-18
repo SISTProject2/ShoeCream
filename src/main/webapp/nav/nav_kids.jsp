@@ -127,8 +127,16 @@ header #NOTICE {
 	text-align: center;
 }
 
+.u-border-2 {
+	color: #337AB7;
+}
+
 .pagination > li > a{
 	float: none;
+}
+
+.u-border-2 {
+	color: #8C8C8C;
 }
 
 </style>      
@@ -151,29 +159,21 @@ header #NOTICE {
   </head>
   <body class="u-body u-xl-mode" data-lang="en">
     <section class="u-clearfix u-section-1" id="sec-aa34">
-      <img class="u-expanded-width u-image u-image-default u-image-1" style="margin-top:120px;" src="../home/nav_men/images/kid.jpg" alt="" data-image-width="694" data-image-height="324">
+      <img class="u-expanded-width u-image u-image-default u-image-1" style="margin-top:110px;" src="../home/nav_men/images/kid.png" alt="" data-image-width="694" data-image-height="324">
  
       
-      <h2 class="u-text u-text-default u-text-2" style="position: relative; top: 40px">KIDS</h2>
+      <h2 class="u-text u-text-default u-text-2" style="position: relative; top: 40px"></h2>
       
-      <!-- 필터 드랍다운 -->
-      <div class="one-line" style="display: inline-block;" > 
-      <div class="drop-down" style="position: relative; right: -1050px">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">슈크림 추천제품순
-		    <span class="caret"></span></button>
-		    <ul class="dropdown-menu">
-		      <li><a href="#">좋아요 많은순</a></li>
-		      <li><a href="#">높은 즉시구매가순</a></li>
-		      <li><a href="#">낮은 즉시구매가순</a></li>
-		      <li><a href="#">최신 발매순</a></li>
-		      <li><a href="#">오래된 발매순</a></li>
-		    </ul>
-		  </div>
-		  </div>
-
-		<!--  -->
-				
-      <div class="u-border-2 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+      <!-- 필터 버튼 -->
+      <div class="container"  style="left: 44%; ">
+	 	 <a href="../nav/nav_kids.do?no=1"><button type="button" class="btn btn-outline-dark" style="color: black">인기 순</button></a> 
+	 	 <a href="../nav/nav_kids.do?no=2"><button type="button" class="btn btn-outline-dark" style="color: black">높은 가격 순</button></a> 
+	 	 <a href="../nav/nav_kids.do?no=3"><button type="button" class="btn btn-outline-dark" style="color: black">낮은 가격 순</button></a> 
+	 	 <a href="../nav/nav_kids.do?no=4"><button type="button" class="btn btn-outline-dark" style="color: black">최신 발매 순</button></a> 
+	 	 <a href="../nav/nav_kids.do?no=5"><button type="button" class="btn btn-outline-dark" style="color: black">오래된 발매 순</button></a>
+	 </div>
+		
+      <div class="u-border-2 u-border-grey-blue-1 u-line u-line-horizontal u-line-1"></div>
       <div class="u-align-center u-list u-list-7">
         <div class="u-repeater u-repeater-7">
         <c:forEach var="vo" items="${list }" varStatus="s">
@@ -185,8 +185,14 @@ header #NOTICE {
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black; font-size: 13pt">${vo.name_eng }</a><br>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black; font-size: 14pt">${vo.name_kor }</a>
               
-              <h4 class="u-text u-text-default u-text-6"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원</h4>
-              <h5 class="u-text u-text-default u-text-7">즉시 구매가</h5>
+              <h4 class="u-text u-text-default u-text-6">
+              <c:if test="${vo.im_buy!=0}">
+              	<fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원</h4>
+              	<h5 class="u-text u-text-default u-text-7">즉시 구매가</h5>
+              </c:if>
+              <c:if test="${vo.im_buy==0}">
+              	입찰 준비 중</h4>
+              </c:if>
               <h5 class="u-text u-text-default u-text-8">${vo.bookmark }</h5><span class="u-icon u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-77d5"></use></svg><svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-77d5" style="enable-background:new 0 0 51.997 51.997;"><g><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
 		c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
 		c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
@@ -202,6 +208,7 @@ header #NOTICE {
    
         </div>
       </div>
+      <div style= "margin-top:150px"></div>
     </section>
     
   
