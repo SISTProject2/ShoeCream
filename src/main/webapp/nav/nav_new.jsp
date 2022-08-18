@@ -132,7 +132,19 @@ header #NOTICE {
 }
 
 .u-border-2 {
-	color: #8C8C8C;
+	color: black;
+}
+
+.btn-outline-dark{
+	color: black;
+	font-weight: bold;
+	border: 2px solid black;
+}
+
+.u-list-199 {
+  position: absolute;
+  left: 40%;
+  transform: translateX(-50%);
 }
 
 </style>      
@@ -159,14 +171,58 @@ header #NOTICE {
       
       <h2 class="u-text u-text-default u-text-2" style="position: relative; top: 40px"></h2>
       
+      <!-- 신발 종류 -->
+	    <div class="u-list u-list-199" style="margin: 0 auto">
+	        <div class="u-repeater u-repeater-1" style="display: flex">
+	          <div class="u-container-style u-list-item u-repeater-item" >
+	            <div class="u-container-layout u-similar-container u-container-layout-1">
+	              <a href="../shoes/shoes_kinds.do?category_id=2">
+	              <img src="../images/shoes/001.png" width="140px" height="140px" ></a>
+	            </div>
+	          </div>
+	          <div class="u-container-style u-list-item u-repeater-item">
+	            <div class="u-container-layout u-similar-container u-container-layout-2">
+	              <a href="../shoes/shoes_kinds.do?category_id=1">
+	              <img src="../images/shoes/002.png" width="140px" height="140px" ></a>
+	            </div>
+	          </div>
+	          <div class="u-container-style u-list-item u-repeater-item">
+	            <div class="u-container-layout u-similar-container u-container-layout-3">
+	              <a href="../shoes/shoes_kinds.do?category_id=3">
+	              <img src="../images/shoes/003.png" width="140px" height="140px" ></a>
+	            </div>
+	          </div>
+	          <div class="u-container-style u-list-item u-repeater-item">
+	            <div class="u-container-layout u-similar-container u-container-layout-4">
+	              <a href="../shoes/shoes_kinds.do?category_id=4">
+	              <img src="../images/shoes/004.png" width="140px" height="140px" ></a>
+	            </div>
+	          </div>
+	          <div class="u-container-style u-list-item u-repeater-item">
+	            <div class="u-container-layout u-similar-container u-container-layout-5">
+	              <a href="../shoes/shoes_kinds.do?category_id=5">
+	              <img src="../images/shoes/005.png" width="140px" height="140px" ></a>
+	            </div>
+	          </div>
+	          <div class="u-container-style u-list-item u-repeater-item">
+	            <div class="u-container-layout u-similar-container u-container-layout-6">
+	              <a href="../shoes/shoes_kinds.do?category_id=6">
+	              <img src="../images/shoes/006.png" width="140px" height="140px" ></a>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+      
       <!-- 필터 버튼 -->
-      <div class="container"  style="left: 60%; ">
+      <div class="container" style="margin-top: 250px">
 	 	 <a href="../nav/nav_new.do?no=1"><button type="button" class="btn btn-outline-dark" style="color: black">인기 순</button></a> 
 	 	 <a href="../nav/nav_new.do?no=2"><button type="button" class="btn btn-outline-dark" style="color: black">높은 가격 순</button></a> 
 	 	 <a href="../nav/nav_new.do?no=3"><button type="button" class="btn btn-outline-dark" style="color: black">낮은 가격 순</button></a> 
-	 </div>
+	 
 				
       <div class="u-border-2 u-border-grey-blue-1 u-line u-line-horizontal u-line-1"></div>
+      
+      
       <div class="u-align-center u-list u-list-7">
         <div class="u-repeater u-repeater-7">
         <c:forEach var="vo" items="${list }" varStatus="s">
@@ -243,6 +299,7 @@ header #NOTICE {
 		  
 		  
 		</nav>
+		</div>
 		
 		
     </section>
