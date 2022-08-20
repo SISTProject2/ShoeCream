@@ -35,4 +35,27 @@
     FROM goods_2
     WHERE goods_id=#{goods_id}
   </select>
+  
+  <!-- 검색 -->
+  <select id="shoesFindData" resultType="ShoesVO" parameterType="map">
+    SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark, num
+    FROM (SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark, rownum as num
+    FROM (SELECT goods_id, brand, name_kor, name_eng, img, im_buy, bookmark
+    FROM goods_2
+    WHERE UPPER(brand) LIKE UPPER('%'||#{brand}||'%')
+    OR UPPER(name_eng) LIKE UPPER('%'||#{name_eng}||'%')
+    OR UPPER(name_kor) LIKE UPPER('%'||#{name_kor}||'%') ORDER BY bookmark DESC NULLS LAST))
+    WHERE num BETWEEN #{start} AND #{end}
+   </select>
+   
+  <!-- 검색 전체 페이지 -->
+  <select id="findTotalPage" resultType="int" parameterType="string">
+   SELECT CEIL(COUNT(*)/12.0)
+   FROM goods_2
+   WHERE UPPER(brand) LIKE UPPER('%'||#{brand}||'%')
+   OR UPPER(name_eng) LIKE UPPER('%'||#{name_eng}||'%')
+   OR UPPER(name_kor) LIKE UPPER('%'||#{name_kor}||'%')
+   ORDER BY bookmark DESC NULLS LAST
+ </select>
+  
 </mapper>
