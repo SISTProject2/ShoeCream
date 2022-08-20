@@ -175,89 +175,54 @@ $(function(){
         <div class="u-repeater u-repeater-1">
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <p class="u-custom-item u-text u-text-2">#style</p>
+              <a href="../style/tag.do?tag=nike"><p class="u-custom-item u-text u-text-2" style="color: black;">#NIKE</p></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-2">
-              <p class="u-custom-item u-text u-text-default u-text-3" style="font-size: 16px; text-decoration-line: none; font-weight: normal">#style</p>
+              <a href="../style/tag.do?tag=스트릿"><p class="u-custom-item u-text u-text-default u-text-3" style="font-size: 16px; text-decoration-line: none; font-weight: normal; color: black;">#스트릿</p></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-3">
-              <p class="u-custom-item u-text u-text-default u-text-4" style="font-size: 16px">#style</p>
+              <a href="../style/tag.do?tag=OOTD"><p class="u-custom-item u-text u-text-default u-text-4" style="font-size: 16px; color: black;">#OOTD</p></a>
             </div>
           </div>
-          <div class="u-container-style u-list-item u-repeater-item">
+          <div class="u-container-style u-list-item u-repeater-item" style="width: 111px; margin-left: -15px;">
             <div class="u-container-layout u-similar-container u-container-layout-4">
-              <p class="u-custom-item u-text u-text-default u-text-5" style="font-size: 16px; font-weight: normal">#style</p>
+              <a href="../style/tag.do?tag=오늘뭐신지"><p class="u-custom-item u-text u-text-default u-text-5" style="font-size: 16px; font-weight: normal; color: black;">#오늘뭐신지</p></a>
             </div>
           </div>
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-5">
-              <p class="u-custom-item u-text u-text-default u-text-6" style="font-size: 16px">#style</p>
+              <a href="../style/tag.do?tag=챌린지"><p class="u-custom-item u-text u-text-default u-text-6" style="font-size: 16px; color: black;">#챌린지</p></a>
             </div>
           </div>
         </div>
       </div>
-      <div class="u-expanded-width u-gallery u-layout-horizontal u-lightbox u-no-transition u-show-text-always u-width-fixed u-gallery-1">
+       <%-- <div class="u-expanded-width u-gallery u-layout-horizontal u-lightbox u-no-transition u-show-text-always u-width-fixed u-gallery-1">
         <div class="u-gallery-inner">
+        <c:forEach var="vo" items="${list4 }" varStatus="s">
+        <c:if test="${s.index>=0 && s.index<6 }">
           <div class="u-gallery-item u-gallery-item-1">
             <div class="u-back-slide">
-              <img class="u-back-image u-back-image-1" src="../images/5.svg" alt="user_id">
+              <img class="u-back-image u-back-image-1" src="${vo.img }" alt="user_id">
             </div>
             <div class="u-align-left u-over-slide u-valign-bottom u-over-slide-1">
               <h3 class="u-gallery-heading u-text-white" style="margin-left: 0px; margin-right: auto; font-weight: 700; background-image: none; font-size: 1rem;">user_id</h3>
               <p class="u-gallery-text" style="margin-left: 0px; margin-right: auto; margin-top: 0px;"></p>
             </div>
-          </div>
-          <div class="u-gallery-item u-gallery-item-2">
-            <div class="u-back-slide">
-              <img class="u-back-image u-back-image-2" src="../images/5.svg">
-            </div>
-            <div class="u-align-left u-over-slide u-valign-bottom u-over-slide-2">
-              <h3 class="u-gallery-heading u-text-white" style="margin-left: 0px; margin-right: auto; font-weight: 700; background-image: none; font-size: 1rem;"></h3>
-              <p class="u-gallery-text" style="margin-left: 0px; margin-right: auto; margin-top: 0px;"></p>
+          <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src="5.svg">
+                <p class="u-text u-text-body-alt-color u-text-1">user_id</p>
+              </div>
             </div>
           </div>
-          <div class="u-gallery-item u-gallery-item-3">
-            <div class="u-back-slide">
-              <img class="u-back-image u-back-image-3" src="../images/5.svg">
-            </div>
-            <div class="u-align-left u-over-slide u-valign-bottom u-over-slide-3">
-              <h3 class="u-gallery-heading u-text-white" style="margin-left: 0px; margin-right: auto; font-weight: 700; background-image: none; font-size: 1rem;"></h3>
-              <p class="u-gallery-text" style="margin-left: 0px; margin-right: auto; margin-top: 0px;"></p>
-            </div>
-          </div>
-          <div class="u-gallery-item u-gallery-item-4">
-            <div class="u-back-slide">
-              <img class="u-back-image u-back-image-4" src="../images/5.svg">
-            </div>
-            <div class="u-align-left u-over-slide u-valign-bottom u-over-slide-4">
-              <h3 class="u-gallery-heading u-text-white" style="margin-left: 0px; margin-right: auto; font-weight: 700; background-image: none; font-size: 1rem;"></h3>
-              <p class="u-gallery-text" style="margin-left: 0px; margin-right: auto; margin-top: 0px;"></p>
-            </div>
-          </div>
-          <div class="u-gallery-item u-gallery-item-5">
-            <div class="u-back-slide">
-              <img class="u-back-image u-back-image-5" src="../images/5.svg">
-            </div>
-            <div class="u-align-left u-over-slide u-valign-bottom u-over-slide-5">
-              <h3 class="u-gallery-heading u-text-white" style="margin-left: 0px; margin-right: auto; font-weight: 700; background-image: none; font-size: 1rem;"></h3>
-              <p class="u-gallery-text" style="margin-left: 0px; margin-right: auto; margin-top: 0px;"></p>
-            </div>
-          </div>
-          <div class="u-gallery-item u-gallery-item-6">
-            <div class="u-back-slide">
-              <img class="u-back-image u-back-image-6" src="../images/5.svg">
-            </div>
-            <div class="u-align-left u-over-slide u-valign-bottom u-over-slide-6">
-              <h3 class="u-gallery-heading u-text-white" style="margin-left: 0px; margin-right: auto; font-weight: 700; background-image: none; font-size: 1rem;"></h3>
-              <p class="u-gallery-text" style="margin-left: 0px; margin-right: auto; margin-top: 0px;"></p>
-            </div>
-          </div>
-        </div>
-        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button">
+          </c:if>
+          </c:forEach>
+        </div> 
+        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="a" role="button">
           <span aria-hidden="true">
             <svg viewBox="0 0 451.847 451.847">
               <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
@@ -293,7 +258,21 @@ $(function(){
             </svg>
           </span>
         </a>
-      </div>
+      </div> --%>
+      <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+          <c:forEach var="vo" items="${list4 }" varStatus="s">
+          <c:if test="${s.index>=0 && s.index<5 }">
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <a href="../style/style_detail_before.do?id=${vo.style_id }"><img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src="${vo.img }" style="height:100%; object-fit: cover; border-radius: 10px;"></a>
+                <p class="u-text u-text-body-alt-color u-text-1" style="margin: -40px 15px 0;  font-weight: 520;  font-size: 18px;">user_id</p>
+              </div>
+            </div>
+            </c:if>
+            </c:forEach>
+          </div>
+        </div>
     </div>
   </section>
   <div style= "margin-top:100px"></div>
