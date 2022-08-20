@@ -20,8 +20,8 @@
 
 		<div class="search">
 		  <form method="post" action="../main/search.do">
-			<input type="text" placeholder=" NIKE" style="width: 92%; font-family: sans-serif; font-size: 16px; background-image: none;" id="fd" name="fd" value="${fd}" >
-			<input type="image" src="../images/search_b.png" id="btn" style="background-image: none; width: auto;">
+			<input type="text" placeholder=" NIKE" style="width: 92%; font-family: sans-serif; font-size: 16px; background-image: none;" id="fd" name="fd" value="${fd}" onKeypress="javascript:if(event.keyCode==13) {search_onclick_submit}" >
+			<input type="image" src="../images/search_b.png" id="btn" style="background-image: none; width: auto;" onclick="search_onclick_submit">
 	      </form>
 		</div>
 		
