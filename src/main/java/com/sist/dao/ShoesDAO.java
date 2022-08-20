@@ -2,6 +2,7 @@ package com.sist.dao;
 
 import java.io.Reader;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -100,4 +101,28 @@ public class ShoesDAO {
 		return vo;		
 	}
 	
+	public static List<ShoesVO> shoesFindData(Map map) {
+
+		SqlSession session=ssf.openSession();
+		List<ShoesVO> list=session.selectList("shoesFindData",map);
+		session.close();
+		return list;
+		
+	}
+	
+	public static int findTotalPage(Map map) {
+		int total = 0;
+		SqlSession session = null;
+		   
+		try
+		{
+			session = ssf.openSession();
+			total = session.selectOne("findTotalPage", map);
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			if(session!=null) session.close();
+		}
+		return total;
+	}
 }

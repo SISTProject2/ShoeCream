@@ -19,7 +19,10 @@
 		</div>
 
 		<div class="search">
-			<input type="text" placeholder="검색어 입력">
+		  <form method="post" action="../main/search.do">
+			<input type="text" placeholder=" NIKE" style="width: 92%; font-family: sans-serif; font-size: 16px; background-image: none;" id="fd" name="fd" value="${fd}" >
+			<input type="image" src="../images/search_b.png" id="btn" style="background-image: none; width: auto;">
+	      </form>
 		</div>
 		
 		<ul>

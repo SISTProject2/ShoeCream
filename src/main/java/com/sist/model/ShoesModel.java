@@ -1,6 +1,8 @@
 package com.sist.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -50,6 +52,52 @@ public class ShoesModel {
 		return "../main/main.jsp";
 	}
 	
+	@RequestMapping("main/search.do")
+	public String shoesFind(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch(Exception ex) {}
+		
+		String fd=request.getParameter("fd");
+		if(fd.trim()=="")
+		{
+			fd="NIKE";
+		} 
 
+	    String page = request.getParameter("page");
+		if(page == null) {
+			page = "1";
+		}
+		int curpage = Integer.parseInt(page);
+		Map map = new HashMap();
+		int rowSize = 12;
+		int start = (rowSize*curpage)-(rowSize-1); 
+		int end = (rowSize*curpage);
+		
+		map.put("table_name", "search");
+		map.put("start", start); 
+		map.put("end", end);
+		map.put("brand", fd);
+		map.put("name_eng", fd);
+		map.put("name_kor", fd);
+		List<ShoesVO> list=ShoesDAO.shoesFindData(map);
+		int totalpage = ShoesDAO.findTotalPage(map);
+		
+		final int BLOCK = 5;
+		int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
+		int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;
+		if(endPage>totalpage) {
+			endPage = totalpage;
+		}
+		request.setAttribute("curpage", curpage);
+		request.setAttribute("totalpage", totalpage);
+		request.setAttribute("startPage", startPage);
+		request.setAttribute("endPage", endPage);
+		request.setAttribute("list", list);
+		request.setAttribute("fd", fd);
+		request.setAttribute("main_jsp", "../main/search.jsp");
+		
+		return "../main/main.jsp";
+	}
 	
 }
