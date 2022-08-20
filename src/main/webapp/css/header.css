@@ -1,11 +1,6 @@
 @charset "UTF-8";
 
 
-
-.nanumgothic * {
-    font-family: 'Nanum Gothic', sans-serif;
-}
-
 html, body {
     margin: 0;
     padding: 0;
