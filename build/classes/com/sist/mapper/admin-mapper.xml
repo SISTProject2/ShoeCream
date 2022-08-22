@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.admin-mapper">
+    <select id="adminLogin" resultType="AdminVO" parameterType="AdminVO">
+        SELECT *
+        FROM ADMIN_2
+        where MANAGER = #{manager}
+          and MANAGER_PWD = #{manager_pwd}
+    </select>
+
+
+    <insert id="saveUser" parameterType="UserVO">
+        <selectKey keyProperty="user_id" resultType="int" order="BEFORE">
+            SELECT NVL(MAX(user_id)+1,1) as sreply_id FROM USER_2
+        </selectKey>
+        INSERT INTO USER_2(USER_ID,NAME,EMAIL,TEL,BIRTHDAY,ZIPCODE,S_SIZE,PWD)
+        values(#{user_id},#{name},#{email},#{tel},#{birthday},#{zipcode},#{s_size},#{pwd})
+    </insert>
+
+
+    <select id="usersTotalPage" resultType="int" parameterType="hashmap">
+        SELECT CEIL(COUNT(*) / #{count})
+        FROM USER_2
+        WHERE UPPER(NAME) LIKE UPPER('%' || #{search} || '%')
+                  OR UPPER(EMAIL) LIKE UPPER('%' || #{search} || '%')
+                  OR TEL LIKE '%' || #{search} || '%'
+                  OR USER_ID LIKE '%' || #{search} || '%'
+        ORDER BY USER_ID DESC NULLS LAST
+    </select>
+
+    <select id="userPagingList" resultType="UserVO" parameterType="hashmap">
+        SELECT *
+        FROM (SELECT a.*, rownum as num
+              FROM (SELECT *
+                    FROM USER_2
+                    WHERE UPPER(NAME) LIKE UPPER('%' || #{search} || '%')
+                              OR UPPER(EMAIL) LIKE UPPER('%' || #{search} || '%')
+                              OR TEL LIKE '%' || #{search} || '%'
+                              OR USER_ID LIKE '%' || #{search} || '%'
+                    ORDER BY USER_ID DESC NULLS LAST) a) t
+        WHERE num BETWEEN #{start} AND #{end}
+    </select>
+
+    <update id="updateUser" parameterType="UserVO">
+        UPDATE USER_2
+        SET name=#{name},
+            EMAIL=#{email},
+            TEL=#{tel},
+            BIRTHDAY=#{birthday},
+            ZIPCODE=#{zipcode},
+            S_SIZE=#{s_size}
+        WHERE USER_ID = #{user_id}
+    </update>
+
+    <update id="updateShoes" parameterType="ShoesVO">
+        UPDATE goods_2
+        SET name_kor= #{name_kor},
+            name_eng= #{name_eng},
+            img= #{img},
+            brand= #{brand},
+            sku= #{sku},
+            color= #{color},
+            type= #{type},
+            release_date= #{release_date},
+            release_price= #{release_price},
+            category_id= #{category_id}
+        WHERE goods_id = #{goods_id}
+    </update>
+
+    <select id="goodsTotalPage" resultType="int" parameterType="hashmap">
+        SELECT CEIL(COUNT(*) / #{count})
+        FROM goods_2
+        WHERE UPPER(brand) LIKE UPPER('%' || #{search} || '%')
+           OR UPPER(name_eng) LIKE UPPER('%' || #{search} || '%')
+           OR UPPER(name_kor) LIKE UPPER('%' || #{search} || '%')
+        ORDER BY bookmark DESC NULLS LAST
+    </select>
+
+    <select id="goodsPagingList" resultType="ShoesVO" parameterType="map">
+        SELECT goods_id,
+               NVL(name_kor, '-')         name_kor,
+               NVL(name_eng, '-')         name_eng,
+               NVL(brand, '-')            brand,
+               NVL(sku, '-')              sku,
+               NVL(color, '-')            color,
+               type,
+               NVL(release_date, SYSDATE) release_date,
+               NVL(release_price, 0)      release_price,
+               category_id,
+               NVL(img, '-')              img
+        FROM (SELECT goods_id,
+                     NVL(name_kor, '-')         name_kor,
+                     NVL(name_eng, '-')         name_eng,
+                     NVL(brand, '-')            brand,
+                     NVL(sku, '-')              sku,
+                     NVL(color, '-')            color,
+                     type,
+                     NVL(release_date, SYSDATE) release_date,
+                     NVL(release_price, 0)      release_price,
+                     category_id,
+                     NVL(img, '-')              img,
+                     rownum as                  num
+              FROM (SELECT goods_id,
+                           NVL(name_kor, '-')         name_kor,
+                           NVL(name_eng, '-')         name_eng,
+                           NVL(brand, '-')            brand,
+                           NVL(sku, '-')              sku,
+                           NVL(color, '-')            color,
+                           type,
+                           NVL(release_date, SYSDATE) release_date,
+                           NVL(release_price, 0)      release_price,
+                           category_id,
+                           NVL(img, '-')              img
+                    FROM goods_2
+                    WHERE UPPER(brand) LIKE UPPER('%' || #{search} || '%')
+                       OR UPPER(name_eng) LIKE UPPER('%' || #{search} || '%')
+                       OR UPPER(name_kor) LIKE UPPER('%' || #{search} || '%')
+                    ORDER BY goods_id DESC NULLS LAST) a) t
+        WHERE num BETWEEN #{start} AND #{end}
+    </select>
+
+
+    <insert id="saveShoes" parameterType="shoesVO">
+        <selectKey keyProperty="goods_id" resultType="int" order="BEFORE">
+            SELECT NVL(MAX(goods_id)+1,1) as goods_id FROM goods_2
+        </selectKey>
+        INSERT INTO goods_2(goods_id, name_kor, name_eng, img, brand, sku, color, type, release_date, release_price,
+        category_id)
+        values(#{goods_id},#{name_kor},#{name_eng},#{img},#{brand},#{sku},#{color},#{type},#{release_date},#{release_price},#{category_id})
+    </insert>
+
+    <delete id="deleteShoes" parameterType="int">
+        DELETE
+        From goods_2
+        WHERE goods_id = #{goods_id}
+    </delete>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE
+        From USER_2
+        WHERE USER_ID = #{seq}
+    </delete>
+
+
+    <select id="noticesTotalpage" resultType="int" parameterType="hashmap">
+        SELECT CEIL(COUNT(*) / #{count})
+        FROM NOTICE_2
+        ORDER BY NOTICE_ID DESC NULLS LAST
+    </select>
+
+    <select id="noticePageList" resultType="NoticeVO" parameterType="hashmap">
+        SELECT *
+        FROM (SELECT a.*, rownum as num
+              FROM (SELECT *
+                    FROM NOTICE_2
+                    ORDER BY NOTICE_ID DESC NULLS LAST) a) t
+        WHERE num BETWEEN #{start} AND #{end}
+    </select>
+
+
+
+
+    <update id="updateNotice" parameterType="NoticeVO">
+        UPDATE NOTICE_2
+        SET content=#{content},
+            title = #{title},
+            ADMIN_ID = #{admin_id},
+            RGDATE = SYSDATE
+        WHERE notice_id = #{notice_id}
+    </update>
+
+
+    <delete id="deleteNotice" parameterType="int">
+        Delete
+        from NOTICE_2
+        WHERE notice_id = #{notice_id}
+    </delete>
+
+    <delete id="deleteQnA" parameterType="int">
+        Delete
+        from CS_2
+        WHERE cs_id = #{cs_id}
+    </delete>
+
+    <insert id="saveNotice" parameterType="NoticeVO">
+        <selectKey keyProperty="notice_id" resultType="int" order="BEFORE">
+            SELECT NVL(MAX(notice_id)+1,1) as notice_id FROM NOTICE_2
+        </selectKey>
+        insert into NOTICE_2
+        values (#{notice_id},#{title},#{content},SYSDATE,#{admin_id})
+    </insert>
+
+
+    <select id="qnaPageList" resultType="CsVO" parameterType="hashmap">
+        SELECT *
+        FROM (SELECT a.*, rownum as num
+              FROM (select c.*, cs.content as reply
+                    from cs_2 c
+                             left join cs_comment_2 cs on c.CS_ID = cs.CS_ID) a) t
+        WHERE num BETWEEN #{start} AND #{end}
+    </select>
+
+    <select id="qnaTotalpage" resultType="int" parameterType="int">
+        SELECT CEIL(COUNT(*) / #{count})
+        FROM cs_2
+        ORDER BY CS_ID DESC NULLS LAST
+    </select>
+
+    <select id="findCsId" resultType="int" parameterType="int">
+        SELECT count(*)
+        FROM CS_COMMENT_2
+        where cs_id=#{cs_id}
+    </select>
+
+    <insert id="saveQnA" parameterType="CsCommentVO">
+        <selectKey keyProperty="cc_id" resultType="int" order="BEFORE">
+            SELECT NVL(MAX(CC_ID)+1,1) as cc_id FROM CS_COMMENT_2
+        </selectKey>
+        insert into CS_COMMENT_2
+        values (#{cc_id},#{content},SYSDATE,#{admin_id},#{cs_id})
+    </insert>
+
+    <update id="updateQnA" parameterType="CsCommentVO">
+        UPDATE CS_COMMENT_2
+        SET content=#{content},
+            RGDATE = SYSDATE,
+            ADMIN_ID = #{admin_id}
+        WHERE cs_id = #{cs_id}
+    </update>
+
+
+
+</mapper>
