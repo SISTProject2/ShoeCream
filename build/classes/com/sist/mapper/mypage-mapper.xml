@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sist.mapper.mypage-mapper">
-
     <select id="mockLogin" resultType="UserVo" parameterType="int">
         SELECT *
         FROM USER_2 where USER_ID =#{seq}
     </select>
-    
     <update id="updatePassword" parameterType="UserVO">
         UPDATE USER_2 SET
             PWD = #{pwd}
@@ -18,25 +16,21 @@
             TEL = #{tel}
         WHERE USER_ID=#{user_id}
     </update>
-    
     <update id="updateSize" parameterType="UserVO">
         UPDATE USER_2 SET
             S_SIZE = #{s_size}
         WHERE USER_ID=#{user_id}
     </update>
-    
     <update id="updateProfileImage" parameterType="UserVO">
         UPDATE USER_2 SET
             IMG = #{img}
         WHERE USER_ID=#{user_id}
     </update>
-    
     <update id="updateAddress" parameterType="UserVO">
         UPDATE USER_2 SET
             ADRESS = #{adress}
         WHERE USER_ID=#{user_id}
     </update>
-    
     <update id="updateAccount" parameterType="UserVO">
         UPDATE USER_2 SET
             BANKNAME = #{bankname},
