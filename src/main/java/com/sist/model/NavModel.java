@@ -24,7 +24,7 @@ public class NavModel {
 		
 		
 		//
-        UserVO userVO = MypageDAO.mockLogin(3);
+        UserVO userVO = NavDAO.mockLogin2(1);
         System.out.println(userVO);
 
 

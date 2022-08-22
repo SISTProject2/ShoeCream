@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.sist.vo.ShoesVO;
 import com.sist.vo.StyleVO;
+import com.sist.vo.UserVO;
 
 public class NavDAO {
    private static SqlSessionFactory ssf;
@@ -23,6 +24,22 @@ public class NavDAO {
          ex.printStackTrace();
       }
    }
+   
+   public static UserVO mockLogin2(int seq) {
+       SqlSession session = null;
+       UserVO user = null;
+       try {
+           session = ssf.openSession();
+           user = session.selectOne("mockLogin", seq);
+       } catch (Exception ex) {
+           ex.printStackTrace();
+       } finally {
+           session.close();
+       }
+
+       return user;
+   }
+   
    
    // new 페이징
    public static int navTotalPage(Map map)
