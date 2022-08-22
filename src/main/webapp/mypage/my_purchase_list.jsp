@@ -15,6 +15,11 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
+    
+    
+    
+    
+    
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -51,7 +56,6 @@
                     <h3 class="u-text u-text-default u-text-7">내 정보</h3>
                     <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.do">프로필 정보</a></h3>
                     <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.do">주소록</a></h3>
-                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_card.do">결제 정보</a></h3>
                     <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_pay_account.do">판매 정산 계좌</a></h3>
                     <h3 class="u-text u-text-default u-text-12"><a href="../mypage/my_style.do">스타일</a></h3>
                   </div>
@@ -62,7 +66,7 @@
               <div class="u-container-layout u-container-layout-3">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
-                    <h3 class="u-text u-text-default u-text-13">구매 내역</h3>
+                    <h3 class="u-text u-text-default u-text-12">구매 내역</h3>
                   </div>
                 </div>
                 <div class="u-tabs u-tabs-1">
@@ -89,21 +93,21 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-4">
                           <div class="u-container-layout u-container-layout-7">
                             <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-14">
+                            <h3 class="u-text u-text-default u-text-13">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-15">
+                            <h3 class="u-text u-text-default u-text-14">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-16">
+                            <h3 class="u-text u-text-default u-text-15">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-17">
+                            <h3 class="u-text u-text-default u-text-16">
                               <span style="font-size: 20px;">22/12/12</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-18">
+                            <h3 class="u-text u-text-default u-text-17">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
@@ -115,21 +119,21 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-5">
                           <div class="u-container-layout u-container-layout-8">
                             <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-19">
+                            <h3 class="u-text u-text-default u-text-18">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-20">
+                            <h3 class="u-text u-text-default u-text-19">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-21">
+                            <h3 class="u-text u-text-default u-text-20">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-22">
+                            <h3 class="u-text u-text-default u-text-21">
                               <span style="font-size: 20px;">22/12/12</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-23">
+                            <h3 class="u-text u-text-default u-text-22">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
@@ -141,21 +145,21 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-6">
                           <div class="u-container-layout u-container-layout-9">
                             <img class="u-image u-image-default u-preserve-proportions u-image-3" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-24">
+                            <h3 class="u-text u-text-default u-text-23">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-25">
+                            <h3 class="u-text u-text-default u-text-24">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-26">
+                            <h3 class="u-text u-text-default u-text-25">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-27">
+                            <h3 class="u-text u-text-default u-text-26">
                               <span style="font-size: 20px;">22/12/12</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-28">
+                            <h3 class="u-text u-text-default u-text-27">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
@@ -167,21 +171,21 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-7">
                           <div class="u-container-layout u-container-layout-10">
                             <img class="u-image u-image-default u-preserve-proportions u-image-4" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-29">
+                            <h3 class="u-text u-text-default u-text-28">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-30">
+                            <h3 class="u-text u-text-default u-text-29">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-31">
+                            <h3 class="u-text u-text-default u-text-30">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-32">
+                            <h3 class="u-text u-text-default u-text-31">
                               <span style="font-size: 20px;">22/12/12</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-33">
+                            <h3 class="u-text u-text-default u-text-32">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
@@ -193,21 +197,21 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-8">
                           <div class="u-container-layout u-container-layout-11">
                             <img class="u-image u-image-default u-preserve-proportions u-image-5" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-34">
+                            <h3 class="u-text u-text-default u-text-33">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-35">
+                            <h3 class="u-text u-text-default u-text-34">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-36">
+                            <h3 class="u-text u-text-default u-text-35">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-37">
+                            <h3 class="u-text u-text-default u-text-36">
                               <span style="font-size: 20px;">22/12/12</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-38">
+                            <h3 class="u-text u-text-default u-text-37">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
@@ -237,25 +241,25 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-group u-shape-rectangle u-group-11">
                           <div class="u-container-layout u-container-layout-15">
                             <img class="u-image u-image-default u-preserve-proportions u-image-6" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-39">
+                            <h3 class="u-text u-text-default u-text-38">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-40">
+                            <h3 class="u-text u-text-default u-text-39">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-41">
+                            <h3 class="u-text u-text-default u-text-40">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-42">
+                            <h3 class="u-text u-text-default u-text-41">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-43">
+                            <h3 class="u-text u-text-default u-text-42">
                               <span style="font-size: 20px;">입찰 중</span>
                             </h3>
                           </div>
@@ -263,25 +267,25 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-12">
                           <div class="u-container-layout u-container-layout-16">
                             <img class="u-image u-image-default u-preserve-proportions u-image-7" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-44">
+                            <h3 class="u-text u-text-default u-text-43">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-45">
+                            <h3 class="u-text u-text-default u-text-44">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-46">
+                            <h3 class="u-text u-text-default u-text-45">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-47">
+                            <h3 class="u-text u-text-default u-text-46">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-48">
+                            <h3 class="u-text u-text-default u-text-47">
                               <span style="font-size: 20px;">입찰 중</span>
                             </h3>
                           </div>
@@ -289,25 +293,25 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-13">
                           <div class="u-container-layout u-container-layout-17">
                             <img class="u-image u-image-default u-preserve-proportions u-image-8" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-49">
+                            <h3 class="u-text u-text-default u-text-48">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-50">
+                            <h3 class="u-text u-text-default u-text-49">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-51">
+                            <h3 class="u-text u-text-default u-text-50">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-52">
+                            <h3 class="u-text u-text-default u-text-51">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-53">
+                            <h3 class="u-text u-text-default u-text-52">
                               <span style="font-size: 20px;">입찰 중</span>
                             </h3>
                           </div>
@@ -315,25 +319,25 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-14">
                           <div class="u-container-layout u-container-layout-18">
                             <img class="u-image u-image-default u-preserve-proportions u-image-9" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-54">
+                            <h3 class="u-text u-text-default u-text-53">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-55">
+                            <h3 class="u-text u-text-default u-text-54">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-56">
+                            <h3 class="u-text u-text-default u-text-55">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-57">
+                            <h3 class="u-text u-text-default u-text-56">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-58">
+                            <h3 class="u-text u-text-default u-text-57">
                               <span style="font-size: 20px;">입찰 중</span>
                             </h3>
                           </div>
@@ -341,25 +345,25 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-15">
                           <div class="u-container-layout u-container-layout-19">
                             <img class="u-image u-image-default u-preserve-proportions u-image-10" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-59">
+                            <h3 class="u-text u-text-default u-text-58">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-60">
+                            <h3 class="u-text u-text-default u-text-59">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-61">
+                            <h3 class="u-text u-text-default u-text-60">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-62">
+                            <h3 class="u-text u-text-default u-text-61">
                               <span style="font-size: 20px;">999,999,999</span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-63">
+                            <h3 class="u-text u-text-default u-text-62">
                               <span style="font-size: 20px;">입찰 중</span>
                             </h3>
                           </div>
@@ -384,22 +388,22 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-18">
                           <div class="u-container-layout u-container-layout-23">
                             <img class="u-image u-image-default u-preserve-proportions u-image-11" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-64">
+                            <h3 class="u-text u-text-default u-text-63">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-65">
+                            <h3 class="u-text u-text-default u-text-64">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-66">
+                            <h3 class="u-text u-text-default u-text-65">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-67">
+                            <h3 class="u-text u-text-default u-text-66">
                               <span style="font-size: 20px;">종 료</span>
                             </h3>
                           </div>
@@ -407,22 +411,22 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-19">
                           <div class="u-container-layout u-container-layout-24">
                             <img class="u-image u-image-default u-preserve-proportions u-image-12" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-68">
+                            <h3 class="u-text u-text-default u-text-67">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-69">
+                            <h3 class="u-text u-text-default u-text-68">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-70">
+                            <h3 class="u-text u-text-default u-text-69">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-71">
+                            <h3 class="u-text u-text-default u-text-70">
                               <span style="font-size: 20px;">종 료</span>
                             </h3>
                           </div>
@@ -430,22 +434,22 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-20">
                           <div class="u-container-layout u-container-layout-25">
                             <img class="u-image u-image-default u-preserve-proportions u-image-13" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-72">
+                            <h3 class="u-text u-text-default u-text-71">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-73">
+                            <h3 class="u-text u-text-default u-text-72">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-74">
+                            <h3 class="u-text u-text-default u-text-73">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-75">
+                            <h3 class="u-text u-text-default u-text-74">
                               <span style="font-size: 20px;">종 료</span>
                             </h3>
                           </div>
@@ -453,22 +457,22 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-21">
                           <div class="u-container-layout u-container-layout-26">
                             <img class="u-image u-image-default u-preserve-proportions u-image-14" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-76">
+                            <h3 class="u-text u-text-default u-text-75">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-77">
+                            <h3 class="u-text u-text-default u-text-76">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-78">
+                            <h3 class="u-text u-text-default u-text-77">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-79">
+                            <h3 class="u-text u-text-default u-text-78">
                               <span style="font-size: 20px;">종 료</span>
                             </h3>
                           </div>
@@ -476,22 +480,22 @@
                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-22">
                           <div class="u-container-layout u-container-layout-27">
                             <img class="u-image u-image-default u-preserve-proportions u-image-15" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                            <h3 class="u-text u-text-default u-text-80">
+                            <h3 class="u-text u-text-default u-text-79">
                               <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-81">
+                            <h3 class="u-text u-text-default u-text-80">
                               <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-82">
+                            <h3 class="u-text u-text-default u-text-81">
                               <span style="font-size: 20px; font-weight: normal;">
                                 <span class="u-text-grey-40">name_kor</span>
                                 <span class="u-text-grey-40"></span>
                                 <span style="font-weight: 700;"></span>
                               </span>
                             </h3>
-                            <h3 class="u-text u-text-default u-text-83">
+                            <h3 class="u-text u-text-default u-text-82">
                               <span style="font-size: 20px;">종 료</span>
                             </h3>
                           </div>
@@ -514,6 +518,11 @@
         </div>
       </div>
     </section>
+    
+    
+    
+    
+    
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-a9f8"><div class="u-clearfix u-sheet u-sheet-1">

@@ -15,6 +15,11 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
+    
+    
+    
+    
+    
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -51,7 +56,6 @@
                     <h3 class="u-text u-text-default u-text-7">내 정보</h3>
                     <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.do">프로필 정보</a></h3>
                     <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.do">주소록</a></h3>
-                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_card.do">결제 정보</a></h3>
                     <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_pay_account.do">판매 정산 계좌</a></h3>
                     <h3 class="u-text u-text-default u-text-12"><a href="../mypage/my_style.do">스타일</a></h3>
                   </div>
@@ -62,12 +66,12 @@
               <div class="u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-2 u-container-layout u-container-layout-3">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
-                    <h3 class="u-text u-text-default u-text-13">최근 본 상품</h3>
+                    <h3 class="u-text u-text-default u-text-12">최근 본 상품</h3>
                   </div>
                 </div>
                 <div class="u-container-style u-group u-shape-rectangle u-group-3">
                   <div class="u-container-layout u-container-layout-5">
-                    <h3 class="u-text u-text-white u-text-14">
+                    <h3 class="u-text u-text-white u-text-13">
                       <span style="font-weight: normal;">price</span>
                     </h3>
                     <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-2 u-container-style u-expanded-width u-group u-opacity u-opacity-20 u-shape-rectangle u-white u-group-4">
@@ -79,18 +83,18 @@
                     <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-group u-shape-rectangle u-group-5">
                       <div class="u-container-layout u-container-layout-7">
                         <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                        <h3 class="u-text u-text-default u-text-15">
+                        <h3 class="u-text u-text-default u-text-14">
                           <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
                           </span>
                         </h3>
-                        <h3 class="u-text u-text-default u-text-16">
+                        <h3 class="u-text u-text-default u-text-15">
                           <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
                           </span>
                         </h3>
-                        <h3 class="u-text u-text-default u-text-17">
+                        <h3 class="u-text u-text-default u-text-16">
                           <span style="font-size: 20px;">999,999원</span>
                         </h3>
-                        <h3 class="u-text u-text-default u-text-palette-5-dark-1 u-text-18">
+                        <h3 class="u-text u-text-default u-text-palette-5-dark-1 u-text-17">
                           <span style="font-size: 20px; font-weight: normal;">name_kor</span>
                         </h3>
                       </div>
@@ -111,6 +115,11 @@
         </div>
       </div>
     </section>
+    
+    
+    
+    
+    
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-a9f8"><div class="u-clearfix u-sheet u-sheet-1">

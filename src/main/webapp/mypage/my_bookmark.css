@@ -107,11 +107,6 @@
   margin: 15px auto 0 51px;
 }
 
-.u-section-1 .u-text-12 {
-  font-size: 1.5rem;
-  margin: 15px auto 0 51px;
-}
-
 .u-section-1 .u-layout-cell-2 {
   min-height: 1481px;
 }
@@ -131,7 +126,7 @@
   padding-right: 0;
 }
 
-.u-section-1 .u-text-13 {
+.u-section-1 .u-text-12 {
   font-weight: 700;
   margin: 11px auto 0 11px;
 }
@@ -171,29 +166,29 @@
   margin: -134px auto 0 0;
 }
 
-.u-section-1 .u-text-14 {
+.u-section-1 .u-text-13 {
   font-weight: 700;
   margin: -162px auto 0 200px;
 }
 
-.u-section-1 .u-text-15 {
+.u-section-1 .u-text-14 {
   font-weight: normal;
   margin: -12px auto 0 200px;
 }
 
-.u-section-1 .u-text-16 {
+.u-section-1 .u-text-15 {
   font-weight: 700;
   font-size: 1.5rem;
   margin: -39px 130px 0 1165px;
 }
 
-.u-section-1 .u-text-17 {
+.u-section-1 .u-text-16 {
   font-weight: normal;
   font-size: 1rem;
   margin: 9px 99px 0 auto;
 }
 
-.u-section-1 .u-text-18 {
+.u-section-1 .u-text-17 {
   font-size: 1.25rem;
   text-decoration: underline !important;
   margin: 42px 40px 0 auto;
@@ -249,9 +244,7 @@
   .u-section-1 .u-list-1 {
     width: calc(((100% - 940px) / 2) + 1px);
   }
-  .u-section-1 .u-list-2 {
-    width: calc(((100% - 940px) / 2) + 1px);
-  }
+
 
   .u-section-1 .u-layout-cell-1 {
     min-height: 1221px;
@@ -297,7 +290,7 @@
     margin-top: -135px;
   }
 
-  .u-section-1 .u-text-16 {
+  .u-section-1 .u-text-15 {
     font-size: 1.25rem;
     margin-top: -38px;
     margin-right: 0;
@@ -392,10 +385,6 @@
     margin-left: 37px;
   }
 
-  .u-section-1 .u-text-12 {
-    margin-left: 37px;
-  }
-
   .u-section-1 .u-layout-cell-2 {
     min-height: 100px;
   }
@@ -408,15 +397,15 @@
     width: 534px;
   }
 
+  .u-section-1 .u-text-13 {
+    margin-left: 150px;
+  }
+
   .u-section-1 .u-text-14 {
     margin-left: 150px;
   }
 
   .u-section-1 .u-text-15 {
-    margin-left: 150px;
-  }
-
-  .u-section-1 .u-text-16 {
     margin-left: 481px;
   }
 
@@ -464,7 +453,7 @@
     width: 520px;
   }
 
-  .u-section-1 .u-text-16 {
+  .u-section-1 .u-text-15 {
     margin-left: 467px;
   }
 
@@ -514,19 +503,19 @@
     margin-top: -119px;
   }
 
+  .u-section-1 .u-text-13 {
+    margin-left: 92px;
+  }
+
   .u-section-1 .u-text-14 {
     margin-left: 92px;
   }
 
   .u-section-1 .u-text-15 {
-    margin-left: 92px;
-  }
-
-  .u-section-1 .u-text-16 {
     margin-left: 267px;
   }
 
-  .u-section-1 .u-text-18 {
+  .u-section-1 .u-text-17 {
     margin-top: 34px;
   }
 

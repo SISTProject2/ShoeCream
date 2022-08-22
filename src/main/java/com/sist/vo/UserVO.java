@@ -1,5 +1,6 @@
 package com.sist.vo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /*
@@ -107,8 +108,32 @@ public class UserVO {
 	public Date getBirthday() {
 		return birthday;
 	}
+	public String formatBirth() {
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		return simpleDateFormat.format(this.birthday);
+
+	}
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "UserVO{" +
+				"user_id=" + user_id +
+				", email='" + email + '\'' +
+				", pwd='" + pwd + '\'' +
+				", name='" + name + '\'' +
+				", tel='" + tel + '\'' +
+				", gender='" + gender + '\'' +
+				", zipcode='" + zipcode + '\'' +
+				", adress='" + adress + '\'' +
+				", s_size='" + s_size + '\'' +
+				", img='" + img + '\'' +
+				", bankname='" + bankname + '\'' +
+				", accno='" + accno + '\'' +
+				", accholder='" + accholder + '\'' +
+				", birthday=" + birthday +
+				'}';
+	}
 }
