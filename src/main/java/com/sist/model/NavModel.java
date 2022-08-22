@@ -6,19 +6,33 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
+import com.sist.dao.MypageDAO;
 import com.sist.dao.NavDAO;
 import com.sist.dao.ShoesDAO;
 import com.sist.vo.ShoesVO;
 import com.sist.vo.StyleVO;
+import com.sist.vo.UserVO;
 
 @Controller
 public class NavModel {
 	@RequestMapping("nav/nav_new.do")
 	public String nav_new(HttpServletRequest request, HttpServletResponse response) {
 		
+		
+		//
+        UserVO userVO = MypageDAO.mockLogin(3);
+        System.out.println(userVO);
+
+
+        HttpSession session = request.getSession();
+        session.setAttribute("user", userVO);
+		//
+        
+        
 		String page = request.getParameter("page");
 		
 		String no = request.getParameter("no");
