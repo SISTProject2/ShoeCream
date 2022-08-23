@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,18 +48,18 @@
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
                   <div class="u-container-layout u-container-layout-2">
                     <h1 class="u-text u-text-default u-text-1">
-                      <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="my_mypage.do" data-page-id="1289201052">마이 페이지</a>
+                      <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="my_mypage.html" data-page-id="1289201052">마이 페이지</a>
                     </h1>
                     <h3 class="u-text u-text-default u-text-2">쇼핑 정보</h3>
-                    <h3 class="u-text u-text-default u-text-3"><a href="../mypage/my_purchase_list.do">구매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-4"><a href="../mypage/my_sell_list.do">판매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/my_bookmark.do">관심 상품</a></h3>
-                    <h3 class="u-text u-text-default u-text-6"><a href="../mypage/my_recently_viewed.do">최근 본 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-3"><a href="../mypage/my_purchase_list.jsp">구매 내역</a></h3>
+                    <h3 class="u-text u-text-default u-text-4"><a href="../mypage/my_sell_list.jsp">판매 내역</a></h3>
+                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/my_bookmark.jsp">관심 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-6"><a href="../mypage/my_recently_viewed.jsp">최근 본 상품</a></h3>
                     <h3 class="u-text u-text-default u-text-7">내 정보</h3>
-                    <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.do">프로필 정보</a></h3>
-                    <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.do">주소록</a></h3>
-                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_pay_account.do">판매 정산 계좌</a></h3>
-                    <h3 class="u-text u-text-default u-text-12"><a href="../mypage/my_style.do">스타일</a></h3>
+                    <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.jsp">프로필 정보</a></h3>
+                    <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.jsp">주소록</a></h3>
+                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_account.jsp">판매 정산 계좌</a></h3>
+                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_style.jsp">스타일</a></h3>
                   </div>
                 </div>
               </div>
@@ -68,18 +68,11 @@
               <div class="u-container-layout u-container-layout-3">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
-                    <c:if test="${userProfile.img != '' && userProfile.img ne null && !empty userProfile.img }">
-                      <img class="u-image u-image-circle u-preserve-proportions u-image-1"src="../mypage/profile_image.do"
-                           data-image-width="100" data-image-height="100">
-                    </c:if>
-                    <c:if test="${userProfile.img == '' && userProfile.img eq null || empty userProfile.img }">
-                      <div class="u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="100" data-image-height="100"></div>
-                    </c:if>
-
-                    <h3 class="u-text u-text-default u-text-12">${nickname}<span style="font-size: 1.25rem;"></span>
+                    <div class="u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="100" data-image-height="100"></div>
+                    <h3 class="u-text u-text-default u-text-12">user_id<span style="font-size: 1.25rem;"></span>
                     </h3>
                     <h3 class="u-text u-text-default u-text-13">
-                      <span style="font-size: 20px; font-weight: normal;">${userProfile.email}</span>
+                      <span style="font-size: 20px; font-weight: normal;">user_email</span>
                     </h3>
                     <a href="https://nicepage.review" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-2">프로필 수정</a>
                     <a href="https://nicepage.review" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-3">프로필 수정</a>

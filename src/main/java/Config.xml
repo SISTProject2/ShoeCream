@@ -15,6 +15,7 @@
     <typeAlias type="com.sist.vo.UserVO" alias="UserVO"/>
     <typeAlias type="com.sist.vo.AdminVO" alias="AdminVO"/>
     <typeAlias type="com.sist.vo.StyleReplyVO" alias="StyleReplyVO"/>
+    <typeAlias type="com.sist.vo.LikesVO" alias="LikesVO"/>
 
     
   </typeAliases>

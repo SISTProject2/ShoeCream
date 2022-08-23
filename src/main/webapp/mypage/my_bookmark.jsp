@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +41,7 @@
       <div class="u-list u-list-2">
         <div class="u-repeater u-repeater-2"></div>
       </div>
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
           <div class="u-layout-row">
             <div class="u-align-left u-container-style u-layout-cell u-size-12 u-layout-cell-1">
@@ -46,18 +49,18 @@
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
                   <div class="u-container-layout u-container-layout-2">
                     <h1 class="u-text u-text-default u-text-1">
-                      <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="my_mypage.do" data-page-id="1289201052">마이 페이지</a>
+                      <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="my_mypage.html" data-page-id="1289201052">마이 페이지</a>
                     </h1>
                     <h3 class="u-text u-text-default u-text-2">쇼핑 정보</h3>
-                    <h3 class="u-text u-text-default u-text-3"><a href="../mypage/my_purchase_list.do">구매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-4"><a href="../mypage/my_sell_list.do">판매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/my_bookmark.do">관심 상품</a></h3>
-                    <h3 class="u-text u-text-default u-text-6"><a href="../mypage/my_recently_viewed.do">최근 본 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-3"><a href="../mypage/my_purchase_list.jsp">구매 내역</a></h3>
+                    <h3 class="u-text u-text-default u-text-4"><a href="../mypage/my_sell_list.jsp">판매 내역</a></h3>
+                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/my_bookmark.jsp">관심 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-6"><a href="../mypage/my_recently_viewed.jsp">최근 본 상품</a></h3>
                     <h3 class="u-text u-text-default u-text-7">내 정보</h3>
-                    <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.do">프로필 정보</a></h3>
-                    <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.do">주소록</a></h3>
-                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_pay_account.do">판매 정산 계좌</a></h3>
-                    <h3 class="u-text u-text-default u-text-12"><a href="../mypage/my_style.do">스타일</a></h3>
+                    <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.jsp">프로필 정보</a></h3>
+                    <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.jsp">주소록</a></h3>
+                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_account.jsp">판매 정산 계좌</a></h3>
+                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_style.jsp">스타일</a></h3>
                   </div>
                 </div>
               </div>
@@ -67,38 +70,43 @@
                 <div class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
                     <h3 class="u-text u-text-default u-text-12">관심 상품</h3>
+                    <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-2">상품</a>
+                    <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-3"> 즉시 구매가</a>
                   </div>
                 </div>
-                <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-group u-shape-rectangle u-group-3">
+                <div class="u-align-left u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-2 u-container-style u-group u-opacity u-opacity-20 u-shape-rectangle u-white u-group-3">
                   <div class="u-container-layout u-container-layout-5">
-                    <a href="https://nicepage.com/website-design" class="u-border-2 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-hover-custom-color-1 u-radius-6 u-text-hover-white u-text-white u-btn-2">
-                      <span style="font-size: 2.25rem;">&nbsp;구매</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-                    </a>
-                    <div class="u-border-3 u-border-palette-2-light-2 u-line u-line-vertical u-line-1"></div>
-                    <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <h3 class="u-text u-text-default u-text-13">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-14">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-white u-text-15">
-                      <span style="font-weight: normal;">price</span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-white u-text-16">
-                      <span style="font-weight: 700;">즉시 구매가</span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-palette-5-dark-1 u-text-17">삭제 </h3>
-                  </div>
-                </div>
-                <div class="u-container-style u-group u-shape-rectangle u-white u-group-4">
-                  <div class="u-container-layout u-valign-middle u-container-layout-6">
-                    <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-3">&lt;&lt;<span style="font-size: 1rem;"></span>
-                    </a>
-                    <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-4">1</a>
-                    <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-5">&gt;&gt;</a>
+                    <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-4">
+                      <div class="u-container-layout u-container-layout-6">
+                        <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
+                        <h3 class="u-text u-text-default u-text-13">
+                          <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
+                          </span>
+                        </h3>
+                        <h3 class="u-text u-text-default u-text-14">
+                          <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
+                          </span>
+                        </h3>
+                        <h3 class="u-text u-text-default u-text-15">
+                          <span style="font-size: 20px;">999,999,999</span>
+                        </h3>
+                        <h3 class="u-text u-text-default u-text-16">
+                          <span style="font-size: 20px; font-weight: normal;">
+                            <span class="u-text-grey-40">name_kor</span>
+                            <span class="u-text-grey-40"></span>
+                            <span style="font-weight: 700;"></span>
+                          </span>
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-white u-group-5">
+                      <div class="u-container-layout u-container-layout-7">
+                        <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-4">&lt;&lt;<span style="font-size: 1rem;"></span>
+                        </a>
+                        <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-5">1</a>
+                        <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-6">&gt;&gt;</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

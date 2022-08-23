@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+ 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -172,53 +174,54 @@ header #NOTICE {
       <h2 class="u-text u-text-default u-text-2" style="position: relative; top: 40px"></h2>
       
       <!-- 신발 종류 -->
-	    <div class="u-list u-list-199" style="margin: 0 auto">
+	    <div class="u-list u-list-199" style="right: 2px">
 	        <div class="u-repeater u-repeater-1" style="display: flex">
 	          <div class="u-container-style u-list-item u-repeater-item" >
 	            <div class="u-container-layout u-similar-container u-container-layout-1">
 	              <a href="../shoes/shoes_kinds.do?category_id=2">
-	              <img src="../images/shoes/001.png" width="140px" height="140px" ></a>
+	              <img src="../images/shoes/sneakers.png" width="120px" height="120px" ></a>
 	            </div>
 	          </div>
 	          <div class="u-container-style u-list-item u-repeater-item">
 	            <div class="u-container-layout u-similar-container u-container-layout-2">
 	              <a href="../shoes/shoes_kinds.do?category_id=1">
-	              <img src="../images/shoes/002.png" width="140px" height="140px" ></a>
+	              <img src="../images/shoes/jogging.png" width="120px" height="120px" ></a>
 	            </div>
 	          </div>
 	          <div class="u-container-style u-list-item u-repeater-item">
 	            <div class="u-container-layout u-similar-container u-container-layout-3">
 	              <a href="../shoes/shoes_kinds.do?category_id=3">
-	              <img src="../images/shoes/003.png" width="140px" height="140px" ></a>
+	              <img src="../images/shoes/sandal.png" width="120px" height="120px" ></a>
 	            </div>
 	          </div>
 	          <div class="u-container-style u-list-item u-repeater-item">
 	            <div class="u-container-layout u-similar-container u-container-layout-4">
 	              <a href="../shoes/shoes_kinds.do?category_id=4">
-	              <img src="../images/shoes/004.png" width="140px" height="140px" ></a>
+	              <img src="../images/shoes/loafer.png" width="120px" height="120px" ></a>
 	            </div>
 	          </div>
 	          <div class="u-container-style u-list-item u-repeater-item">
 	            <div class="u-container-layout u-similar-container u-container-layout-5">
 	              <a href="../shoes/shoes_kinds.do?category_id=5">
-	              <img src="../images/shoes/005.png" width="140px" height="140px" ></a>
+	              <img src="../images/shoes/boots.png" width="120px" height="120px" ></a>
 	            </div>
 	          </div>
 	          <div class="u-container-style u-list-item u-repeater-item">
 	            <div class="u-container-layout u-similar-container u-container-layout-6">
 	              <a href="../shoes/shoes_kinds.do?category_id=6">
-	              <img src="../images/shoes/006.png" width="140px" height="140px" ></a>
+	              <img src="../images/shoes/rainboots.png" width="120px" height="120px" ></a>
 	            </div>
 	          </div>
 	        </div>
 	      </div>
       
+      <div style="bottom: 80px">
+      <!-- 필터 버튼 -->
       <!-- 필터 버튼 -->
       <div class="container" style="margin-top: 250px">
-	 	 <a href="../nav/nav_new.do?no=1"><button type="button" class="btn btn-outline-dark" style="color: black">인기 순</button></a> 
-	 	 <a href="../nav/nav_new.do?no=2"><button type="button" class="btn btn-outline-dark" style="color: black">높은 가격 순</button></a> 
-	 	 <a href="../nav/nav_new.do?no=3"><button type="button" class="btn btn-outline-dark" style="color: black">낮은 가격 순</button></a> 
-	 
+	 	 <a href="../nav/nav_new.do?no=1"><img src="../images/pop.png" width="108px" height="38px"></a> 
+	 	 <a href="../nav/nav_new.do?no=2"><img src="../images/high.png" width="108px" height="38px"></a> 
+	 	 <a href="../nav/nav_new.do?no=3"><img src="../images/low.png" width="108px" height="38px"></a> 
 				
       <div class="u-border-2 u-border-grey-blue-1 u-line u-line-horizontal u-line-1"></div>
       
@@ -243,29 +246,33 @@ header #NOTICE {
               	입찰 준비 중</h4>
               </c:if>
               
-              <h5 class="u-text u-text-default u-text-8">${vo.bookmark }</h5><span class="u-icon u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-77d5"></use></svg><svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-77d5" style="enable-background:new 0 0 51.997 51.997;"><g><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
-		c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
-		c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
-		C52.216,18.553,51.97,16.611,51.911,16.242z M49.521,21.261c-0.984,4.172-3.265,7.973-6.59,10.985L25.855,47.481L9.072,32.25
-		c-3.331-3.018-5.611-6.818-6.596-10.99c-0.708-2.997-0.417-4.69-0.416-4.701l0.015-0.101C2.725,9.139,7.806,3.826,14.158,3.826
-		c4.687,0,8.813,2.88,10.771,7.515l0.921,2.183l0.921-2.183c1.927-4.564,6.271-7.514,11.069-7.514
-		c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"></path>
-</g></svg></span>
+              <!-- 좋아요 -->
+			<c:if test="${sessionScope.user.user_id != null }">
+                 <c:choose>
+                   <c:when test="${jcount != 0 }">
+                    <a href="../nav/likes.do?no=${no }&page=${curpage }&goods_id=${vo.goods_id }"><img src="../images/heartbf.png" style="width: 50px; height: 50px"></a>LIKE
+                   </c:when>
+                 <c:otherwise>
+                  <img src="../images/heartaf.png" style="width: 50px; height: 50px">LIKE
+                 </c:otherwise>
+                </c:choose>
+            </c:if>   
+
+		       
+              
             </div>
           </div>
          </c:if>
       </c:forEach>
    		
    		<div style= "margin-top:50px"></div>
-        </div>
-      </div>
-      
-      <nav aria-label="Page navigation example">
+   		
+   		<nav aria-label="Page navigation example">
 		  <ul class="pagination">
 		    <li class="page-item">
 	      
 		      <c:if test="${startPage > 1 }">
-		      <a class="page-link" href="../nav/nav_new.do?page=${startPage-1 }" aria-label="Previous">
+		      <a class="page-link" href="../nav/nav_new.do?no=${no }&page=${startPage-1 } aria-label="Previous">
 		        <span aria-hidden="true">&laquo;</span>
 		        <span class="sr-only">Previous</span>
 		      </a>
@@ -282,13 +289,13 @@ header #NOTICE {
 	              <c:set var="style" value=""/>
 	            </c:if>
 	            
-	            <li ${style }><a href="../nav/nav_new.do?page=${i }">${i }</a></li>
+	            <li ${style }><a href="../nav/nav_new.do?no=${no }&page=${i }">${i }</a></li>
 	       </c:forEach>
 
 		    <li class="page-item">
 		    
 		      <c:if test="${endPage < totalpage }">
-		      <a class="page-link" href="../nav/nav_new.do?page=${endPage+1 }" aria-label="Next">
+		      <a class="page-link" href="../nav/nav_new.do?no=${no }&page=${endPage+1 }" aria-label="Next">
 		        <span aria-hidden="true">&raquo;</span>
 		        <span class="sr-only">Next</span>
 		      </a>
@@ -299,9 +306,15 @@ header #NOTICE {
 		  
 		  
 		</nav>
+        </div>
+        
+        
+      </div>
+      
+      
 		</div>
 		
-		
+		</div>
     </section>
     
   

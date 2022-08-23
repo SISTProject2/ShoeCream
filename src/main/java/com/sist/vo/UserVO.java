@@ -24,98 +24,176 @@ ACCHOLDER	VARCHAR2(20 BYTE)	Yes		14	예금주
 public class UserVO {
 	
 	private int user_id;
-	private String email, pwd, name, tel, gender, zipcode, adress, s_size, img, bankname, accno, accholder ;
-	private Date birthday;
+	private String email, pwd, name, tel, gender, zipcode, adress, s_size, img, bankname, accno, accholder, birthday ;
 	
+
 	public int getUser_id() {
 		return user_id;
 	}
+
+
+
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
+
+
+
 	public String getEmail() {
 		return email;
 	}
+
+
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
+
 	public String getPwd() {
 		return pwd;
 	}
+
+
+
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
+
+
+
 	public String getName() {
 		return name;
 	}
+
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+
 	public String getTel() {
 		return tel;
 	}
+
+
+
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
+
+
 	public String getGender() {
 		return gender;
 	}
+
+
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
+
+
 	public String getZipcode() {
 		return zipcode;
 	}
+
+
+
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
+
+
+
 	public String getAdress() {
 		return adress;
 	}
+
+
+
 	public void setAdress(String adress) {
 		this.adress = adress;
 	}
+
+
+
 	public String getS_size() {
 		return s_size;
 	}
+
+
+
 	public void setS_size(String s_size) {
 		this.s_size = s_size;
 	}
+
+
+
 	public String getImg() {
 		return img;
 	}
+
+
+
 	public void setImg(String img) {
 		this.img = img;
 	}
+
+
+
 	public String getBankname() {
 		return bankname;
 	}
+
+
+
 	public void setBankname(String bankname) {
 		this.bankname = bankname;
 	}
+
+
+
 	public String getAccno() {
 		return accno;
 	}
+
+
+
 	public void setAccno(String accno) {
 		this.accno = accno;
 	}
+
+
+
 	public String getAccholder() {
 		return accholder;
 	}
+
+
+
 	public void setAccholder(String accholder) {
 		this.accholder = accholder;
 	}
-	public Date getBirthday() {
+
+
+
+	public String getBirthday() {
 		return birthday;
 	}
-	public String formatBirth() {
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		return simpleDateFormat.format(this.birthday);
 
-	}
-	public void setBirthday(Date birthday) {
+
+
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
+
+
 
 	@Override
 	public String toString() {

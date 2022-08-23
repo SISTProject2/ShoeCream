@@ -425,6 +425,18 @@
     width: calc(((100% - 940px) / 2) + 1px);
   }
 
+  .u-section-1 .u-repeater-1 {
+    grid-template-columns: repeat(undefined, NaN%);
+  }
+
+  .u-section-1 .u-list-2 {
+    width: calc(((100% - 940px) / 2) + 1px);
+  }
+
+  .u-section-1 .u-repeater-2 {
+    grid-template-columns: repeat(undefined, NaN%);
+  }
+
   .u-section-1 .u-layout-cell-1 {
     min-height: 1886px;
   }
