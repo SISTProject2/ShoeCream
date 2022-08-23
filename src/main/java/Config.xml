@@ -34,6 +34,7 @@
     <mapper resource="com/sist/mapper/style-mapper.xml"/> 
     <mapper resource="com/sist/mapper/style_reply-mapper.xml"/> 
     <mapper resource="com/sist/mapper/category-mapper.xml"/> 
+    <mapper resource="com/sist/mapper/user-mapper.xml"/> 
   </mappers>
 
   
