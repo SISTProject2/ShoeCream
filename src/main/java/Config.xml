@@ -17,7 +17,7 @@
     <typeAlias type="com.sist.vo.StyleReplyVO" alias="StyleReplyVO"/>
     <typeAlias type="com.sist.vo.LikesVO" alias="LikesVO"/>
 
-    
+
   </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -38,7 +38,8 @@
     <mapper resource="com/sist/mapper/style_reply-mapper.xml"/> 
     <mapper resource="com/sist/mapper/category-mapper.xml"/> 
     <mapper resource="com/sist/mapper/admin-mapper.xml"/>
-    <mapper resource="com/sist/mapper/cs-mapper.xml"/>  
+    <mapper resource="com/sist/mapper/cs-mapper.xml"/>
+    <mapper resource="com/sist/mapper/user-mapper.xml"/>
   </mappers>
 
   

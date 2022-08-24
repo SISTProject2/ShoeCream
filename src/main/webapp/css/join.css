@@ -1,10 +1,20 @@
 @charset "UTF-8";
+@import "reset.css";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+.nanumgothic * {
+    font-family: 'Nanum Gothic', sans-serif;
+}
 
 @font-face {
     font-family: 'SBAggroL';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+body {
+	font-family: 'Nanum Gothic';
 }
 
 .join_container {
@@ -16,7 +26,6 @@
 .join_title {
     text-align: center;
     margin: 50px 0 65px 0;
-   
 }
 
 .joinmember {
@@ -53,12 +62,23 @@
 	color: #D6D6D6;
 }
 
+.pwd_eye {
+	width: 100%
+}
+
 .eye{
-    background-image: url("../images/eye.png");
-    background-repeat: no-repeat;/*이미지 반복 없이 한 개만 출력*/
-    background-size: 18px;
-    background-position: 95% center;/*영역 안에서 이미지 위치 x축 y축 위치값*/
-    padding-left: 1px;/*padding값이 없으면 placeholder="Add List"와 겹친다. */
+	position: relative;
+}
+
+.eye_i {
+	position: absolute;
+  	top: -6%;
+  	bottom: 0;
+  	right: auto;
+  	margin: auto 400px;
+  	height: 21px;
+  	font-size: 22px;
+  	cursor: pointer;
 }
 
 .agree {
