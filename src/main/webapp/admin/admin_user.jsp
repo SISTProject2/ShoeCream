@@ -127,7 +127,7 @@
                                     <c:if test="${s.index>=0 && s.index<10 }">
                                         <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-5">
                                             <div  class=" u-container-layout u-container-layout-7">
-                                                <a data-id="${list.user_id}"  data-email="${list.email}" data-tel="${list.tel}" data-birthday="${list.formatBirth()}"
+                                                <a data-id="${list.user_id}"  data-email="${list.email}" data-tel="${list.tel}" data-birthday="${list.birthday}"
                                                             data-size="${list.s_size}" data-name="${list.name}" data-zipcode="${list.zipcode}"
                                                         class="updateBtn u-active-grey-25 u-border-1 u-border-active-white u-border-grey-75 u-border-hover-white u-btn u-btn-round u-button-style u-hover-grey-25 u-none u-radius-35 u-text-hover-white u-btn-5">
                                                     &nbsp; 수정&nbsp;&nbsp;</a>
