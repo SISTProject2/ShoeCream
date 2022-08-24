@@ -30,7 +30,7 @@ public class MyPageModel {
     @RequestMapping("mypage/my_mypage.do")
     public String my_mypage(HttpServletRequest request, HttpServletResponse response) {
        if (request.getSession().getAttribute("email") == null) {
-            return "../account/join.jsp";
+            return "../account/login.jsp";
         }
         return "../mypage/my_mypage.jsp";
     }
