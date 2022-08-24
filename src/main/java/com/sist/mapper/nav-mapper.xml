@@ -49,11 +49,11 @@
   </select>
   
   <!-- Style -->
-  <select id="navStyleList" resultType="StyleVO">
+<!--   <select id="navStyleList" resultType="StyleVO">
     SELECT *
     FROM style_2
     ORDER BY style_id DESC
-  </select>
+  </select> -->
   
   <!-- Brand -->
   <select id="navBrandList" resultType="ShoesVO">

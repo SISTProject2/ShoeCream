@@ -12,7 +12,7 @@
 
 		      var $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
 		          $wrap = $('<div class="file-upload-wrapper" style=" weight:268px; height: 64px;">'),
-		          $input = $('<input type="text" placeholder="파일" id="name-558c" name="name" class="file-upload-input" style="height: 32px;font-size: 0.875rem; border:1px solid #c0c0c0; width: 154px; margin-left:0px;" required=""/>'),
+		          $input = $('<input type="text" placeholder="파일" id="name-558c" name="name" class="file-upload-input" style="height: 10px; font-size: 0.875rem; border:1px solid #c0c0c0; width: 154px; margin-left:0px;" required=""/>'),
 /*		          $input = $('<input type="text" placeholder="파일 업로드" style="width: 200px; height: 34px; margin-left:550px; "class="file-upload-input" />'),*/
 		          // Button that will be used in non-IE browsers
 		          $button = $('<button type="button" class="file-upload-button" style="font-size: 0.875rem;border: solid black 1px;background-image: none;font-weight: 700;padding: 5px 10px; weight: 81px; height: 34px;cursor: pointer;display: inline-block;color:black; display: flex; align-items:center;  font-size: 14px;  text-transform: uppercase;  padding: 11px 10px; border: 1px solid black; margin-left: 13px; margin-right:-283px; background-color: white; float: left; /* IE 9 Fix */ -moz-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;">파일 선택</button>'),

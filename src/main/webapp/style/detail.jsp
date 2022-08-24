@@ -64,6 +64,22 @@ $(function(){
 			i=0;
 		}
 	})
+	
+	$('#del').on("click",function(){
+		let style_id=$(this).attr("data-id");
+		
+		$.ajax({
+			type:'post',
+			url:'../style/delete.do',
+			data:{"style_id":style_id},
+			success:function(result){
+					location.href="../nav/nav_style.do"; 
+			},
+			error:function(err){
+			}
+			
+		})
+	})
 }) 
 
 
@@ -97,9 +113,9 @@ $(function(){
             <td style="width:4%;"><span><img src="../images/style/64572.png" style="width:35px; height:35px; margin-top: 6px;" alt=""></span></td>
             <td style=" width:7%"><span style="font-weight: 400;font-size: 1.5rem;font-family: Roboto,sans-serif;">${fn:substringBefore(vo.email ,'@')}</span></td>
             <td style=""><h6 class="u-text-grey-25 ti" id="time" value="${vo.style_id }" style="font-size: 0.875rem; margin-top: 28px;"><script>timeForToday("${vo.dbday}")</script></h6></td>
-            <td style="width:30%; position: relative; z-index: 1; padding-top: 8px; ">
             <c:if test="${sessionScope.user_id==vo.u_id}"><%-- 본인이면 --%>
-              <a href="../style/update.do?id=${vo.style_id }" style="color: #8C8C8C;">수정</a>
+            <td style="width:30%; position: relative; z-index: 1; padding-top: 8px; ">
+              <a href="../style/update.do?style_id=${vo.style_id }" style="color: #8C8C8C;">수정</a>
        		  <a href="" id="del" style="color: #8C8C8C; margin-left: 10px;" data-id="${vo.style_id }">삭제</a>
        		</td>
        		</c:if>

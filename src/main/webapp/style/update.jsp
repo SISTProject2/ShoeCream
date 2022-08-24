@@ -95,21 +95,16 @@
  $(function(){
 	$('#writeBtn').click(function(){
 		
-		let img=$('#hide1').val(); 	// 입력한 값 가져오기
-		if (img.trim()=="") {
-			$('#hide1').focus();
-			return;
-		} 
-		let content=$('#hide2').val(); 	// 입력한 값 가져오기
+		let content=$('#hide2').val(); 	
 		if (content.trim()=="") {
 			$('#hide2').focus();
 			return;
 		} 
 	
-		$('#frm3').submit();	// 데이터 보내기
+		$('#frm3').submit();	
 	})
 }) 
-		
+
 </script>
 </head>
 <iframe name='blankifr' style='display:none;'></iframe>
@@ -121,28 +116,14 @@
             <h2 class="u-align-center u-text u-text-2" style="font-family: SBAggroL; font-size: 3rem;font-weight: 300;text-transform: none;margin: 0 66px; text-decoration: none;">Style</h2>
             <div class="u-border-1 u-border-grey-75 u-border-no-bottom u-container-style u-group u-white u-group-2" style="width: 650px; min-height: 340px; background-image: none; height: auto;margin: 22px auto 0; ">
               <div class="u-container-layout u-valign-middle u-container-layout-2" style="padding: 0; margin-top:0px; height:700px;">
-                <img class="u-image u-image-contain u-image-default u-image-1" style=" width: 490px;height: auto;margin: 0 auto;" src="" onerror="this.src='bas.png'"alt=""  id="uploadImage" data-image-width="400" data-image-height="265">
+                <img class="u-image u-image-contain u-image-default u-image-1" style=" width: 490px;height: auto;margin: 0 auto;" src="" onerror="this.src='${vo.img }'"alt=""  id="uploadImage" data-image-width="400" data-image-height="265">
               </div>
             </div>
-           <form method=post action="../style/input_ok.jsp" class="frm" enctype="multipart/form-data" target="blankifr" id="frm2">
-            <div class="u-border-1 u-border-grey-75 u-border-no-top u-container-style u-group u-group-3" style="width: 650px; min-height: 82px; height: auto; margin: 0 auto; ">
-              <div class="custom-file-upload" style="margin-left: 175px;">
-                <div class="u-container-layout u-container-layout-3" style="padding-left: 30px; padding-right: 30px;">
-                  <div class="u-form u-form-1" style="height: 64px; margin: 13px 0 0 0;">
-    			      <input type="file" id="file" name="myfiles[]" multiple="" class="custom-file-upload-hidden" tabindex="-1" style="position: absolute; left: -9999px;">
-				  	  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-					  <script  src="../home/style/script.js"></script>
-                  </div>
-                </div>
-			  </div>
-			  <input type="submit" class="u-black u-border-1 u-border-black u-btn u-button-style u-btn-2" value="File Upload" id="sendButton" style="text-transform: uppercase;letter-spacing: 1px; background-image: none;border-style: solid;margin: 43px 0 16px 77px;padding: 3px 20px 4px;">
-            </div>
-			</form>
-			<form method=post action="../style/insert_ok.do" class="frm" id="frm1" target="blankifr">
+			<form method=post action="../style/update_ok.do" class="frm" id="frm1" target="blankifr">
             <div class="u-form u-form-2" style="height: 214px;width: 655px;margin: 39px auto 0;">
                 <div class="u-form-group u-form-message u-form-group-3" style="margin-top: 0; margin-bottom: 10px;">
                   <label for="message-f2a8" class="u-label u-label-2" style="font-weight: 700;">Content</label>
-                  <textarea placeholder="문구 입력..." rows="4" cols="50" id="content2" name="content2" class="u-border-1 u-border-grey-75 u-input u-input-rectangle" style="border:1px solid #404040" required=""></textarea>
+                  <textarea placeholder="문구 입력..." rows="4" cols="50" id="content2" name="content2" class="u-border-1 u-border-grey-75 u-input u-input-rectangle" style="border:1px solid #404040" required="">${vo.content }</textarea>
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
                   <a href="#" class="u-form-control-hidden" style="background-image: none; border-style: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top:22px;" >WRITE<br>
@@ -151,9 +132,10 @@
                 </div>
             </div>
             </form>
-            <form method=post action="../style/insert_ok.do" class="frm" id="frm3">
-			  <input type="hidden" name="img" id="hide1" value="">
-			  <input type="hidden" name="content" id="hide2" value="" >
+            <form method=post action="../style/update_ok.do" class="frm" id="frm3">
+			  <input type="hidden" name="img" id="hide1" value="${vo.img }">
+			  <input type="hidden" name="content" id="hide2" value="${vo.content }" >
+			  <input type="hidden" name="style_id" id="hide3" value="${vo.style_id }" >
 			  <!-- <input type="submit" id="abc"></button> -->
 			  <div class="u-align-center u-form-group u-form-submit">
                   <a href="#" class="u-black u-btn u-btn-rectangle u-btn-submit u-button-style u-btn-3" id="writeBtn" style="background-image: none; border-style: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top:22px;" >WRITE<br>
@@ -165,8 +147,6 @@
         </div>
       </div>
     </section>
-    
-    
     
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
@@ -182,28 +162,9 @@
 
 </body>
   <script>
-
-    document.querySelector("#sendButton").addEventListener('click',()=>{
-
-      let selectFile = document.querySelector("#file").files[0];
-
-      const file = URL.createObjectURL(selectFile);
-
-
-      document.querySelector("#uploadImage").src = file;
-      
-    })
-    
     document.querySelector("#writeBtn").addEventListener('click',()=>{ 
-    	 var fileValue = $("#file").val().split("\\");
-   	  	 var fileName = fileValue[fileValue.length-1]; // 파일명
-         document.querySelector("#hide1").value = fileName;
-
+   	  	 
          document.querySelector("#hide2").value = $('#content2').val();
     })
-    
-    
-    
-    
   </script>
 </html>

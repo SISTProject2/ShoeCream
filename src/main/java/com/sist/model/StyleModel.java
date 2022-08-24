@@ -190,4 +190,45 @@ public class StyleModel {
 		
 		return "redirect:../style/detail.do?style_id="+sid;
 	}
+	
+	@RequestMapping("style/update.do")
+	public String style_update(HttpServletRequest request, HttpServletResponse response) {
+		
+		String style_id=request.getParameter("style_id");
+		StyleVO vo=StyleDAO.styleUpdateData(Integer.parseInt(style_id));
+		
+		request.setAttribute("vo", vo);
+		request.setAttribute("main_jsp", "../style/update.jsp");
+		
+		return "../main/main.jsp";
+	}
+	
+	@RequestMapping("style/update_ok.do")
+	public String style_update_ok(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch(Exception ex) {}
+		
+		String content=request.getParameter("content");
+		System.out.println("content="+content);
+		String style_id=request.getParameter("style_id");
+		System.out.println("style_id="+style_id);
+		
+		StyleVO vo=new StyleVO();
+		vo.setContent(content);
+		vo.setStyle_id(Integer.parseInt(style_id));
+		
+		StyleDAO.styleUpdate(vo);
+		
+		return "redirect:../style/detail.do?style_id="+style_id;
+	}
+	
+	@RequestMapping("style/delete.do")
+	public String style_delete(HttpServletRequest request, HttpServletResponse response) {
+		String style_id=request.getParameter("style_id");
+		
+		StyleDAO.styleDelete(Integer.parseInt(style_id));
+		
+		return "../style/delete.jsp";
+	}
 }

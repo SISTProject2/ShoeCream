@@ -160,4 +160,50 @@ public class StyleDAO {
 				session.close();
 		}
 	}
+	
+	public static StyleVO styleUpdateData(int style_id) {
+		StyleVO vo=new StyleVO();
+		SqlSession session=null;
+		try {
+			session=ssf.openSession();
+			vo=session.selectOne("styleDetailData",style_id);
+		} catch(Exception ex) {
+			System.out.println("styleUpdateData error : ");
+			ex.printStackTrace();
+		} finally {
+			if (session!=null)
+				session.close();
+		}
+		
+		return vo;
+	}
+	
+	public static void styleUpdate(StyleVO vo) {
+		SqlSession session=null;
+		try {
+			session=ssf.openSession(true);	
+			session.update("styleUpdate",vo);
+		} catch(Exception ex) {
+			System.out.println("styleUpdate error : ");
+			ex.printStackTrace();
+		} finally {
+			if (session!=null)
+				session.close();
+		
+		}
+	}
+	
+	public static void styleDelete(int style_id) {
+		SqlSession session=null;
+		try {
+			session=ssf.openSession();
+			session.delete("styleDelete",style_id);
+			session.commit();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if(session!=null)
+				session.close();
+		}
+	}
 }
