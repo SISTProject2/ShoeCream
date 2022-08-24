@@ -96,11 +96,13 @@ public class UserModel {
 		// DAO연동 ==> mapper(SQL) , dao(메소드 처리)
 		UserVO vo = UserDAO.isLogin(email, pwd);
 		String result = vo.getMsg();
+		int user_id=StyleDAO.styleGetUserId(email);
 		if (result.equals("OK"))// 로그인시에 세션에 저장 ==> 서버에 저장 (브라우저 종료 , 로그아웃시에 해제)
 		{
 			HttpSession session = request.getSession();
 			session.setAttribute("email", vo.getEmail());
 			session.setAttribute("name", vo.getName());
+			session.setAttribute("user_id", user_id);
 //			session.setAttribute("admin", vo.getAdmin());
 			// 서버에 저장 ==> 모든 JSP에서 사용이 가능
 		}

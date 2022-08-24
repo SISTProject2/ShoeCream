@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class StyleVO {
 	private int style_id, bookmark, user_id, rcount;
-	private String img, content, dbday;
+	private String img, content, dbday, email;
 	private Date rgdate;
 	
 	public int getStyle_id() {
@@ -63,6 +63,12 @@ public class StyleVO {
 	}
 	public void setDbday(String dbday) {
 		this.dbday = dbday;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	

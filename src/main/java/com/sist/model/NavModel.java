@@ -272,15 +272,15 @@ public class NavModel {
 		return "../main/main.jsp";	
 	}
 	
-	@RequestMapping("nav/nav_style.do")
-	public String nav_style(HttpServletRequest request, HttpServletResponse response) {
-		
-		List<StyleVO> list = NavDAO.navStyleList();
-		request.setAttribute("list", list);
-		request.setAttribute("main_jsp", "../nav/nav_style.jsp");
-		
-		return "../main/main.jsp";	
-	}
+//	@RequestMapping("nav/nav_style.do")
+//	public String nav_style(HttpServletRequest request, HttpServletResponse response) {
+//		
+//		List<StyleVO> list = NavDAO.navStyleList();
+//		request.setAttribute("list", list);
+//		request.setAttribute("main_jsp", "../nav/nav_style.jsp");
+//		
+//		return "../main/main.jsp";	
+//	}
 	
 	
 	@RequestMapping("nav/nav_calendar.do")

@@ -1,10 +1,13 @@
 package com.sist.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
@@ -17,8 +20,31 @@ import com.sist.vo.StyleVO;
 public class StyleModel {
 	@RequestMapping("nav/nav_style.do")
 	public String style_list(HttpServletRequest request, HttpServletResponse response) {
-		List<StyleVO> list=StyleDAO.styleListData();
-
+		String page=request.getParameter("page");
+		if (page==null)
+			page="1";
+		int curpage=Integer.parseInt(page);
+		Map map=new HashMap();
+		int rowSize=8;
+		int start=(curpage*rowSize)-(rowSize-1);
+		int end=curpage*rowSize;
+		map.put("start", start);
+		map.put("end", end);
+		
+		List<StyleVO> list=StyleDAO.styleListData(map);
+		int totalpage=StyleDAO.styleTotalPage(map);
+		
+		final int BLOCK = 5;
+		int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
+		int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;
+		if(endPage>totalpage) {
+			endPage = totalpage;
+		}
+		request.setAttribute("curpage", curpage);
+		request.setAttribute("totalpage", totalpage);
+		request.setAttribute("startPage", startPage);
+		request.setAttribute("endPage", endPage);
+		
 		request.setAttribute("list", list);
 		request.setAttribute("main_jsp", "../nav/nav_style.jsp");
 		

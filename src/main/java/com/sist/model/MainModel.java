@@ -1,6 +1,8 @@
 package com.sist.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,7 +23,10 @@ public class MainModel {
 		List<ShoesVO> list = ShoesDAO.shoesPopListData();
 		List<ShoesVO> list2 = ShoesDAO.shoesNewListData();
 		List<ShoesVO> list3 = ShoesDAO.shoesPreListData();
-		List<StyleVO> list4=StyleDAO.styleListData();
+		Map map=new HashMap();
+		map.put("start", 1);
+		map.put("end", 5);
+		List<StyleVO> list4=StyleDAO.styleListData(map);
 		request.setAttribute("list", list);
 		request.setAttribute("list2", list2);
 		request.setAttribute("list3", list3);

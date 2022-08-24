@@ -2,6 +2,7 @@ package com.sist.dao;
 
 import java.io.Reader;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -21,12 +22,12 @@ public class StyleDAO {
 		}
 	}
 	
-	public static List<StyleVO> styleListData() {
+	public static List<StyleVO> styleListData(Map map) {
 		List<StyleVO> list = null;
 		SqlSession session=null;
 		try {
 			session=ssf.openSession();
-			list=session.selectList("styleListData");
+			list=session.selectList("styleListData", map);
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		} finally {
@@ -35,6 +36,37 @@ public class StyleDAO {
 		}
 		
 		return list;
+	}
+	
+	public static int styleTotalPage(Map map) {
+		int total=0;
+		SqlSession session=null;
+		try {
+			session=ssf.openSession();
+			total=session.selectOne("styleTotalPage", map);
+		} catch(Exception ex) {
+			System.out.println("styleTotalPage error : ");
+			ex.printStackTrace();
+		} finally {
+			if (session!=null)
+				session.close();
+		}
+		
+		return total;
+	}
+	
+	public static int styleGetUserId(String email) {
+		SqlSession session=null;
+		int user_id=0;
+		try {
+			session=ssf.openSession();
+			user_id=session.selectOne("styleGetUserId",email);
+		} catch(Exception ex) {
+			if(session!=null)
+				session.close();
+		}
+		
+		return user_id;
 	}
 	
 	public static void styleInsert(StyleVO vo) {

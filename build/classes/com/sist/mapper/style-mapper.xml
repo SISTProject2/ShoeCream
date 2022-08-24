@@ -10,11 +10,21 @@ BOOKMARK          NUMBER
 USER_ID  NOT NULL NUMBER  
  -->
   <!-- 목록 출력 -->
-  <select id="styleListData" resultType="StyleVO">
-    SELECT style_id, img, content, TO_CHAR(rgdate, 'YYYY-MM-DD HH24:MI:SS') as dbday, bookmark, user_id, rcount, num
+  <select id="styleListData" resultType="StyleVO" parameterType="hashmap">
+    SELECT style_id, img, content, TO_CHAR(rgdate, 'YYYY-MM-DD HH24:MI:SS') as dbday, bookmark, (SELECT email FROM user_2 WHERE user_id='1') as email, rcount, num
     FROM (SELECT style_id, img, content, rgdate, bookmark, user_id, rcount, rownum as num
     FROM (SELECT /*+ INDEX_ASC(style_2 pk_style_2)*/ style_id, img, content, rgdate, bookmark, user_id, rcount
-    FROM style_2)) ORDER BY style_id desc
+    FROM style_2)) WHERE num BETWEEN #{start} AND #{end} ORDER BY style_id desc
+  </select>
+
+  <!-- 페이징 -->
+  <select id="styleTotalPage" resultType="int">
+    SELECT CEIL(COUNT(*)/8.0) FROM style_2
+  </select>
+  
+  <!-- user_id -->
+  <select id="styleGetUserId" resultType="int" parameterType="string">
+    SELECT user_id FROM user_2 WHERE email=#{email}
   </select>
  
   <!-- 삽입 --> 
