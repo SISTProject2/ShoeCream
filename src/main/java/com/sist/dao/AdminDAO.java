@@ -278,11 +278,11 @@ public class AdminDAO {
       return total;
    }
 
-   public static void saveQnA(CsCommentVO csCommentVO) {
+   public static void saveQnaReply(CsCommentVO csCommentVO) {
       SqlSession session = null;
       try {
          session = ssf.openSession();
-         session.insert("saveQnA",csCommentVO);
+         session.insert("saveQnAReply",csCommentVO);
          session.commit();
       } catch (Exception ex) {
          ex.printStackTrace();

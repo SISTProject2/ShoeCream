@@ -212,7 +212,7 @@
         where cs_id=#{cs_id}
     </select>
 
-    <insert id="saveQnA" parameterType="CsCommentVO">
+    <insert id="saveQnAReply" parameterType="CsCommentVO">
         <selectKey keyProperty="cc_id" resultType="int" order="BEFORE">
             SELECT NVL(MAX(CC_ID)+1,1) as cc_id FROM CS_COMMENT_2
         </selectKey>

@@ -55,7 +55,7 @@ public class AdminModel {
             csComment.setContent( request.getParameter("content"));
             int csId = AdminDAO.findCsId(cs_id);
             if (csId == 0) {
-                AdminDAO.saveQnA(csComment);
+                AdminDAO.saveQnaReply(csComment);
             } else {
                 AdminDAO.updateQnA(csComment);
             }
@@ -70,10 +70,6 @@ public class AdminModel {
         try {
             if (request.getSession().getAttribute("admin") == null) {
                 return "redirect:../admin/admin_login.do";
-            }
-            try {
-                request.setCharacterEncoding("UTF-8");
-            } catch (Exception ex) {
             }
             String page = request.getParameter("page");
             if (page == null || page.isEmpty()) {
@@ -143,10 +139,6 @@ public class AdminModel {
         try {
             if (request.getSession().getAttribute("admin") == null) {
                 return "redirect:../admin/admin_login.do";
-            }
-            try {
-                request.setCharacterEncoding("UTF-8");
-            } catch (Exception ex) {
             }
             String page = request.getParameter("page");
             if (page == null || page.isEmpty()) {

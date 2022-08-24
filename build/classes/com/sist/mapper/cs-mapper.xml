@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sist.mapper.cs-mapper">
- 
+    <insert id="saveQna" parameterType="CsVO">
+        <selectKey keyProperty="cs_id" resultType="int" order="BEFORE">
+            SELECT NVL(MAX(CS_ID)+1,1) as cs_id FROM cs_2
+        </selectKey>
+        insert into cs_2
+        values (#{cs_id},#{s_type},#{title},SYSDATE,#{content},#{img} ,#{user_id})
+    </insert>
 </mapper>
