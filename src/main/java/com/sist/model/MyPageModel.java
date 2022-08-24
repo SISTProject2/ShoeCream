@@ -70,7 +70,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/my_profile.do")
     public String my_profile(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         HttpSession session = request.getSession();
