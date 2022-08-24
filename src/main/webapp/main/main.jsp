@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="keywords" content="Iterative Methods">
 <meta name="description" content="">
-<title>Home</title>
+<title>Home</title> 
 <link rel="stylesheet" href="../home/nicepage.css" media="screen">
 <link rel="stylesheet" href="../home/Home.css" media="screen">
 <script class="u-script" type="text/javascript" src="../home/jquery.js"
@@ -27,12 +27,12 @@
 <meta name="theme-color" content="#478ac9">
 <meta property="og:title" content="Home">
 <meta property="og:type" content="website">
+
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="nav.jsp"></jsp:include>
 	<jsp:include page="${main_jsp }"></jsp:include>
-	<div class="print"></div>
 	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
