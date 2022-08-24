@@ -26,7 +26,15 @@ import java.util.Collection;
 public class MyPageModel {
 
     String fileDir = "C:/file/";
-
+    
+    @RequestMapping("mypage/my_mypage.do")
+    public String my_mypage(HttpServletRequest request, HttpServletResponse response) {
+       if (request.getSession().getAttribute("email") == null) {
+            return "../account/join.jsp";
+        }
+        return "../mypage/my_mypage.jsp";
+    }
+    
     @RequestMapping("mypage/my_purchase_list.do")
     public String my_purchase_list(HttpServletRequest request, HttpServletResponse response) {
         if (request.getSession().getAttribute("user") == null) {
