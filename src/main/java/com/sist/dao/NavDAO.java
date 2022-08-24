@@ -25,22 +25,7 @@ public class NavDAO {
          ex.printStackTrace();
       }
    }
-   
-   // 임시 로그인
-   public static UserVO mockLogin2(int seq) {
-       SqlSession session = null;
-       UserVO user = null;
-       try {
-           session = ssf.openSession();
-           user = session.selectOne("mockLogin", seq);
-       } catch (Exception ex) {
-           ex.printStackTrace();
-       } finally {
-           session.close();
-       }
 
-       return user;
-   }
    
    
    // new 페이징

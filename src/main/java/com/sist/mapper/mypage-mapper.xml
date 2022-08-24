@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sist.mapper.mypage-mapper">
-    <select id="mockLogin" resultType="UserVo" parameterType="int">
-        SELECT *
-        FROM USER_2 where USER_ID =#{seq}
-    </select>
+
     <update id="updatePassword" parameterType="UserVO">
         UPDATE USER_2 SET
             PWD = #{pwd}

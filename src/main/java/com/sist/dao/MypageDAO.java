@@ -23,20 +23,6 @@ public class MypageDAO {
         }
     }
 
-    public static UserVO mockLogin(int seq) {
-        SqlSession session = null;
-        UserVO user = null;
-        try {
-            session = ssf.openSession();
-            user = session.selectOne("mockLogin", seq);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            session.close();
-        }
-
-        return user;
-    }
 
 
     public static void updatePassword(UserVO updateUser) {

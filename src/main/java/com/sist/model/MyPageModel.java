@@ -27,34 +27,6 @@ public class MyPageModel {
 
     String fileDir = "C:/file/";
 
-    @RequestMapping("mypage/my_mypage.do")
-    public String my_mypage(HttpServletRequest request, HttpServletResponse response) {
-        try {
-
-            //세션 확인 코드 나중에 넣기
-        /* if (request.getSession().getAttribute("user") == null) {
-             return "../account/join.jsp";
-        }*/
-        	
-            //로그인됫다고 침
-            UserVO userVO = MypageDAO.mockLogin(1);
-            System.out.println(userVO);
-
-
-            HttpSession session = request.getSession();
-            session.setAttribute("user", userVO);
-
-            /* UserVO userVO = (UserVO) session.getAttribute("user");*/
-            String nickname = userVO.getEmail().split("@")[0];
-            request.setAttribute("userProfile", userVO);
-            request.setAttribute("nickname", nickname);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return "../mypage/my_mypage.jsp";
-    }
-
     @RequestMapping("mypage/my_purchase_list.do")
     public String my_purchase_list(HttpServletRequest request, HttpServletResponse response) {
         if (request.getSession().getAttribute("user") == null) {

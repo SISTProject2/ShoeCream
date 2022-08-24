@@ -23,103 +23,93 @@ import com.sist.vo.UserVO;
 @Controller
 public class NavModel {
 	@RequestMapping("nav/nav_new.do")
-	public String nav_new(HttpServletRequest request, HttpServletResponse response) {
-		
-		// 임시 로그인
-        UserVO userVO = NavDAO.mockLogin2(1);
-        System.out.println(userVO);
+	public String nav_new(HttpServletRequest request, HttpServletResponse response) {	        
+	        
+	      String page = request.getParameter("page");
+	      
+	      String no = request.getParameter("no");
+	      String goods_id = request.getParameter("goods_id");
 
+	      String column = "";
+	      
+	      if(page == null)
+	         page = "1";
+	      
+	      if(no == null)
+	         no = "1";
+	      
+	      if(Integer.parseInt(no) == 1)
+	         column = "bookmark DESC";      
+	      if(Integer.parseInt(no) == 2)
+	         column = "im_buy DESC";
+	      if(Integer.parseInt(no) == 3)
+	         column = "im_buy ASC";
+	      
+	      int curpage = Integer.parseInt(page);
+	      Map map = new HashMap();
+	      int rowSize = 12;
+	      int start = (rowSize*curpage)-(rowSize-1); //rownum
+	      int end = (rowSize*curpage);
+	      
+	      map.put("table_name", "nav_new");// ${table_name}
+	      map.put("im_buy", "im_buy");// 
+	      map.put("start", start); // #{start}
+	      map.put("end", end);
+	      map.put("no", no); 
+	      map.put("column", column);
+	      
+	      List<ShoesVO> list = NavDAO.navNewList(map);
+	      int totalpage = NavDAO.navTotalPage(map);
+	      
+	      final int BLOCK = 10;
+	      int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
+	      // [1] [2] [3] [4] [5]  => start = 1, 6, ... / end = 5, 10, ...
+	      int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;
+	      if(endPage>totalpage) {
+	         endPage = totalpage;
+	      }
+	      request.setAttribute("curpage", curpage);
+	      request.setAttribute("totalpage", totalpage);
+	      request.setAttribute("startPage", startPage);
+	      request.setAttribute("endPage", endPage);
+	      request.setAttribute("no", no);
+	      request.setAttribute("column", column);
+	      
+	      request.setAttribute("list", list);
+	      request.setAttribute("main_jsp", "../nav/nav_new.jsp");
+	      
+	      // ============= 좋아요 jcount =================
+	      
+	      try 
+	      {
+	         LikesVO jvo = new LikesVO();
+	          jvo.setGoods_id(Integer.parseInt(goods_id));
+	          
+	          HttpSession session = request.getSession();
+	          String user_id = (String)session.getAttribute("user_id");
+	         
+	          jvo.setUser_id(Integer.parseInt(user_id));
+	          
+	          int jcount = 0;
+	          if(user_id != null)
+	          {
+	            jcount = NavDAO.likesCount(jvo);
+	          }  
+	          request.setAttribute("jcount", jcount);
+	          
+	      }catch(Exception ex){}
+	      
+	       
+	       
+	     //=================== 마이페이지 최근 본 상품
+	      
+	      // 쿠키
+	      Cookie[] cookies = request.getCookies();
+	      List<ShoesVO> cList = new ArrayList<ShoesVO>();
+	      
+	      return "../main/main.jsp";   
+	   }
 
-        HttpSession session2 = request.getSession();
-        session2.setAttribute("user", userVO);
-		//
-		
-        
-        
-		String page = request.getParameter("page");
-		
-		String no = request.getParameter("no");
-		String goods_id = request.getParameter("goods_id");
-
-		String column = "";
-		
-		if(page == null)
-			page = "1";
-		
-		if(no == null)
-			no = "1";
-		
-		if(Integer.parseInt(no) == 1)
-			column = "bookmark DESC";		
-		if(Integer.parseInt(no) == 2)
-			column = "im_buy DESC";
-		if(Integer.parseInt(no) == 3)
-			column = "im_buy ASC";
-		
-		int curpage = Integer.parseInt(page);
-		Map map = new HashMap();
-		int rowSize = 12;
-		int start = (rowSize*curpage)-(rowSize-1); //rownum
-		int end = (rowSize*curpage);
-		
-		map.put("table_name", "nav_new");// ${table_name}
-		map.put("im_buy", "im_buy");// 
-		map.put("start", start); // #{start}
-		map.put("end", end);
-		map.put("no", no); 
-		map.put("column", column);
-		
-		List<ShoesVO> list = NavDAO.navNewList(map);
-		int totalpage = NavDAO.navTotalPage(map);
-		
-		final int BLOCK = 10;
-		int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
-		// [1] [2] [3] [4] [5]  => start = 1, 6, ... / end = 5, 10, ...
-		int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;
-		if(endPage>totalpage) {
-			endPage = totalpage;
-		}
-		request.setAttribute("curpage", curpage);
-		request.setAttribute("totalpage", totalpage);
-		request.setAttribute("startPage", startPage);
-		request.setAttribute("endPage", endPage);
-		request.setAttribute("no", no);
-		request.setAttribute("column", column);
-		
-		request.setAttribute("list", list);
-		request.setAttribute("main_jsp", "../nav/nav_new.jsp");
-		
-		// ============= 좋아요 jcount =================
-		
-		try 
-		{
-			LikesVO jvo = new LikesVO();
-		    jvo.setGoods_id(Integer.parseInt(goods_id));
-		    
-		    HttpSession session = request.getSession();
-		    UserVO vo = (UserVO)session.getAttribute("user");
-		   
-		    jvo.setUser_id(vo.getUser_id());
-		    
-		    int jcount = 0;
-		    if(vo != null)
-		    {
-		      jcount = NavDAO.likesCount(jvo);
-		    }  
-		    request.setAttribute("jcount", jcount);
-		    
-		}catch(Exception ex){}
-		
-	    
-	    
-	  //=================== 마이페이지 최근 본 상품
-		
-		// 쿠키
-		Cookie[] cookies = request.getCookies();
-		List<ShoesVO> cList = new ArrayList<ShoesVO>();
-		
-		return "../main/main.jsp";	
-	}
 	
 	@RequestMapping("nav/nav_men.do")
 	public String nav_men(HttpServletRequest request, HttpServletResponse response) {
@@ -394,37 +384,25 @@ public class NavModel {
 	@RequestMapping("nav/likes.do")
 	public String shoes_likes(HttpServletRequest request, HttpServletResponse response)
 	{
-		
-		// 임시 로그인
-        UserVO userVO = NavDAO.mockLogin2(1);
-        System.out.println(userVO);
-        
-        //--
-        String no = request.getParameter("no");
-        System.out.println("no=" + no);
-        
-        String page = request.getParameter("page");
-        System.out.println("page=" + page);
-        
-        String goods_id = request.getParameter("goods_id");
-        //--
+      
+      String no = request.getParameter("no");
+      String page = request.getParameter("page");
+      String goods_id = request.getParameter("goods_id");
+      
+      HttpSession session = request.getSession();
+      String user_id = (String)session.getAttribute("user_id");
+      
+      LikesVO vo = new LikesVO();
+      
+      vo.setGoods_id(Integer.parseInt(goods_id));
+      vo.setUser_id(Integer.parseInt(user_id)); 
+      
+      NavDAO.likesInsert(vo);
+      
+      // 좋아요 클릭하고 되돌아가는 링크
+      return "redirect:../nav/nav_new.do?no=" + no + "&page=" + page + "&goods_id=" + goods_id;  
+    }
 
-
-        HttpSession session2 = request.getSession();
-        session2.setAttribute("user", userVO);
-		//
-		
-		
-		LikesVO vo = new LikesVO();
-		
-		vo.setGoods_id(Integer.parseInt(goods_id));
-		vo.setUser_id(userVO.getUser_id()); // 1
-		
-		NavDAO.likesInsert(vo);
-		
-		// 좋아요 클릭하고 되돌아가는 링크
-		return "redirect:../nav/nav_new.do?no=" + no + "&page=" + page + "&goods_id=" + goods_id;  
-	}
 	
 	// ============== 마이페이지 좋아요 ==================
 	

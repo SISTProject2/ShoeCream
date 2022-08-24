@@ -31,7 +31,7 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/sist/mapper/shoes-mapper.xml"/> 
+    <mapper resource="com/sist/mapper/shoes-mapper.xml"/>
     <mapper resource="com/sist/mapper/nav-mapper.xml"/>
     <mapper resource="com/sist/mapper/mypage-mapper.xml"/> 
     <mapper resource="com/sist/mapper/style-mapper.xml"/> 
@@ -39,6 +39,7 @@
     <mapper resource="com/sist/mapper/category-mapper.xml"/> 
     <mapper resource="com/sist/mapper/admin-mapper.xml"/>
     <mapper resource="com/sist/mapper/cs-mapper.xml"/>
+    <mapper resource="com/sist/mapper/user-mapper.xml"/>
   </mappers>
 
   
