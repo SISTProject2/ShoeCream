@@ -78,6 +78,14 @@ function tagToLink(str){
     
     return txt;
 }
+
+$(function(){
+	$('#chat').on("click",function(){
+		
+			$('#rp').focus();
+			return;
+	})
+})
 </script>
 </head>
 <body class="u-body u-xl-mode" data-lang="en">
@@ -106,8 +114,23 @@ function tagToLink(str){
     </section>
     <section class="u-clearfix u-section-3" id="sec-ab75" style="margin-top: -120px;">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <span class="u-file-icon u-icon u-icon-1"><img src="../images/style/1077035.png" alt=""></span>
-        <span class="u-file-icon u-icon u-icon-2"><img src="../images/style/589671.png" alt=""></span>
+        <c:if test="${sessionScope.user_id!=null}">
+          <c:if test="${lcount==0 }">
+            <span class="u-file-icon u-icon u-icon-1"><a href="../style/likes.do?style_id=${vo.style_id }"><img src="../images/style/1077035.png" alt="" style="position: relative; z-index: 1;"></a></span>
+          </c:if>
+          <c:if test="${lcount!=0 }">
+            <span class="u-file-icon u-icon u-icon-1"><a href="../style/likes_cancel.do?style_id=${vo.style_id }"><img src="../images/style/heart_red.png" alt="" style="position: relative; z-index: 1;"></a></span>
+          </c:if>
+        </c:if>
+        <c:if test="${sessionScope.user_id==null}">
+          <c:if test="${lcount==0 }">
+            <span class="u-file-icon u-icon u-icon-1"><a href="../style/likes.do?style_id=${vo.style_id }" onclick="return false"><img src="../images/style/1077035.png" alt="" style="position: relative; z-index: 1;"></a></span>
+          </c:if>
+          <c:if test="${lcount!=0 }">
+            <span class="u-file-icon u-icon u-icon-1"><a href="../style/likes_cancel.do?style_id=${vo.style_id }" onclick="return false"><img src="../images/style/heart_red.png" alt="" style="position: relative; z-index: 1;"></a></span>
+          </c:if>
+        </c:if>
+        <input type="image" class="u-file-icon u-icon u-icon-2" src="../images/style/589671.png" id="chat" style="width: 30px;  height: 30px; position: relative; z-index: 1;">
       </div>
     </section>
     <section class="u-clearfix u-section-4" id="sec-e3a3" style="margin-top: -120px;">
@@ -125,10 +148,10 @@ function tagToLink(str){
               <tr>
                 <td rowspan="2" width="10%">
                   <c:if test="${svo.group_tab==1 }">
-                    <img class="u-image u-image-circle u-image-1 profile" src="../images/style/64572.png"  style="  width: 46px;  height: 46px; margin-left:40px;">
+                    <img class="u-image u-image-circle u-image-1 profile" src="../images/style/64572.png"  style=" width: 38px;  height: 38px; margin-left:40px; margin-bottom: 10px;">
                   </c:if>
                   <c:if test="${svo.group_tab==0 }">
-                    <img class="u-image u-image-circle u-image-1 profile" src="../images/style/64572.png"  style="  width: 46px;  height: 46px;">
+                    <img class="u-image u-image-circle u-image-1 profile" src="../images/style/64572.png"  style="  width: 38px;  height: 38px; margin-bottom: 10px;">
                   </c:if>
                 </td>
                 <td width="70%" class="re" data-no="${svo.sreply_id }"  style="vertical-align: text-bottom;"">
@@ -148,7 +171,7 @@ function tagToLink(str){
               </tr>
               <tr>
                 <td width="70%" class="re" data-no="${svo.sreply_id }">
-                  <c:if test="${svo.group_tab==1 }">
+                  <c:if test="${svo.group_tab==1 && sessionScope.user_id==svo.user_id }">
                       <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default  u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; margin-left:10px; font-weight: 800; color: #425465">수정</a>
 		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default  u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #a97275">삭제</a>
                    </div>
@@ -156,8 +179,10 @@ function tagToLink(str){
                   <c:if test="${svo.group_tab==0 }">
 		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-palette-1-dark-1 u-text-3 reply" id="writerp${svo.sreply_id }" data-no="${svo.sreply_id }" onclick="return false" style="font-weight: 800; font-size: 0.75rem; margin-top:5px; display:inline;">답글</a>
 		              &nbsp;
+		            <c:if test="${sessionScope.user_id==svo.user_id}"><%-- 본인이면 --%>  
 		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #425465">수정</a>
 		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #a97275"">삭제</a>
+                    </c:if>
                   </c:if>
                 </td> 
                 <td width="20%" style="float: right;">
@@ -180,6 +205,7 @@ function tagToLink(str){
               </form>
             </table>
             </c:forEach>
+            <c:if test="${sessionScope.email!=null }"><%--로그인시에만 보여준다 --%>
             <img class="u-image u-image-circle u-image-2" data-image-width="1280" data-image-height="781" src="../images/style/64572.png" style="width: 46px; height: 46px; margin: 25px auto 0 3px;">
             <div class="u-form u-form-1" style="height: 44px;  margin: -45px -11px 0 91px;">
               <form method=post action="../stylereply/reply_insert.do">
@@ -188,13 +214,14 @@ function tagToLink(str){
                 <input type=hidden name=name value="hong">
                 <div class="u-form-group u-form-message u-label-top">
                   <label for="name-558c" class="u-form-control-hidden u-label"></label>
-                  <textarea placeholder="댓글 입력.." id="message-6797" name="content" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-input-1" required="required" rows="1" style="font-size: 0.875rem; width: 496px; margin-left: -23px; border: 1px solid lightgrey"></textarea>
+                  <textarea placeholder="댓글 입력.." id="rp" name="content" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-input-1" required="required" rows="1" style="font-size: 0.875rem; width: 496px; margin-left: -23px; border: 1px solid lightgrey"></textarea>
                 </div>
                 <div class="u-form-group u-form-submit">
                   <input type="submit" class="u-black u-border-none u-btn u-btn-submit u-button-style u-btn-1" value="댓글" style="background-image: none; font-size: 0.875rem; padding: 8px 10px; margin-top: -53px; margin-left: 488px;">
                 </div>
               </form>
             </div>
+            </c:if>
           </div>
         </div>
       </div>

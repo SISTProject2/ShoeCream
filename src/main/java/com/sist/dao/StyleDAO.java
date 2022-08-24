@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.sist.vo.StyleLikesVO;
 import com.sist.vo.StyleVO;
 
 public class StyleDAO {
@@ -114,5 +115,49 @@ public class StyleDAO {
 		}
 		return list;
 		
+	}
+	
+	public static void styleLikesInsert(StyleLikesVO vo) {
+		SqlSession session=null;
+		try {
+			session=ssf.openSession(true);
+			session.insert("styleLikesInsert",vo);
+			session.update("likesIncrement",vo);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if(session!=null)
+				session.close();
+		}
+	}
+	
+	public static int styleLikesCount(StyleLikesVO vo) {
+		int count=0;
+		SqlSession session=null;
+		try {
+			session=ssf.openSession();
+			count=session.selectOne("styleLikesCount",vo);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if(session!=null)
+				session.close();
+		}
+		
+		return count;
+	}
+	
+	public static void styleLikesDelete(StyleLikesVO vo) {
+		SqlSession session=null;
+		try {
+			session=ssf.openSession(true);
+			session.delete("styleLikesDelete",vo);
+			session.update("likesDecrement",vo);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if(session!=null)
+				session.close();
+		}
 	}
 }

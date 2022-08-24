@@ -49,4 +49,34 @@ USER_ID  NOT NULL NUMBER
      ORDER BY style_id DESC
    </select>
   
+  <!-- 좋아요 -->
+  <insert id="styleLikesInsert" parameterType="com.sist.vo.StyleLikesVO">
+    <selectKey keyProperty="sl_id" resultType="int" order="BEFORE">
+      SELECT NVL(MAX(sl_id)+1,1) as sl_id FROM style_likes_2
+    </selectKey>
+    INSERT INTO style_likes_2 VALUES(#{sl_id},#{user_id},#{sid})
+  </insert>
+  <update id="likesIncrement" parameterType="StyleVO">
+    UPDATE style_2 SET
+    bookmark=bookmark+1
+    WHERE style_id=#{sid}
+  </update>
+  <update id="likesDecrement" parameterType="StyleVO">
+    UPDATE style_2 SET
+    bookmark=bookmark-1
+    WHERE style_id=#{sid}
+  </update>
+  
+  <!-- 좋아요 여부 확인 -->
+  <select id="styleLikesCount" resultType="int" parameterType="com.sist.vo.StyleLikesVO">
+    SELECT COUNT(*) FROM style_likes_2
+    WHERE user_id=#{user_id} AND style_id=#{sid}
+  </select>
+  
+  <!-- 좋아요 취소 -->
+  <delete id="styleLikesDelete" parameterType="com.sist.vo.StyleLikesVO">
+    DELETE FROM style_likes_2
+    WHERE user_id=#{user_id} AND style_id=#{sid}
+  </delete>
+  
 </mapper>

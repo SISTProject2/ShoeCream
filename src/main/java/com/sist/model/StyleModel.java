@@ -14,6 +14,7 @@ import com.sist.controller.Controller;
 import com.sist.controller.RequestMapping;
 import com.sist.dao.StyleDAO;
 import com.sist.dao.StyleReplyDAO;
+import com.sist.vo.StyleLikesVO;
 import com.sist.vo.StyleReplyVO;
 import com.sist.vo.StyleVO;
 
@@ -114,6 +115,21 @@ public class StyleModel {
 		
 		List<StyleReplyVO> list=StyleReplyDAO.styleReplyListData(svo);
 		
+		//------------------ likes --------------------------
+		
+		StyleLikesVO lvo=new StyleLikesVO();
+		lvo.setSid(Integer.parseInt(style_id));
+		if(session.getAttribute("user_id")!=null) {
+			int user_id=(int)session.getAttribute("user_id");
+			lvo.setUser_id(user_id);
+			System.out.println("user_id="+user_id);
+		}
+		int lcount=StyleDAO.styleLikesCount(lvo);
+		
+		request.setAttribute("lcount", lcount);
+		
+		//---------------- tag ------------------------------
+		
 		String content = vo.getContent();
 		String[] tag = content.split("#");
 	    
@@ -143,5 +159,35 @@ public class StyleModel {
 		request.setAttribute("main_jsp", "../style/tag.jsp");
 		
 		return "../main/main.jsp";
+	}
+	
+	@RequestMapping("style/likes.do")
+	public String style_likes(HttpServletRequest request, HttpServletResponse response) {
+		String sid=request.getParameter("style_id");
+		System.out.println("sid="+sid);
+		HttpSession session=request.getSession();
+		int user_id=(int) session.getAttribute("user_id");
+		System.out.println("user_id="+user_id);
+		StyleLikesVO vo=new StyleLikesVO();
+		vo.setSid(Integer.parseInt(sid));
+		vo.setUser_id(user_id);
+//		
+		StyleDAO.styleLikesInsert(vo);
+		
+		return "redirect:../style/detail.do?style_id="+sid;
+	}
+	
+	@RequestMapping("style/likes_cancel.do")
+	public String food_jjim_cancel(HttpServletRequest request, HttpServletResponse response) {
+		String sid=request.getParameter("style_id");
+		HttpSession session=request.getSession();
+		int user_id=(int) session.getAttribute("user_id");
+		StyleLikesVO vo=new StyleLikesVO();
+		vo.setSid(Integer.parseInt(sid));
+		vo.setUser_id(user_id);
+		
+		StyleDAO.styleLikesDelete(vo);
+		
+		return "redirect:../style/detail.do?style_id="+sid;
 	}
 }
