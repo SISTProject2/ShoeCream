@@ -61,6 +61,7 @@
                     <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.jsp">주소록</a></h3>
                     <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_account.jsp">판매 정산 계좌</a></h3>
                     <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_style.jsp">스타일</a></h3>
+                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_style.jsp">스타일</a></h3>
                   </div>
                 </div>
               </div>
@@ -77,27 +78,32 @@
                 <div class="u-align-left u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-2 u-container-style u-group u-opacity u-opacity-20 u-shape-rectangle u-white u-group-3">
                   <div class="u-container-layout u-container-layout-5">
                     <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-4">
-                      <div class="u-container-layout u-container-layout-6">
-                        <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                        <h3 class="u-text u-text-default u-text-13">
-                          <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                          </span>
-                        </h3>
-                        <h3 class="u-text u-text-default u-text-14">
-                          <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                          </span>
-                        </h3>
-                        <h3 class="u-text u-text-default u-text-15">
-                          <span style="font-size: 20px;">999,999,999</span>
-                        </h3>
-                        <h3 class="u-text u-text-default u-text-16">
-                          <span style="font-size: 20px; font-weight: normal;">
-                            <span class="u-text-grey-40">name_kor</span>
-                            <span class="u-text-grey-40"></span>
-                            <span style="font-weight: 700;"></span>
-                          </span>
-                        </h3>
-                      </div>
+                      
+                      <c:forEach var="vo" items="${fLlist }">
+	                      <div class="u-container-layout u-container-layout-6">
+	                        <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
+	                        <h3 class="u-text u-text-default u-text-13">
+	                          <span style="font-size: 20px; font-weight: bold; text-decoration: underline">${vo.brand }<span style="font-weight: 700;"></span>
+	                          </span>
+	                        </h3>
+	                        <h3 class="u-text u-text-default u-text-14">
+	                          <span style="font-size: 20px; font-weight: normal;">${vo.name_eng }<span style="font-weight: 700;"></span>
+	                          </span>
+	                        </h3>
+	                        <h3 class="u-text u-text-default u-text-15">
+	                          <span style="font-size: 20px;">${vo.im_buy }</span>
+	                        </h3>
+	                        <h3 class="u-text u-text-default u-text-16">
+	                          <span style="font-size: 20px; font-weight: normal;">
+	                            <span style="font-size: 20px; font-weight: normal;">${vo.name_kor }<span style="font-weight: 700;"></span>
+	                          </span>
+	                            <span class="u-text-grey-40"></span>
+	                            <span style="font-weight: 700;"></span>
+	                          </span>
+	                        </h3>
+	                      </div>
+                      </c:forEach>
+                      
                     </div>
                     <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-white u-group-5">
                       <div class="u-container-layout u-container-layout-7">
