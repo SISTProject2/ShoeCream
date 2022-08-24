@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>     
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,9 +82,21 @@ function tagToLink(str){
 </head>
 <body class="u-body u-xl-mode" data-lang="en">
     <section class="u-clearfix u-section-1" id="sec-3134">
-      <div class="u-clearfix u-sheet u-sheet-1"><span class="u-file-icon u-icon u-text-palette-5-base u-white u-icon-1"><img src="../images/style/64572.png" alt=""></span>
-        <h4 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-1">namename</h4>
-        <h6 class="u-custom-font u-font-open-sans u-text u-text-default u-text-grey-25 u-text-2 ti" id="time" value="${vo.style_id }"><script>timeForToday("${vo.dbday}")</script></h6>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <table style=" width: 100%; margin-top: 33px;">
+          <tr>
+            <td style="width:22%;"></td>
+            <td style="width:4%;"><span><img src="../images/style/64572.png" style="width:35px; height:35px; margin-top: 6px;" alt=""></span></td>
+            <td style=" width:7%"><span style="font-weight: 400;font-size: 1.5rem;font-family: Roboto,sans-serif;">${fn:substringBefore(vo.email ,'@')}</span></td>
+            <td style=""><h6 class="u-text-grey-25 ti" id="time" value="${vo.style_id }" style="font-size: 0.875rem; margin-top: 28px;"><script>timeForToday("${vo.dbday}")</script></h6></td>
+            <td style="width:30%; position: relative; z-index: 1; padding-top: 8px; ">
+            <c:if test="${sessionScope.user_id==vo.u_id}"><%-- 본인이면 --%>
+              <a href="../style/update.do?id=${vo.style_id }" style="color: #8C8C8C;">수정</a>
+       		  <a href="" id="del" style="color: #8C8C8C; margin-left: 10px;" data-id="${vo.style_id }">삭제</a>
+       		</td>
+       		</c:if>
+          </tr>
+        </table>
       </div>
     </section>
     <section class="u-clearfix u-section-2" id="sec-6e73" style="margin-top: -120px;">

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
 <head>
@@ -145,7 +146,7 @@ header {
                       <div class="u-container-layout u-similar-container u-container-layout-7">
                       <a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img class="u-expanded-width u-image u-image-round u-radius-27 u-image-1" alt="" data-image-width="571" data-image-height="713" src="${vo.img }" alt=""></a>
                       <span class="u-file-icon u-icon u-text-palette-5-base u-white u-icon-1" style="margin: 12px auto 0 6px;"><img src="../images/style/64572.png" alt=""></span>
-                      <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-6">shoe_style</h6>
+                      <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-6">${fn:substringBefore(vo.email,'@')}</h6>
                         <input type="hidden" name=style_id value="${vo.style_id }">
                         <div style="clear: both;"></div>
                         <p class="u-align-left u-small-text u-text u-text-variant u-text-7" style="margin: 15px 16px 0;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }">${vo.content }</a><br></p>

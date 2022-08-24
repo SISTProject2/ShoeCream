@@ -12,7 +12,7 @@ import java.util.Date;
  */
 
 public class StyleVO {
-	private int style_id, bookmark, user_id, rcount;
+	private int style_id, bookmark, u_id, rcount;
 	private String img, content, dbday, email;
 	private Date rgdate;
 	
@@ -28,11 +28,11 @@ public class StyleVO {
 	public void setBookmark(int bookmark) {
 		this.bookmark = bookmark;
 	}
-	public int getUser_id() {
-		return user_id;
+	public int getU_id() {
+		return u_id;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setU_id(int u_id) {
+		this.u_id = u_id;
 	}
 	public String getImg() {
 		return img;

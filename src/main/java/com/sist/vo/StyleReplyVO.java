@@ -6,6 +6,8 @@ public class StyleReplyVO {
 	private int sreply_id, sid, group_id, group_step, group_tab, root, dept;
 	private String name, content, dbday;
 	private Date regdate;
+	private String img, scontent, email;
+	private int rcount, user_id;
 	
 	public int getSreply_id() {
 		return sreply_id;
@@ -73,5 +75,36 @@ public class StyleReplyVO {
 	public void setDept(int dept) {
 		this.dept = dept;
 	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getScontent() {
+		return scontent;
+	}
+	public void setScontent(String scontent) {
+		this.scontent = scontent;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getRcount() {
+		return rcount;
+	}
+	public void setRcount(int rcount) {
+		this.rcount = rcount;
+	}
+	public int getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+	
 	
 }

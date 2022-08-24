@@ -11,12 +11,12 @@ USER_ID  NOT NULL NUMBER
  -->
   <!-- 목록 출력 -->
   <select id="styleListData" resultType="StyleVO" parameterType="hashmap">
-    SELECT style_id, img, content, TO_CHAR(rgdate, 'YYYY-MM-DD HH24:MI:SS') as dbday, bookmark, (SELECT email FROM user_2 WHERE user_id='1') as email, rcount, num
-    FROM (SELECT style_id, img, content, rgdate, bookmark, user_id, rcount, rownum as num
-    FROM (SELECT /*+ INDEX_ASC(style_2 pk_style_2)*/ style_id, img, content, rgdate, bookmark, user_id, rcount
+    SELECT style_id, img, content, TO_CHAR(rgdate, 'YYYY-MM-DD HH24:MI:SS') as dbday, bookmark, (SELECT email FROM user_2 WHERE user_id = u_id ) as email, rcount, num
+    FROM (SELECT style_id, img, content, rgdate, bookmark, u_id, rcount, rownum as num
+    FROM (SELECT /*+ INDEX_ASC(style_2 pk_style_2)*/ style_id, img, content, rgdate, bookmark, u_id, rcount
     FROM style_2)) WHERE num BETWEEN #{start} AND #{end} ORDER BY style_id desc
   </select>
-
+  
   <!-- 페이징 -->
   <select id="styleTotalPage" resultType="int">
     SELECT CEIL(COUNT(*)/8.0) FROM style_2
@@ -29,21 +29,14 @@ USER_ID  NOT NULL NUMBER
  
   <!-- 삽입 --> 
   <insert id="styleInsert" parameterType="StyleVO">
-    INSERT INTO style_2(style_id, content, img, user_id) 
+    INSERT INTO style_2(style_id, content, img, u_id) 
     VALUES ((SELECT NVL(MAX(style_id)+1,1) FROM style_2),
-    #{content}, #{img}, (SELECT NVL(MAX(user_id)+1,1) FROM style_2))
+    #{content}, #{img}, (SELECT user_id FROM user_2 WHERE email=#{email}))
   </insert>
-  
-  <!-- 조회수 올리기 -->
-<!--   <update id="hitIncrement" parameterType="int">
-    UPDATE project_freeboard SET
-    hit=hit+1
-    WHERE no=#{no}
-  </update>  --> 
   
   <!-- 상세보기 -->
   <select id="styleDetailData" resultType="StyleVO" parameterType="int">
-    SELECT style_id, img, content, TO_CHAR(rgdate, 'YYYY-MM-DD HH24:MI:SS') as dbday, bookmark, user_id, rcount
+    SELECT style_id, img, content, TO_CHAR(rgdate, 'YYYY-MM-DD HH24:MI:SS') as dbday, bookmark, u_id, (SELECT email FROM user_2 WHERE user_id=u_id) as email, rcount
     FROM style_2
     WHERE style_id=#{style_id}
   </select>

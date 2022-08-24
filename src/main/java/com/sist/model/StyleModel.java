@@ -1,5 +1,6 @@
 package com.sist.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -66,15 +67,16 @@ public class StyleModel {
 			request.setCharacterEncoding("UTF-8");
 		} catch(Exception ex) {}
 		
+		HttpSession session=request.getSession();
+		String email=(String)session.getAttribute("email");
 		String content=request.getParameter("content");
 		String img=request.getParameter("img");
 		 
 		StyleVO vo=new StyleVO();
 		vo.setContent(content);
 		vo.setImg("../style/image/"+img);
+		vo.setEmail(email);
 		
-		System.out.println("img="+img);
-		System.out.println("content="+content);
 
 		StyleDAO.styleInsert(vo);
 		
@@ -99,9 +101,17 @@ public class StyleModel {
 		StyleVO vo=StyleDAO.styleDetailData(Integer.parseInt(style_id));
 
 		request.setAttribute("vo", vo);
-
+		
+		//------------------- reply ------------------
+		
 		StyleReplyVO svo=new StyleReplyVO();
 		svo.setSid(vo.getStyle_id());
+		
+		HttpSession session=request.getSession();
+		String email=(String)session.getAttribute("email");
+		System.out.println("email="+email);
+		svo.setEmail(email);
+		
 		List<StyleReplyVO> list=StyleReplyDAO.styleReplyListData(svo);
 		
 		String content = vo.getContent();
