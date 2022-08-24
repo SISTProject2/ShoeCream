@@ -13,22 +13,38 @@ USER_ID       NOT NULL NUMBER          시퀀스넘버
  */
 public class CsVO {
 	
-	private int cs_id, user_id;
-	private String s_type, title, content, img;
+	private int cs_id;
+	private int user_id;
+	private String s_type, title, content, img,reply;
+
+
 	private Date rgdate;
-	
+
+	public String getReply() {
+		return reply;
+	}
+
+	public void setReply(String reply) {
+		this.reply = reply;
+	}
+
+
+
 	public int getCs_id() {
 		return cs_id;
 	}
 	public void setCs_id(int cs_id) {
 		this.cs_id = cs_id;
 	}
+
 	public int getUser_id() {
 		return user_id;
 	}
+
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
+
 	public String getS_type() {
 		return s_type;
 	}
@@ -59,7 +75,17 @@ public class CsVO {
 	public void setRgdate(Date rgdate) {
 		this.rgdate = rgdate;
 	}
-	
 
-	
+	@Override
+	public String toString() {
+		return "CsVO{" +
+				"cs_id=" + cs_id +
+				", s_type='" + s_type + '\'' +
+				", title='" + title + '\'' +
+				", content='" + content + '\'' +
+				", img='" + img + '\'' +
+				", reply='" + reply + '\'' +
+				", rgdate=" + rgdate +
+				'}';
+	}
 }

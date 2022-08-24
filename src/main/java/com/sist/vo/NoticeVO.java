@@ -1,5 +1,6 @@
 package com.sist.vo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /*
@@ -45,5 +46,22 @@ public class NoticeVO {
 	public void setRgdate(Date rgdate) {
 		this.rgdate = rgdate;
 	}
-	
+	public String formatRgdate() {
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		return simpleDateFormat.format(this.rgdate);
+
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "NoticeVO{" +
+				"notice_id=" + notice_id +
+				", admin_id=" + admin_id +
+				", title='" + title + '\'' +
+				", content='" + content + '\'' +
+				", rgdate=" + rgdate +
+				'}';
+	}
 }
