@@ -10,8 +10,8 @@
 <body>
 	<footer>
 		<div>
-			<button href="../cs/cs_notice.do">공지사항</button>
-			<button id='footer_right' href="../cs/cs_QnA.do">1:1 문의</button>
+			<button type="button" onclick="location.href='../cs/cs_notice.do'">공지사항</button>
+			<button type="button" id='footer_right' onclick="location.href='../cs/cs_QnA.do'">1:1 문의</button>
 		</div>
 		<div>
 			<hr>
