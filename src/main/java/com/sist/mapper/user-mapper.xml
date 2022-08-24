@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.user-mapper">
+
+   <select id="userEmailCheck" resultType="int" parameterType="string">
+     SELECT COUNT(*) FROM user_2
+     WHERE email=#{email}
+   </select>
+   <select id="userTelCheck" resultType="int" parameterType="string">
+     SELECT COUNT(*) FROM user_2
+     WHERE tel=#{tel}
+   </select>
+   
+   <insert id="userInsert" parameterType="UserVO">
+     INSERT INTO user_2(user_id, email, pwd, name, tel)
+     VALUES(
+     #{user_id},
+     #{email},
+     #{pwd},
+     #{name},
+     #{tel}
+     )
+    </insert>
+    
+    <!-- user_id max값 가져오기  -->
+    <select id="getMaxUserId" resultType="int" parameterType="int">
+    select max(user_id) from user_2
+    </select>
+    
+    <!-- 로그인  -->
+    <!-- id 존재여부 확인 (0=X,1=O) -->
+    <select id="userEmailCount" resultType="int" parameterType="string">
+     SELECT COUNT(*) 
+     FROM user_2
+     WHERE email=#{email}
+    </select>
+    
+     <!-- 비밀번호 읽기 -->
+    <select id="userInfoData" resultType="UserVO" parameterType="string">
+      SELECT pwd,email,name
+      FROM user_2
+      WHERE email=#{email}
+    </select>
+    
+    <!-- 회원 정보 읽기 -->
+    <select id="userDetailData" resultType="UserVO" parameterType="string">
+      SELECT * FROM user_2
+      WHERE email=#{email}
+    </select>
+    
+    <!--  session처리  -->
+    <update id="userUpdate" parameterType="UserVO">
+      UPDATE user_2 SET
+      name=#{name},gender=#{gender},
+      zipcode=#{zipcode},adress=#{adress},
+      s_size=#{s_size},img=#{img},
+      bankname=#{bankname},accno=#{accno},accholder=#{accholder}
+      WHERE email=#{email}
+    </update>
+    
+    <delete id="userDelete" parameterType="string">
+      DELETE FROM user_2
+      WHERE email=#{email}
+    </delete>
+    
+</mapper>
+    
+    
