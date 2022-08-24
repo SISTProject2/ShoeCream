@@ -381,7 +381,7 @@ public class AdminModel {
         userVO.setName(request.getParameter("name"));
         userVO.setZipcode(request.getParameter("zipcode"));
         userVO.setEmail(request.getParameter("email"));
-        userVO.setBirthday(Date.valueOf(request.getParameter("birthday")));
+        userVO.setBirthday(request.getParameter("birthday"));
         userVO.setS_size(request.getParameter("size"));
         userVO.setPwd("0");
         System.out.println("userVO = " + userVO);
@@ -459,7 +459,7 @@ public class AdminModel {
             userVO.setName(request.getParameter("name"));
             userVO.setZipcode(request.getParameter("zipcode"));
             userVO.setEmail(request.getParameter("email"));
-            userVO.setBirthday(Date.valueOf(request.getParameter("birthday")));
+            userVO.setBirthday(request.getParameter("birthday"));
             userVO.setS_size(request.getParameter("size"));
             userVO.setUser_id(Integer.parseInt(request.getParameter("userId")));
             System.out.println("userVO = " + userVO);
