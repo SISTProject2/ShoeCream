@@ -20,7 +20,11 @@ public class StyleReplyModel {
 		
 		String sid=request.getParameter("sid");	
 		String content=request.getParameter("content");
-		String name=request.getParameter("name");
+		
+		HttpSession session=request.getSession();
+		String email=(String)session.getAttribute("email");
+		int index=email.indexOf("@");
+		String name=email.substring(0,index);
 		
 		StyleReplyVO vo=new StyleReplyVO();
 		vo.setSid(Integer.parseInt(sid));

@@ -14,13 +14,14 @@
   <selectKey keyProperty="sreply_id" resultType="int" order="BEFORE">
     SELECT NVL(MAX(sreply_id)+1,1) as sreply_id FROM style_reply_2
   </selectKey>
-  INSERT INTO style_reply_2(sreply_id, sid, name, content, regdate, group_id) VALUES(
+  INSERT INTO style_reply_2(sreply_id, sid, name, content, regdate, group_id, user_id) VALUES(
     #{sreply_id},
     #{sid},
     #{name},
     #{content},
     SYSDATE,
-    (SELECT NVL(MAX(group_id)+1,1) FROM style_reply_2)
+    (SELECT NVL(MAX(group_id)+1,1) FROM style_reply_2),
+    (SELECT user_id FROM user_2 WHERE email=#{email})
   )
 </insert>
 
@@ -32,9 +33,9 @@
 
 <!-- 댓글 목록 -->
 <select id="styleReplyListData" resultType="StyleReplyVO">
-  SELECT sreply_id, sid, name, content, TO_CHAR(regdate,'YYYY-MM-DD') as dbday, group_id, group_tab, num
-  FROM (SELECT sreply_id, sid, name, content, regdate,  group_id, group_tab, rownum as num
-  FROM (SELECT /*+INDEX_ASC(style_reply_2 sr_sreply_id_pk)*/ sreply_id, sid, name, content, regdate,  group_id, group_tab
+  SELECT sreply_id, sid, name, content, TO_CHAR(regdate,'YYYY-MM-DD') as dbday, group_id, group_tab, user_id, num
+  FROM (SELECT sreply_id, sid, name, content, regdate,  group_id, group_tab, user_id, rownum as num
+  FROM (SELECT /*+INDEX_ASC(style_reply_2 sr_sreply_id_pk)*/ sreply_id, sid, name, content, regdate,  group_id, group_tab, user_id
   FROM style_reply_2 ORDER BY group_id ASC, CASE WHEN group_step=0 THEN group_step END ASC, CASE WHEN group_step!=0 THEN group_step END DESC))
   WHERE sid=#{sid}
 </select>

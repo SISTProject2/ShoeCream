@@ -87,7 +87,7 @@
                                 </c:if>
                                 <h3 class="u-text u-text-default u-text-13">${nickname}</h3>
                                 <h3 class="u-text u-text-default u-text-14">
-                                    <span style="font-size: 20px; font-weight: normal;">${userProfile.email}</span>
+                                    <span style="font-size: 20px; font-weight: normal;">${vo.email}</span>
                                 </h3>
 
                                 <form id="imageForm" method="post" action="../mypage/update_profileImage.do"   enctype="multipart/form-data">
