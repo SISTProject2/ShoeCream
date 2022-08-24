@@ -206,4 +206,52 @@ public class StyleDAO {
 				session.close();
 		}
 	}
+	
+	public static List<StyleVO> mypageStyle(Map map){
+		SqlSession session=null;
+		List<StyleVO> list=null;
+		try {
+			session=ssf.openSession();
+			list=session.selectList("mypageStyle",map);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if(session!=null)
+				session.close();
+		}
+		return list;
+	}
+	
+	public static int mypageStyleTotalPage(Map map) {
+		int total=0;
+		SqlSession session=null;
+		try {
+			session=ssf.openSession();
+			total=session.selectOne("mypageStyleTotalPage", map);
+		} catch(Exception ex) {
+			System.out.println("mypageStyleTotalPage error : ");
+			ex.printStackTrace();
+		} finally {
+			if (session!=null)
+				session.close();
+		}
+		
+		return total;
+	}
+	
+	 
+	 public static List<StyleVO> mypageStyleLikes(int user_id){
+		 SqlSession session=null;
+		 List<StyleVO> list=null;
+		 try {
+			 session=ssf.openSession();
+			 list=session.selectList("mypageStyleLikes",user_id);
+		 } catch(Exception ex) {
+			 ex.printStackTrace();
+		 } finally {
+			 if(session!=null)
+				 session.close();
+		 }
+		 return list;
+	 }
 }

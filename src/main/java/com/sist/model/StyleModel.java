@@ -231,4 +231,56 @@ public class StyleModel {
 		
 		return "../style/delete.jsp";
 	}
+	
+	@RequestMapping("mypage/mypage_style.do")
+    public String mypage_style(HttpServletRequest request,HttpServletResponse response) {
+		String page=request.getParameter("page");
+		if (page==null)
+			page="1";
+		int curpage=Integer.parseInt(page);
+		
+		Map map=new HashMap();
+		HttpSession session=request.getSession();
+		int user_id=(int) session.getAttribute("user_id");
+		System.out.println("user_id="+user_id);
+		map.put("user_id", user_id);
+		
+		int totalpage=StyleDAO.mypageStyleTotalPage(map);
+		int rowSize=8;
+		int start=(curpage*rowSize)-(rowSize-1);
+		int end=curpage*rowSize;
+		map.put("start", start);
+		map.put("end", end);
+		
+		List<StyleVO> list=StyleDAO.mypageStyle(map);
+		
+		final int BLOCK = 5;
+		int startPage = ((curpage-1)/BLOCK*BLOCK) + 1;
+		int endPage = ((curpage-1)/BLOCK*BLOCK) + BLOCK;
+		if(endPage>totalpage) {
+			endPage = totalpage;
+		}
+		request.setAttribute("curpage", curpage);
+		request.setAttribute("totalpage", totalpage);
+		request.setAttribute("startPage", startPage);
+		request.setAttribute("endPage", endPage);
+		
+		
+		request.setAttribute("list", list);
+		System.out.println(list.get(0).getImg());
+		System.out.println(list.get(0).getContent());
+		
+//		String name="hong";
+//    	List<StyleReplyVO> list2=StyleReplyDAO.styleReplyMypageData(name);
+//    	request.setAttribute("list2", list2);
+    	
+    	///////////////////////////////////////////////////////////////////
+		
+		List<StyleVO> list3=StyleDAO.mypageStyleLikes(user_id);
+		request.setAttribute("list3", list3);
+		
+    	request.setAttribute("main_jsp", "../mypage/my_style.jsp");
+    	
+    	return "../main/main.jsp";
+    }
 }

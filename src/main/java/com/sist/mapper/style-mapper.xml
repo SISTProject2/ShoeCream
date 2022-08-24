@@ -92,4 +92,30 @@ USER_ID  NOT NULL NUMBER
     WHERE style_id=#{style_id}
   </delete>
   
+  <!-- 마이페이지 작성 글 -->
+  <select id="mypageStyle" resultType="StyleVO" parameterType="hashmap">
+  	SELECT style_id, img, content, bookmark, rcount, num
+    FROM (SELECT style_id, img, content, bookmark, rcount, rownum as num
+    FROM (SELECT /*+ INDEX_ASC(style_2 pk_style_2)*/ style_id, img, content, bookmark, rcount
+    FROM style_2 WHERE u_id=#{user_id} ORDER BY rgdate DESC)) WHERE num BETWEEN #{start} AND #{end}
+  </select>
+  
+  <!-- 마이페이지 페이징 -->
+  <select id="mypageStyleTotalPage" resultType="int" parameterType="int">
+    SELECT CEIL(COUNT(*)/8.0) FROM style_2
+    WHERE u_id=#{user_id}
+  </select>
+  
+  <!-- 마이페이지 좋아요 -->
+  <select id="mypageStyleLikes" resultType="StyleVO" parameterType="int">
+  	SELECT style_id,
+      (SELECT img FROM style_2 WHERE style_id=style_likes_2.style_id) as img,
+      (SELECT content FROM style_2 WHERE style_id=style_likes_2.style_id) as content,
+      (SELECT bookmark FROM style_2 WHERE style_id=style_likes_2.style_id) as bookmark,
+      (SELECT rcount FROM style_2 WHERE style_id=style_likes_2.style_id) as rcount,
+      (SELECT email FROM user_2 WHERE ((SELECT u_id FROM style_2 WHERE style_id=style_likes_2.style_id))=user_id) as email
+    FROM style_likes_2
+    WHERE user_id=#{user_id}
+  </select>
+  
 </mapper>
