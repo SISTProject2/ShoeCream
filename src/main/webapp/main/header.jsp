@@ -39,9 +39,9 @@
 			</c:if>
 			<c:if test="${sessionScope.email!=null }">
 				<li><a id='LOGOUT' href="../account/logout.do">LOGOUT</a></li>
-				<li><a id='MYPAGE' href="">MYPAGE</a></li>
+				<li><a id='MYPAGE' href="../mypage/my_mypage.do">MYPAGE</a></li>
 			</c:if>
-			<li><a id='NOTICE' href="../notice/notice.do">NOTICE</a></li>
+			<li><a id='NOTICE' href="../cs/cs_notice.do">NOTICE</a></li>
 		</ul>
 
 	</header>

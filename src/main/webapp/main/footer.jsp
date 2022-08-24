@@ -10,8 +10,8 @@
 <body>
 	<footer>
 		<div>
-			<button href="../notice/notice.do">공지사항</button>
-			<button id='footer_right' href="../cs/cs.do">1:1 문의</button>
+			<button href="../cs/cs_notice.do">공지사항</button>
+			<button id='footer_right' href="../cs/cs_QnA.do">1:1 문의</button>
 		</div>
 		<div>
 			<hr>
