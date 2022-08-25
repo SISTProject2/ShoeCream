@@ -243,12 +243,12 @@
                                       class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""
                                       maxlength="2000" placeholder="내용 입력"></textarea>
                         </div>
-                        <div class="u-align-center u-form-group">
+                        <div class="u-align-center u-form-group" style="margin-left: -50px; margin-top: 90px;">
                             <a onclick="$('#form')[0].reset();   $('#preview').attr('src','images/f8343086770128586d092cbd3eb69339ae7a6fbae365335cf23f48993ac7fed6e761c0bb421b6562cb65abedd50b6331a005d02183ab3925e18bb8_1280.png');
                           $('#img').val('');" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-button-style u-hover-palette-1-base u-none u-btn-4">취소</a>
                             <input type="submit"
                                    class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base  u-button-style u-hover-palette-1-base u-none u-btn-5"
-                                   value="문의">
+                                   value="문의" style="display: block; margin-left: 498px; width: 94px; height: 46.3px;">
 
                         </div>
 
