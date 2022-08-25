@@ -112,7 +112,7 @@ public class CsModel {
 			} else {
 				cs.setImg("");
 			}
-			cs.setTitle (multi.getParameter("content"));
+			cs.setTitle (multi.getParameter("title"));
 			cs.setS_type(multi.getParameter("s_type"));
 			cs.setContent(multi.getParameter("content"));
 			cs.setUser_id(userVO.getUser_id());
