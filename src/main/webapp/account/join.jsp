@@ -168,9 +168,9 @@
 						id="check_1" class="normal"> <label for="check_1">서비스
 						이용약관에 동의합니다. (필수)</label><br> <input type="checkbox" id="check_2"
 						class="normal"> <label for="check_2">개인정보 수집 및 이용에
-						동의합니다. (필수)</label><br> <input type="checkbox" id="check_3"
+						동의합니다. (필수)</label><br> <!-- input type="checkbox" id="check_3"
 						class="normal"> <label for="check_3">마케팅 수신 동의.
-						(선택)</label><br>
+						(선택)</label><br -->
 
 				</div>
 				<div>
