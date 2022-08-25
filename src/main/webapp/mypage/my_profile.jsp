@@ -46,7 +46,7 @@
     </div>
     <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
-            <div class="u-layout-row">
+            <div class="u-layout-row" style=" margin-top: 90px;">
                 <div class="u-align-left u-container-style u-layout-cell u-size-12 u-layout-cell-1">
                     <div class="u-container-layout u-valign-top u-container-layout-1">
                         <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
@@ -189,22 +189,6 @@
 </script>
 
 
-<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-a9f8">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the Text Element.</p>
-    </div>
-</footer>
-<section class="u-backlink u-clearfix u-grey-80">
-    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-    </a>
-    <p class="u-text">
-        <span>created with</span>
-    </p>
-    <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
-    </a>.
-</section>
 <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-dialog-section-4"
          id="sec-53ea">
     <div class="u-align-left u-container-style u-dialog u-radius-40 u-shape-round u-white u-dialog-1">
@@ -548,6 +532,21 @@
         </button>
     </div>
 </section>
+
+    <jsp:include page="../main/header.jsp" />
+	<jsp:include page="../main/footer.jsp" />
+
+ <style type="text/css">
+@charset "UTF-8";
+
+.search {
+        display: none;
+}
+.search input {
+        display: none;
+}
+</style> 
+
 <style> .u-dialog-section-7 {
     min-height: 500px;
 }
