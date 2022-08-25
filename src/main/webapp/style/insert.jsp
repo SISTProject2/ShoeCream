@@ -121,10 +121,10 @@
             <h2 class="u-align-center u-text u-text-2" style="font-family: SBAggroL; font-size: 3rem;font-weight: 300;text-transform: none;margin: 0 66px; text-decoration: none;">Style</h2>
             <div class="u-border-1 u-border-grey-75 u-border-no-bottom u-container-style u-group u-white u-group-2" style="width: 650px; min-height: 340px; background-image: none; height: auto;margin: 22px auto 0; ">
               <div class="u-container-layout u-valign-middle u-container-layout-2" style="padding: 0; margin-top:0px; height:700px;">
-                <img class="u-image u-image-contain u-image-default u-image-1" style=" width: 490px;height: auto;margin: 0 auto;" src="" onerror="this.src='bas.png'"alt=""  id="uploadImage" data-image-width="400" data-image-height="265">
+                <img class="u-image u-image-contain u-image-default u-image-1" style=" width: 490px;height: auto;margin: 0 auto; margin-top: -118px;" src="" onerror="this.src='bas.png'"alt=""  id="uploadImage" data-image-width="400" data-image-height="265">
               </div>
             </div>
-           <form method=post action="../style/input_ok.jsp" class="frm" enctype="multipart/form-data" target="blankifr" id="frm2">
+           <form method=post action="../style/input_ok.jsp" class="frm" enctype="multipart/form-data" target="blankifr" id="frm2" style="margin-top: -120px;">
             <div class="u-border-1 u-border-grey-75 u-border-no-top u-container-style u-group u-group-3" style="width: 650px; min-height: 82px; height: auto; margin: 0 auto; ">
               <div class="custom-file-upload" style="margin-left: 175px;">
                 <div class="u-container-layout u-container-layout-3" style="padding-left: 30px; padding-right: 30px;">

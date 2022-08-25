@@ -107,6 +107,7 @@ public class CsModel {
 			int sizeLimit = 1024 * 1024 * 15;
 			MultipartRequest multi = new MultipartRequest(request, fileDir, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
 			String imagePath = multi.getFilesystemName("img");
+			System.out.println("imagePath="+imagePath);
 			if (imagePath != null && !imagePath.equals("")) {
 				cs.setImg(imagePath);
 			} else {
