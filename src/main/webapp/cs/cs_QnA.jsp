@@ -218,12 +218,12 @@
                             <img id="preview" class="u-image u-image-default u-image-1"
                                  src="images/f8343086770128586d092cbd3eb69339ae7a6fbae365335cf23f48993ac7fed6e761c0bb421b6562cb65abedd50b6331a005d02183ab3925e18bb8_1280.png"
                                  alt="" data-image-width="150" data-image-height="100">
-                            <label for="img" class="custom-btn u-border-2 u-border-hover-palette-1-base u-border-palette-1-base  u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-30 u-btn-1"
+                            <label for="img" class="custom-btn u-border-2 u-border-hover-palette-1-base u-border-palette-1-base  u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-30 u-btn-1" style="border-width: 2px;"
                                    > 수정</label>
                           <input type="file" name="img" id="img"
                                     style="display: none";>
                             <a id="fileClear"
-                               class="custom-btn u-border-2  u-border-hover-palette-1-base u-border-palette-1-base u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-30 u-btn-2">삭제</a>
+                               class="custom-btn u-border-2  u-border-hover-palette-1-base u-border-palette-1-base u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-30 u-btn-2" style="margin-top: -47px;">삭제</a>
                         </div>
                         <div class="u-form-group u-form-name u-form-partition-factor-2">
                             <label for="name-e29c" class="u-label">*문의유형</label>
