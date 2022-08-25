@@ -534,18 +534,13 @@
 </section>
 
     <jsp:include page="../main/header.jsp" />
+    <jsp:include page="../main/nav.jsp" />
 	<jsp:include page="../main/footer.jsp" />
-
- <style type="text/css">
-@charset "UTF-8";
-
-.search {
-        display: none;
+<style type="text/css">
+#nav{
+	margin-top: -1940px;
 }
-.search input {
-        display: none;
-}
-</style> 
+</style>	
 
 <style> .u-dialog-section-7 {
     min-height: 500px;

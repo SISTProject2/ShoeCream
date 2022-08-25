@@ -42,7 +42,7 @@
       </div>
       <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
-          <div class="u-layout-row" style=" margin-top: 90px;">
+          <div class="u-layout-row" style=" margin-top: 140px;">
             <div class="u-align-left u-container-style u-layout-cell u-size-12 u-layout-cell-1">
               <div class="u-container-layout u-valign-top u-container-layout-1">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
@@ -127,17 +127,12 @@
     
     
     <jsp:include page="../main/header.jsp" />
+    <jsp:include page="../main/nav.jsp" />
 	<jsp:include page="../main/footer.jsp" />
-
- <style type="text/css">
-@charset "UTF-8";
-
-.search {
-        display: none;
+<style type="text/css">
+#nav{
+	margin-top: -1940px;
 }
-.search input {
-        display: none;
-}
-</style> 
+</style>	
   
 </body></html>

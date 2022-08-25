@@ -261,15 +261,7 @@
     
     <jsp:include page="../main/header.jsp" />
 	<jsp:include page="../main/footer.jsp" />
- <style type="text/css">
-@charset "UTF-8";
-
-.search {
-        display: none;
-}
-.search input {
-        display: none;
-}
-</style>    
+<style type="text/css">
+</style>	  
   
 </body></html>
