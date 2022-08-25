@@ -113,13 +113,9 @@ public class NavModel {
 	@RequestMapping("shoes/shoes_detail_before.do")
 	public String nav_detail_before(HttpServletRequest request, HttpServletResponse response) {
 		
-		// 세션
-		HttpSession session=request.getSession();
-		int user_id=(int) session.getAttribute("user_id");
-		
 		String goods_id = request.getParameter("goods_id");
 		
-		Cookie cookie = new Cookie(user_id + "shoes" + goods_id, goods_id);
+		Cookie cookie = new Cookie("shoes" + goods_id, goods_id);
 		
 		cookie.setPath("/");
 		cookie.setMaxAge(60*60*24);	

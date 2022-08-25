@@ -104,7 +104,7 @@ public class UserDAO {
 			   if(count==0) {
 				   vo.setMsg("NOEMAIL");
 			   } else {
-				   vo=session.selectOne("userInfoData", email);
+				   vo=session.selectOne("userDetailData", email);
 				   if(pwd.equals(vo.getPwd())) { //로그인
 					   vo.setMsg("OK");
 				   }

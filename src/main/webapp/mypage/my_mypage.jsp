@@ -64,15 +64,22 @@
                 </div>
               </div>
             </div>
-            <div class="u-container-style u-layout-cell u-size-48 u-layout-cell-2">
+                 <div class="u-container-style u-layout-cell u-size-48 u-layout-cell-2">
               <div class="u-container-layout u-container-layout-3">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
-                    <div class="u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="100" data-image-height="100"></div>
-                    <h3 class="u-text u-text-default u-text-12">user_id<span style="font-size: 1.25rem;"></span>
+                    <c:if test="${img != '' && img ne null && !empty img }">
+                      <img class="u-image u-image-circle u-preserve-proportions u-image-1"src="../mypage/profile_image.do"
+                           data-image-width="100" data-image-height="100">
+                    </c:if>
+                    <c:if test="${img == '' && img eq null || empty img }">
+                      <div class="u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="100" data-image-height="100"></div>
+                    </c:if>
+
+                    <h3 class="u-text u-text-default u-text-12">${nickname}<span style="font-size: 1.25rem;"></span>
                     </h3>
                     <h3 class="u-text u-text-default u-text-13">
-                      <span style="font-size: 20px; font-weight: normal;">user_email</span>
+                      <span style="font-size: 20px; font-weight: normal;">${userProfile.email}</span>
                     </h3>
                     <a href="https://nicepage.review" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-2">프로필 수정</a>
                     <a href="https://nicepage.review" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-3">프로필 수정</a>

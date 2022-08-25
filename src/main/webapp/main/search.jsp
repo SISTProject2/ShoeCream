@@ -213,7 +213,7 @@ function abbreviateNumber(value) {
 
 				<!-- bookmark -->
 				
-				<p style="margin-left: 12px; margin-top:3px;">
+				<p>
             	<img src="../images/like.png" width="12px" height="12px"><span style="font-size: 8.5pt; font-weight: bold; font-style: oblique">
             <fmt:formatNumber pattern="#,###" value="${vo.bookmark }" /></span> 
 

@@ -5,10 +5,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sist.dao.MypageDAO;
 import com.sist.dao.ShoesDAO;
-import com.sist.dao.StyleDAO;
-import com.sist.dao.UserDAO;
 import com.sist.vo.ShoesVO;
-import com.sist.vo.StyleLikesVO;
 import com.sist.vo.UserVO;
 
 
@@ -37,9 +34,23 @@ public class MyPageModel {
     
     @RequestMapping("mypage/my_mypage.do")
     public String my_mypage(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("email") == null) {
-            return "../account/login.jsp";
-        }
+    	try {
+    		
+    		if (request.getSession().getAttribute("email") == null) {
+    			return "../account/login.jsp";
+    		}
+    		HttpSession session = request.getSession();
+    		UserVO userVO = (UserVO) session.getAttribute("email");
+    		session.setAttribute("user", userVO);
+    		String nickname = userVO.getEmail().split("@")[0];
+    		System.out.println(nickname);
+    		System.out.println(userVO);
+
+    		request.setAttribute("userProfile", userVO);
+    		request.setAttribute("nickname", nickname);
+    	}catch(Exception e ) {
+    		e.printStackTrace();
+    	}
 
         return "../mypage/my_mypage.jsp";
     }
@@ -70,21 +81,13 @@ public class MyPageModel {
 
     @RequestMapping("mypage/my_recently_viewed.do")
     public String my_recently_viewed(HttpServletRequest request, HttpServletResponse response) {
-       
-    	if (request.getSession().getAttribute("email") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
-    	
-    	// 세션
-
-		HttpSession session=request.getSession();
-		int user_id=(int) session.getAttribute("user_id");
-
-        
-        // 쿠키
+       
        ShoesDAO dao = new ShoesDAO();
        
-      
+       // 쿠키
        Cookie[] cookies = request.getCookies();
        List<ShoesVO> cList = new ArrayList<ShoesVO>();
        
@@ -92,7 +95,7 @@ public class MyPageModel {
        {
           for(int i=cookies.length-1; i>=0; i--)
           {
-             if(cookies[i].getName().startsWith(user_id + "shoes"))
+             if(cookies[i].getName().startsWith("shoes"))
              {
           	  cookies[i].setPath("/");
                 String goods_id2 = cookies[i].getValue();
@@ -141,6 +144,8 @@ public class MyPageModel {
         return "redirect:../mypage/my_addressbook.do";
     }
 
+    
+    
     @RequestMapping("mypage/update_account.do")
     public String update_account(HttpServletRequest request, HttpServletResponse response) {
         UserVO userVO = (UserVO) request.getSession().getAttribute("email");
@@ -164,6 +169,7 @@ public class MyPageModel {
     }
 
 
+    
     @RequestMapping("mypage/delete_account.do")
     public String delete_account(HttpServletRequest request, HttpServletResponse response) {
         UserVO userVO = (UserVO) request.getSession().getAttribute("email");
@@ -364,6 +370,7 @@ public class MyPageModel {
 
         HttpSession session = request.getSession();
         UserVO userVO = (UserVO) session.getAttribute("email");
+        System.out.println(userVO);
         request.setAttribute("userProfile", userVO);
         return "../mypage/my_pay_account.jsp";
     }

@@ -54,34 +54,14 @@ $(function(){
 <body>
   <section class="u-carousel u-slide u-block-24a1-1" id="carousel_1d20" data-interval="5000" data-u-ride="carousel">
     <ol class="u-absolute-hcenter u-carousel-indicators u-block-24a1-2">
-      <li data-u-target="#carousel_1d20" class="u-active u-grey-30" data-u-slide-to="0" style="cursor:pointer;"></li>
-      <li data-u-target="#carousel_1d20" class="u-active u-grey-30" data-u-slide-to="1" style="cursor:pointer;"></li>
-      <li data-u-target="#carousel_1d20" class="u-active u-grey-30" data-u-slide-to="2" style="cursor:pointer;"></li>
-      <li data-u-target="#carousel_1d20" class="u-active u-grey-30" data-u-slide-to="3" style="cursor:pointer;"></li>
+      <li data-u-target="#carousel_1d20" class="u-active u-grey-30" data-u-slide-to="0"></li>
     </ol>
     <div class="u-carousel-inner" role="listbox">
-      <div class="u-active u-carousel-item u-effect-fade u-gallery-item u-carousel-item-1">
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <img src="../images/banner_01.png" style="width:100%; height: 10%;">
-        </div>
-      </div>
-      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2">
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <img src="../images/banner_02.png" style="width:100%; height: 10%;">
-        </div>
-      </div>
-      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-3">
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <img src="../images/banner_03.png" style="width:100%; height: 10%;">
-        </div>
-      </div>
-      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-4">
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <img src="../images/banner_04.png" style="width:100%; height: 10%;">
-        </div>
+      <div class="u-active u-carousel-item u-clearfix u-section-1-1">
+        <div class="u-clearfix u-sheet u-sheet-1"></div>
       </div>
     </div>
-    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-30 u-block-24a1-3" href="#carousel_1d20" role="button" data-u-slide="prev" style="left: 15px;">
+    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-30 u-block-24a1-3" href="#carousel_1d20" role="button" data-u-slide="prev">
       <span aria-hidden="true">
         <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
 						c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
@@ -95,7 +75,7 @@ $(function(){
         </svg>
       </span>
     </a>
-    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-30 u-block-24a1-4" href="#carousel_1d20" role="button" data-u-slide="next" style="right: 15px;">
+    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-30 u-block-24a1-4" href="#carousel_1d20" role="button" data-u-slide="next">
       <span aria-hidden="true">
         <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
 						L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
