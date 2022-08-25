@@ -153,8 +153,8 @@
         FROM (SELECT a.*, rownum as num
               FROM (SELECT *
                     FROM NOTICE_2
-                    ORDER BY NOTICE_ID DESC NULLS LAST) a) t
-        WHERE num BETWEEN #{start} AND #{end}
+                    ORDER BY rgdate DESC, NOTICE_ID DESC NULLS LAST) a) t
+        WHERE num BETWEEN #{start} AND #{end} 
     </select>
 
 
@@ -196,8 +196,8 @@
         FROM (SELECT a.*, rownum as num
               FROM (select c.*, cs.content as reply
                     from cs_2 c
-                             left join cs_comment_2 cs on c.CS_ID = cs.CS_ID) a) t
-        WHERE num BETWEEN #{start} AND #{end}
+                             left join cs_comment_2 cs on c.CS_ID = cs.CS_ID) a) t 
+        WHERE num BETWEEN #{start} AND #{end} ORDER BY rgdate DESC
     </select>
 
     <select id="qnaTotalpage" resultType="int" parameterType="int">
