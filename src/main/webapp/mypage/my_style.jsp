@@ -265,7 +265,6 @@ header {
     
     
     <jsp:include page="../main/header.jsp" />
-	<jsp:include page="../main/footer.jsp" />
 
  <style type="text/css">
 @charset "UTF-8";

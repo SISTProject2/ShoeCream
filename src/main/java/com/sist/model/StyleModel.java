@@ -277,6 +277,6 @@ public class StyleModel {
 		
     	request.setAttribute("main_jsp", "../mypage/my_style.jsp");
     	
-    	return "../mypage/my_style.jsp";
+    	return "../main/main.jsp";
     }
 }
