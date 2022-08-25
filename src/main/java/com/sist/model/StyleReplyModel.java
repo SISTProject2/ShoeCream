@@ -28,10 +28,9 @@ public class StyleReplyModel {
 		
 		StyleReplyVO vo=new StyleReplyVO();
 		vo.setSid(Integer.parseInt(sid));
+		vo.setEmail(email);
 		vo.setName(name);
 		vo.setContent(content);
-		System.out.println("name="+name);
-		System.out.println("content="+content);
 		
 		StyleReplyDAO.styleReplyInsert(vo);
 		
@@ -46,12 +45,16 @@ public class StyleReplyModel {
 		} catch(Exception ex) {}
 	  
 		String sid=request.getParameter("sid");
-		String name=request.getParameter("name");
 		String content=request.getParameter("content");
 		String group_id=request.getParameter("group_id"); 
 		String group_step=request.getParameter("group_step"); 
 		String group_tab=request.getParameter("group_tab"); 
 		String root=request.getParameter("style_id"); 
+		
+		HttpSession session=request.getSession();
+		String email=(String)session.getAttribute("email");
+		int index=email.indexOf("@");
+		String name=email.substring(0,index);
 		
 		StyleReplyVO vo=new StyleReplyVO(); 
 		vo.setSid(Integer.parseInt(sid));

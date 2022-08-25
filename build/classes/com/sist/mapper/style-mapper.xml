@@ -106,6 +106,17 @@ USER_ID  NOT NULL NUMBER
     WHERE u_id=#{user_id}
   </select>
   
+  <!-- 마이페이지 댓글 -->
+  <select id="mypageStyleReply" resultType="StyleReplyVO" parameterType="int">
+  SELECT sreply_id, name, content, TO_CHAR(regdate,'YYYY-MM-DD') as dbday, sid,
+           (SELECT img FROM style_2 WHERE style_id=style_reply_2.sid) as img,
+           (SELECT content FROM style_2 WHERE style_id=style_reply_2.sid) as scontent,
+           (SELECT rcount FROM style_2 WHERE style_id=style_reply_2.sid) as rcount
+    FROM style_reply_2
+    WHERE user_id=#{user_id}
+    ORDER BY sreply_id DESC
+</select>
+  
   <!-- 마이페이지 좋아요 -->
   <select id="mypageStyleLikes" resultType="StyleVO" parameterType="int">
   	SELECT style_id,

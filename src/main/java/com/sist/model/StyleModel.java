@@ -110,7 +110,6 @@ public class StyleModel {
 		
 		HttpSession session=request.getSession();
 		String email=(String)session.getAttribute("email");
-		System.out.println("email="+email);
 		svo.setEmail(email);
 		
 		List<StyleReplyVO> list=StyleReplyDAO.styleReplyListData(svo);
@@ -122,7 +121,6 @@ public class StyleModel {
 		if(session.getAttribute("user_id")!=null) {
 			int user_id=(int)session.getAttribute("user_id");
 			lvo.setUser_id(user_id);
-			System.out.println("user_id="+user_id);
 		}
 		int lcount=StyleDAO.styleLikesCount(lvo);
 		
@@ -164,10 +162,8 @@ public class StyleModel {
 	@RequestMapping("style/likes.do")
 	public String style_likes(HttpServletRequest request, HttpServletResponse response) {
 		String sid=request.getParameter("style_id");
-		System.out.println("sid="+sid);
 		HttpSession session=request.getSession();
 		int user_id=(int) session.getAttribute("user_id");
-		System.out.println("user_id="+user_id);
 		StyleLikesVO vo=new StyleLikesVO();
 		vo.setSid(Integer.parseInt(sid));
 		vo.setUser_id(user_id);
@@ -210,9 +206,7 @@ public class StyleModel {
 		} catch(Exception ex) {}
 		
 		String content=request.getParameter("content");
-		System.out.println("content="+content);
 		String style_id=request.getParameter("style_id");
-		System.out.println("style_id="+style_id);
 		
 		StyleVO vo=new StyleVO();
 		vo.setContent(content);
@@ -267,14 +261,14 @@ public class StyleModel {
 		
 		
 		request.setAttribute("list", list);
-		System.out.println(list.get(0).getImg());
-		System.out.println(list.get(0).getContent());
 		
-//		String name="hong";
-//    	List<StyleReplyVO> list2=StyleReplyDAO.styleReplyMypageData(name);
-//    	request.setAttribute("list2", list2);
+		//-----------------------------------------------------------
+		
+		List<StyleReplyVO> list2=StyleDAO.mypageStyleReply(user_id);
+		
+    	request.setAttribute("list2", list2);
     	
-    	///////////////////////////////////////////////////////////////////
+    	//-----------------------------------------------------------
 		
 		List<StyleVO> list3=StyleDAO.mypageStyleLikes(user_id);
 		request.setAttribute("list3", list3);

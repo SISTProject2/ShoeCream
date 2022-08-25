@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.sist.vo.StyleLikesVO;
+import com.sist.vo.StyleReplyVO;
 import com.sist.vo.StyleVO;
 
 public class StyleDAO {
@@ -239,7 +240,22 @@ public class StyleDAO {
 		return total;
 	}
 	
-	 
+	public static List<StyleReplyVO> mypageStyleReply(int user_id) {
+		List<StyleReplyVO> list=null;
+		SqlSession session=null;
+		try {
+			session=ssf.openSession();
+			list=session.selectList("mypageStyleReply", user_id);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if(session!=null)
+				session.close();
+		}
+		
+		return list;
+	}
+	
 	 public static List<StyleVO> mypageStyleLikes(int user_id){
 		 SqlSession session=null;
 		 List<StyleVO> list=null;
@@ -254,4 +270,5 @@ public class StyleDAO {
 		 }
 		 return list;
 	 }
+	 
 }

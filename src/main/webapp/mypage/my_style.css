@@ -1963,7 +1963,7 @@
   }
 
   .u-section-1 .u-repeater-1 {
-    grid-template-columns: repeat(undefined, NaN%);
+    grid-template-columns: repeat(undefined, NaN);
   }
 
   .u-section-1 .u-list-2 {
@@ -1971,7 +1971,7 @@
   }
 
   .u-section-1 .u-repeater-2 {
-    grid-template-columns: repeat(undefined, NaN%);
+    grid-template-columns: repeat(undefined, NaN);
   }
 
   .u-section-1 .u-layout-wrap-1 {

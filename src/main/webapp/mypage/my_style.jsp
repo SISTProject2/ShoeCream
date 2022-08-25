@@ -11,29 +11,16 @@
     <title>my_style</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="my_style.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
-    <meta name="generator" content="Nicepage 4.15.11, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    
-    
-    
-    
-    
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "MyPage"
-}</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="my_style">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
     
 <style type="text/css">
 @charset "UTF-8";
+@import "../css/reset.css";
+
+header {
+    display: flex;
+    position: fixed;
+}
 
 .pagination{
 	display: block;
@@ -195,137 +182,36 @@
                         </div>
                         <div class="u-container-style u-tab-pane u-white u-tab-pane-2" id="tab-2917" role="tabpanel" aria-labelledby="link-tab-2917">
                           <div class="u-container-layout u-container-layout-40">
-                            <div class="u-container-style u-group u-shape-rectangle u-white u-group-37">
-                              <div class="u-container-layout u-container-layout-41">
-                                <img alt="" class="u-image u-image-round u-radius-40 u-image-25" data-image-width="2836" data-image-height="1875" src="images/3.svg">
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-38">
-                                  <div class="u-container-layout u-container-layout-42">
-                                    <p class="u-text u-text-palette-1-light-1 u-text-46">#test #nike #덩크로우 #덩크로 # 덩크로우범고래 #nike<br>
-                                      <br>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-39">
-                                  <div class="u-container-layout u-container-layout-43">
-                                    <p class="u-text u-text-default u-text-47">shoe_style</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-26" src="images/profile2.png" alt="" data-image-width="100" data-image-height="100">
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-40">
-                                  <div class="u-container-layout u-container-layout-44">
-                                    <p class="u-text u-text-default u-text-48">123</p>
-                                    <p class="u-text u-text-default u-text-49">123</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-27" src="images/heart.png" alt="" data-image-width="512" data-image-height="512"><span class="u-file-icon u-icon u-icon-9"><img src="images/icon1.png" alt=""></span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="u-container-style u-group u-shape-rectangle u-white u-group-41">
-                              <div class="u-container-layout u-container-layout-45">
-                                <img alt="" class="u-image u-image-round u-radius-40 u-image-28" data-image-width="2836" data-image-height="1875" src="images/3.svg">
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-42">
-                                  <div class="u-container-layout u-container-layout-46">
-                                    <p class="u-text u-text-palette-1-light-1 u-text-50">#test #nike #덩크로우 #덩크로 # 덩크로우범고래 #nike<br>
-                                      <br>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-43">
-                                  <div class="u-container-layout u-container-layout-47">
-                                    <p class="u-text u-text-default u-text-51">shoe_style</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-29" src="images/profile2.png" alt="" data-image-width="100" data-image-height="100">
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-44">
-                                  <div class="u-container-layout u-container-layout-48">
-                                    <p class="u-text u-text-default u-text-52">123</p><span class="u-file-icon u-icon u-icon-10"><img src="images/icon1.png" alt=""></span>
-                                    <p class="u-text u-text-default u-text-53">123</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-30" src="images/heart.png" alt="" data-image-width="512" data-image-height="512">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="u-container-style u-group u-shape-rectangle u-white u-group-45">
-                              <div class="u-container-layout u-container-layout-49">
-                                <img alt="" class="u-image u-image-round u-radius-40 u-image-31" data-image-width="2836" data-image-height="1875" src="images/3.svg">
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-46">
-                                  <div class="u-container-layout u-container-layout-50">
-                                    <p class="u-text u-text-palette-1-light-1 u-text-54">#test #nike #덩크로우 #덩크로 # 덩크로우범고래 #nike<br>
-                                      <br>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-47">
-                                  <div class="u-container-layout u-container-layout-51">
-                                    <p class="u-text u-text-default u-text-55">shoe_style</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-32" src="images/profile2.png" alt="" data-image-width="100" data-image-height="100">
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-48">
-                                  <div class="u-container-layout u-container-layout-52">
-                                    <p class="u-text u-text-default u-text-56">123</p><span class="u-file-icon u-icon u-icon-11"><img src="images/icon1.png" alt=""></span>
-                                    <p class="u-text u-text-default u-text-57">123</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-33" src="images/heart.png" alt="" data-image-width="512" data-image-height="512">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="u-container-style u-group u-shape-rectangle u-white u-group-49">
-                              <div class="u-container-layout u-container-layout-53">
-                                <img alt="" class="u-image u-image-round u-radius-40 u-image-34" data-image-width="2836" data-image-height="1875" src="images/3.svg">
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-50">
-                                  <div class="u-container-layout u-container-layout-54">
-                                    <p class="u-text u-text-palette-1-light-1 u-text-58">#test #nike #덩크로우 #덩크로 # 덩크로우범고래 #nike<br>
-                                      <br>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-51">
-                                  <div class="u-container-layout u-container-layout-55">
-                                    <p class="u-text u-text-default u-text-59">shoe_style</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-35" src="images/profile2.png" alt="" data-image-width="100" data-image-height="100">
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-52">
-                                  <div class="u-container-layout u-container-layout-56">
-                                    <p class="u-text u-text-default u-text-60">123</p><span class="u-file-icon u-icon u-icon-12"><img src="images/icon1.png" alt=""></span>
-                                    <p class="u-text u-text-default u-text-61">123</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-36" src="images/heart.png" alt="" data-image-width="512" data-image-height="512">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="u-container-style u-group u-shape-rectangle u-white u-group-53">
-                              <div class="u-container-layout u-container-layout-57">
-                                <img alt="" class="u-image u-image-round u-radius-40 u-image-37" data-image-width="2836" data-image-height="1875" src="images/3.svg">
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-54">
-                                  <div class="u-container-layout u-container-layout-58">
-                                    <p class="u-text u-text-palette-1-light-1 u-text-62">#test #nike #덩크로우 #덩크로 # 덩크로우범고래 #nike<br>
-                                      <br>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-55">
-                                  <div class="u-container-layout u-container-layout-59">
-                                    <p class="u-text u-text-default u-text-63">shoe_style</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-38" src="images/profile2.png" alt="" data-image-width="100" data-image-height="100">
-                                  </div>
-                                </div>
-                                <div class="u-container-style u-group u-shape-rectangle u-white u-group-56">
-                                  <div class="u-container-layout u-container-layout-60">
-                                    <p class="u-text u-text-default u-text-64">123</p><span class="u-file-icon u-icon u-icon-13"><img src="images/icon1.png" alt=""></span>
-                                    <p class="u-text u-text-default u-text-65">123</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-39" src="images/heart.png" alt="" data-image-width="512" data-image-height="512">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+ 							<table width=80% class="table" style="border-top: 1px solid black; margin-top: 25px;">
+							      <tr style="height: 45px;">
+							        <th width="8%" style="border-right: 0px solid; border-bottom: 1px solid #e5e5e5;"></th>
+							        <th width="75%" style="border-right: 0px solid; border-bottom: 1px solid #e5e5e5; text-align: center;">댓글</th>
+							        <th width="27%" style="border-bottom: 1px solid #e5e5e5; "></th>
+							      </tr>
+							      <c:forEach var="vo" items="${list2 }">
+							        <tr>
+							          <td rowspan="3"style="text-align: center; border-right: 0px solid; border-bottom: 1px solid #e5e5e5;">
+							            <%-- <img src="${vo.img }" style="width: 30px; height: 30px; "> --%>
+							            <img src="${vo.img }" style="height:70px; width:60px; border-radius: 12px;">
+							          </td>
+							          <td style="border-right: 0px solid; font-size: 16px;">${vo.content }</td>
+							          <td rowspan="3" style="border-bottom: 1px solid #e5e5e5; ">
+							            <input type="button" value="수정" style="padding: 4px 10px; background-color: #e8ebef; color: #3f5e7a; border-radius: 5px; font-size: 14px; border: 0px; font-weight: 600;">
+							            <!--#59758f-->
+							            <span>&nbsp;&nbsp;</span>
+							            <input type="button" value="삭제" style="padding: 4px 10px; background-color: #e8ebef; color: #a56567; border-radius: 5px; font-size: 14px; border: 0px; font-weight: 600;">
+							          </td>
+							        </tr>
+							        <tr>
+							          <td style="border-right: 0px solid; font-size: 12px; color:#858e99;">${vo.dbday }</td>
+							        </tr>
+							        <tr>
+							          <td style="border-right: 0px solid; border-bottom: 1px solid #e5e5e5; font-size: 15px;"><a href="#">${vo.scontent }<span style="color:red"> [${vo.rcount }]</span></a></td>
+							        </tr>
+							      </c:forEach>
+                            </table>
                             <div class="u-container-style u-group u-shape-rectangle u-white u-group-57">
                               <div class="u-container-layout u-container-layout-61">
-                                <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-5">&lt;&lt;<span style="font-size: 1rem;"></span>
-                                </a>
-                                <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-6">1</a>
-                                <a href="https://nicepage.com/k/test-website-templates" class="u-active-palette-1-base u-border-2 u-border-active-grey-10 u-border-grey-10 u-border-hover-grey-10 u-btn u-button-style u-hover-grey-5 u-text-active-white u-text-hover-palette-1-light-1 u-text-palette-1-light-1 u-white u-btn-7">&gt;&gt;</a>
                               </div>
                             </div>
                           </div>
