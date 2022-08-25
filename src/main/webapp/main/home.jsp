@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -198,73 +199,14 @@ $(function(){
           </div>
         </div>
       </div>
-       <%-- <div class="u-expanded-width u-gallery u-layout-horizontal u-lightbox u-no-transition u-show-text-always u-width-fixed u-gallery-1">
-        <div class="u-gallery-inner">
-        <c:forEach var="vo" items="${list4 }" varStatus="s">
-        <c:if test="${s.index>=0 && s.index<6 }">
-          <div class="u-gallery-item u-gallery-item-1">
-            <div class="u-back-slide">
-              <img class="u-back-image u-back-image-1" src="${vo.img }" alt="user_id">
-            </div>
-            <div class="u-align-left u-over-slide u-valign-bottom u-over-slide-1">
-              <h3 class="u-gallery-heading u-text-white" style="margin-left: 0px; margin-right: auto; font-weight: 700; background-image: none; font-size: 1rem;">user_id</h3>
-              <p class="u-gallery-text" style="margin-left: 0px; margin-right: auto; margin-top: 0px;"></p>
-            </div>
-          <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src="5.svg">
-                <p class="u-text u-text-body-alt-color u-text-1">user_id</p>
-              </div>
-            </div>
-          </div>
-          </c:if>
-          </c:forEach>
-        </div> 
-        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="a" role="button">
-          <span aria-hidden="true">
-            <svg viewBox="0 0 451.847 451.847">
-              <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-					c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-					c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
-			  </path>
-			</svg>
-          </span>
-          <span class="sr-only">
-   		    <svg viewBox="0 0 451.847 451.847">
-   		      <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-						c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-						c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
-   		      </path>
-   		    </svg>
-          </span>
-        </a>
-        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-next u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-2" href="#" role="button">
-          <span aria-hidden="true">
-            <svg viewBox="0 0 451.846 451.847">
-              <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-						L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-						c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z">
-			  </path>
-			</svg>
-          </span>
-          <span class="sr-only">
-            <svg viewBox="0 0 451.846 451.847">
-              <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-						L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-						c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z">
-              </path>
-            </svg>
-          </span>
-        </a>
-      </div> --%>
       <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
           <c:forEach var="vo" items="${list4 }" varStatus="s">
           <c:if test="${s.index>=0 && s.index<5 }">
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <a href="../style/style_detail_before.do?id=${vo.style_id }"><img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src="${vo.img }" style="height:100%; object-fit: cover; border-radius: 10px;"></a>
-                <p class="u-text u-text-body-alt-color u-text-1" style="margin: -40px 15px 0;  font-weight: 520;  font-size: 18px;">user_id</p>
+                <a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" src="${vo.img }" style="height:100%; object-fit: cover; border-radius: 10px;"></a>
+                <p class="u-text u-text-body-alt-color u-text-1" style="margin: -40px 15px 0;  font-weight: 520;  font-size: 18px;">${fn:substringBefore(vo.email,'@')}</p>
               </div>
             </div>
             </c:if>

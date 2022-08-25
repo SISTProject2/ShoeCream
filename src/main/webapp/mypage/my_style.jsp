@@ -118,19 +118,19 @@ header {
                  			 <div class="u-repeater u-repeater-2" style="margin-top: 25px; width:950px; grid-template-columns: repeat(4, 33.33333333%);">
                            <c:forEach var="vo" items="${list }" varStatus="s">
                               <div class="u-container-layout u-container-layout-7" style="margin-right: 35px;">
-                                <img alt="" class="u-expanded-width u-image u-image-round u-radius-40 u-image-1" data-image-width="2836" data-image-height="1875" src="${vo.img }">
+                                <a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img alt="" class="u-expanded-width u-image u-image-round u-radius-40 u-image-1" data-image-width="2836" data-image-height="1875" src="${vo.img }"></a>
                                 <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-white u-group-6">
                                   <div class="u-container-layout u-container-layout-9">
-                                    <p class="u-text u-text-palette-1-light-1 u-text-16" style="font-size: 1.00rem; margin: 11px 18px 0 23px;">${vo.content }<br>
+                                    <p class="u-text u-text-palette-1-light-1 u-text-16" style="font-size: 1.00rem; margin: 11px 18px 0 23px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }">${vo.content }</a><br>
                                       <br>
                                     </p>
                                   </div>
                                 </div>
                                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-7">
-                                  <div class="u-container-layout u-valign-middle u-container-layout-10" style="margin-top: -35px;"><span class="u-file-icon u-icon u-icon-1"><img src="images/icon1.png" alt=""></span>
-                                    <p class="u-text u-text-default u-text-17" style="margin: -22px auto 0 101px;">${vo.rcount }</p>
-                                    <p class="u-text u-text-default u-text-18" style="margin: -22px auto 0 48px;">${vo.bookmark }</p>
-                                    <img class="u-image u-image-default u-preserve-proportions u-image-3" src="images/heart.png" alt="" data-image-width="512" data-image-height="512">
+                                  <div class="u-container-layout u-valign-middle u-container-layout-10" style="margin-top: -35px;"><span class="u-file-icon u-icon u-icon-1"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img src="images/icon1.png" alt=""></a></span>
+                                    <p class="u-text u-text-default u-text-17" style="margin: -22px auto 0 101px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.rcount }</a></p>
+                                    <p class="u-text u-text-default u-text-18" style="margin: -22px auto 0 48px; "><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.bookmark }</a></p>
+                                    <a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img class="u-image u-image-default u-preserve-proportions u-image-3" src="images/heart.png" alt="" data-image-width="512" data-image-height="512"></a>
                                   </div>
                                 </div>
                               </div>
@@ -191,10 +191,9 @@ header {
 							      <c:forEach var="vo" items="${list2 }">
 							        <tr>
 							          <td rowspan="3"style="text-align: center; border-right: 0px solid; border-bottom: 1px solid #e5e5e5;">
-							            <%-- <img src="${vo.img }" style="width: 30px; height: 30px; "> --%>
-							            <img src="${vo.img }" style="height:70px; width:60px; border-radius: 12px;">
+							            <a href="../style/style_detail_before.do?style_id=${vo.sid }"><img src="${vo.img }" style="height:70px; width:60px; border-radius: 12px;"></a>
 							          </td>
-							          <td style="border-right: 0px solid; font-size: 16px;">${vo.content }</td>
+							          <td style="border-right: 0px solid; font-size: 16px;"><a href="../style/style_detail_before.do?style_id=${vo.sid}" style="color:black;">${vo.content }</a></td>
 							          <td rowspan="3" style="border-bottom: 1px solid #e5e5e5; ">
 							            <input type="button" value="수정" style="padding: 4px 10px; background-color: #e8ebef; color: #3f5e7a; border-radius: 5px; font-size: 14px; border: 0px; font-weight: 600;">
 							            <!--#59758f-->
@@ -203,10 +202,10 @@ header {
 							          </td>
 							        </tr>
 							        <tr>
-							          <td style="border-right: 0px solid; font-size: 12px; color:#858e99;">${vo.dbday }</td>
+							          <td style="border-right: 0px solid; font-size: 12px; color:#858e99;"><a href="../style/style_detail_before.do?style_id=${vo.sid }" style="color:black;">${vo.dbday }</a></td>
 							        </tr>
 							        <tr>
-							          <td style="border-right: 0px solid; border-bottom: 1px solid #e5e5e5; font-size: 15px;"><a href="#">${vo.scontent }<span style="color:red"> [${vo.rcount }]</span></a></td>
+							          <td style="border-right: 0px solid; border-bottom: 1px solid #e5e5e5; font-size: 15px;"><a href="../style/style_detail_before.do?style_id=${vo.sid }">${vo.scontent }<span style="color:red"> [${vo.rcount }]</span></a></td>
 							        </tr>
 							      </c:forEach>
                             </table>
@@ -221,22 +220,23 @@ header {
 							<div class="u-repeater u-repeater-2" style="margin-top: 25px; width: 1390px; grid-template-columns: repeat(2, 50%); height: auto; grid-gap: 80px 0px;">
                             <c:forEach var="vo" items="${list3 }">
                               <div class="u-container-layout u-container-layout-63" style="">
-                                <img alt="" class="u-image u-image-round u-radius-40 u-image-40" data-image-width="2836" data-image-height="1875" src="${vo.img }">
+                                <a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img alt="" class="u-image u-image-round u-radius-40 u-image-40" data-image-width="2836" data-image-height="1875" src="${vo.img }"></a>
                                 <div class="u-container-style u-shape-rectangle" style="min-height: 0px; margin-left: 170px; margin-top: -136px;" >
                                   <div class="u-container-layout u-container-layout-65" style="margin-top: -188px;" >
-                                    <p class="u-text u-text-default u-text-68" style="margin: 1px auto 0 37px;">${fn:substringBefore(vo.email,'@')}</p>
+                                    <p class="u-text u-text-default u-text-68" style="margin: 1px auto 0 37px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${fn:substringBefore(vo.email,'@')}</a></p>
                                     <img class="u-image u-image-default u-preserve-proportions u-image-41" src="images/profile2.png" alt="" data-image-width="100" data-image-height="100">
                                   </div>
                                 </div>
                                 <div class="u-container-style u-shape-rectangle u-white u-group-59" style="margin-top:23px;">
-                                    <p class="u-text u-text-palette-1-light-1 u-text-67" style="margin: 17px 21px 0;">${vo.content }<br>
+                                    <p class="u-text u-text-palette-1-light-1 u-text-67" style="margin: 17px 21px 0;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }">${vo.content }</a><br>
                                       <br>
                                     </p>
                                 </div>
                                 <div class="u-container-style u-shape-rectangle" style="margin-left: 179px; margin-top: 0px;">
                                   <div class="u-container-layout u-container-layout-66">
-                                    <p class="u-text u-text-default u-text-69" style="margin: 10px auto 0 32px;">${vo.bookmark }</p><span class="u-file-icon u-icon u-icon-14"><img src="images/icon1.png" alt=""></span>
-                                    <p class="u-text u-text-default u-text-70" style="margin: -22px auto 0 91px;">${vo.rcount }</p><span class="u-icon u-text-palette-1-base u-icon-15"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-06c8"></use></svg><svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-06c8" style="enable-background:new 0 0 51.997 51.997;"><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
+                                    <p class="u-text u-text-default u-text-69" style="margin: 10px auto 0 32px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.bookmark }</a></p><span class="u-file-icon u-icon u-icon-14"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img src="images/icon1.png" alt="" style="margin-left:-10px;"></a></span>
+                                    <p class="u-text u-text-default u-text-70" style="margin: -22px auto 0 81px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.rcount }</a></p><span class="u-icon u-text-palette-1-base u-icon-15"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-06c8"></use></svg></a>
+                                    <svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-06c8" style="enable-background:new 0 0 51.997 51.997;"><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
 	c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
 	c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
 	C52.216,18.553,51.97,16.611,51.911,16.242z"></path></svg></span>
