@@ -30,7 +30,6 @@ main {
 
 /*상품 이미지*/
 .detail_img {
-    background-color: black;
     background-color: white;  
     width: 58%;
     height: auto;
@@ -123,6 +122,11 @@ main {
     cursor: pointer; /* 커서 올렸때 손가락 모양으로 바꾸기 */
 }
 
+.size_select {
+	border: none;
+	border-radius: 0;
+}
+
 /*모달창 추가 */
 .layer-popup {
 	display: none;
@@ -198,7 +202,9 @@ main {
     text-align: center;
     font-size: 15px;
     font-weight: 800;
+    cursor: pointer;
 }
+
 
 .dpb_title {
     width: 30%;
@@ -220,13 +226,13 @@ main {
 }
 
 
-
 /*관심목록*/
 .detail_like {
     width: 12%;
     box-shadow: 0 0 0 1px #ADADAD inset;
     background-color: white;
     text-align: center;
+    cursor: pointer;
 }
 
 .detail_like img {
@@ -329,3 +335,37 @@ details p:first-of-type {
     letter-spacing: -1px;
     color: #707070;
 }
+
+/*리스트*/
+.detail_list {
+	padding: 0 4%;
+	width: 250px;
+	height: auto;
+}
+
+.list_brand {
+	margin: 5px 0;
+	font-weight: 800;
+}
+
+.list_img img {
+	background-color: white;
+    width: 100%;
+    height: auto;
+}
+
+.list_price {
+	margin: 5px 0;
+	font-weight: 800;
+}
+
+.list_price_name {
+	font-size: 13px;
+    color: #707070;
+    font-weight: 600;
+}
+
+.list_price_name a:visited { 
+    color:black; 
+}
+
