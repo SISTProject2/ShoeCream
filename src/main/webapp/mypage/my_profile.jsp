@@ -69,9 +69,9 @@
                                 </h3>
                                 <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.do">주소록</a>
                                 </h3>
-                                <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_pay_account.do">판매 정산
+                                <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_account.do">판매 정산
                                     계좌</a></h3>
-                                <h3 class="u-text u-text-default u-text-12"><a href="../mypage/my_style.do">스타일</a></h3>
+                                <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_style.do">스타일</a></h3>
                             </div>
                         </div>
                     </div>

@@ -58,8 +58,8 @@
                     <h3 class="u-text u-text-default u-text-7">내 정보</h3>
                     <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.do">프로필 정보</a></h3>
                     <h3 class="u-text u-text-default u-text-9"><a href="../mypage/my_addressbook.do">주소록</a></h3>
-                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_pay_account.do">판매 정산 계좌</a></h3>
-                    <h3 class="u-text u-text-default u-text-12"><a href="../mypage/my_style.do">스타일</a></h3>
+                    <h3 class="u-text u-text-default u-text-10"><a href="../mypage/my_pay_account.do">판매 정산 계좌</a></h3>
+                    <h3 class="u-text u-text-default u-text-11"><a href="../mypage/my_style.do">스타일</a></h3>
                   </div>
                 </div>
               </div>
