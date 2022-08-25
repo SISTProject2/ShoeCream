@@ -260,8 +260,12 @@
     
     
     <jsp:include page="../main/header.jsp" />
+    <jsp:include page="../main/nav.jsp" />
 	<jsp:include page="../main/footer.jsp" />
 <style type="text/css">
+#nav{
+	margin-top: -1940px;
+}
 </style>	  
   
 </body></html>
