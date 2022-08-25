@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
 <head>
@@ -32,14 +33,14 @@
                       <div class="u-container-layout u-similar-container u-container-layout-7">
                       <a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img class="u-expanded-width u-image u-image-round u-radius-27 u-image-1" alt="" data-image-width="571" data-image-height="713" src="${vo.img }" alt=""></a>
                       <span class="u-file-icon u-icon u-text-palette-5-base u-white u-icon-1" style="margin: 12px auto 0 6px;"><img src="../images/style//64572.png" alt=""></span>
-                      <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-6">shoe_style</h6>
+                      <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-6" style="margin-left: 35px;">${fn:substringBefore(vo.email,'@')}</h6>
                         <input type="hidden" name=style_id value="${vo.style_id }">
                         <div style="clear: both;"></div>
-                        <p class="u-align-left u-small-text u-text u-text-variant u-text-7" style="margin: 15px 16px 0;"><a href="#">${vo.content }</a><br></p>
-                        <p class="u-small-text u-text u-text-default u-text-variant u-text-8">12&nbsp;</p>
-                        <p class="u-small-text u-text u-text-default u-text-variant u-text-9" style="margin: -19px auto 0 85px;">${vo.rcount }&nbsp;</p>
-                        <span class="u-file-icon u-icon u-icon-2"><img src="../images/style/heart.png" alt=""></span>
-                        <span class="u-file-icon u-icon u-icon-3" style="margin: -24px auto 0 58px; width: 25px; height: 24px;"><img src="../images/style/chat.png" alt=""></span>
+                        <p class="u-align-left u-small-text u-text u-text-variant u-text-7" style="margin: 15px 16px 0;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }">${vo.content }</a><br></p>
+                        <p class="u-small-text u-text u-text-default u-text-variant u-text-8"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.bookmark }&nbsp;</a></p>
+                        <p class="u-small-text u-text u-text-default u-text-variant u-text-9" style="margin: -19px auto 0 85px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.rcount }&nbsp;</a></p>
+                        <span class="u-file-icon u-icon u-icon-2"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img src="../images/style/heart.png" alt=""></a></span>
+                        <span class="u-file-icon u-icon u-icon-3" style="margin: -24px auto 0 58px; width: 25px; height: 24px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img src="../images/style/chat.png" alt=""></a></span>
                       </div>
                     </div>
                     </c:forEach>

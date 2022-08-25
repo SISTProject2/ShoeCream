@@ -49,7 +49,7 @@ USER_ID  NOT NULL NUMBER
   
   <!-- 태그 -->
   <select id="styleTagData" resultType="StyleVO" parameterType="string">
-     SELECT *
+     SELECT style_id, img, content, TO_CHAR(rgdate, 'YYYY-MM-DD HH24:MI:SS') as dbday, bookmark, (SELECT email FROM user_2 WHERE user_id = u_id ) as email, rcount
      FROM style_2
      WHERE UPPER(content) LIKE UPPER('%'||#{tag}||'%')
      ORDER BY style_id DESC
