@@ -61,6 +61,10 @@ header {
   color: white;
   border-color: black;
 }
+
+a:hover{
+	text-decoration: none;
+}
 </style>
 
 </head>
@@ -70,10 +74,10 @@ header {
         <div class="u-expanded-width u-tab-links-align-center u-tabs u-tabs-1">
           <ul class="u-spacing-15 u-tab-list u-unstyled" role="tablist">
             <li class="u-tab-item" role="presentation">
-              <a class="active u-active-black u-border-3 u-border-active-palette-5-base u-border-no-bottom u-border-no-left u-border-no-right u-button-style u-radius-50 u-tab-link u-text-active-white u-text-body-color u-text-hover-grey-75 u-tab-link-1" id="link-tab-0da5" href="#tab-0da5" role="tab" aria-controls="tab-0da5" aria-selected="true">인기</a>
+              <a class="active u-active-black u-border-3 u-border-active-palette-5-base u-border-no-bottom u-border-no-left u-border-no-right u-button-style u-radius-50 u-tab-link u-text-active-white u-text-body-color u-text-hover-grey-75 u-tab-link-1" id="link-tab-0da5" href="#tab-0da5" role="tab" aria-controls="tab-0da5" aria-selected="true" style="text-decoration: none;">인기</a>
             </li>
             <li class="u-tab-item" role="presentation">
-              <a class="u-active-black u-border-3 u-border-active-palette-5-base u-border-no-bottom u-border-no-left u-border-no-right u-button-style u-radius-50 u-tab-link u-text-active-white u-text-body-color u-text-hover-grey-75 u-tab-link-2" id="link-tab-2917" href="#tab-2917" role="tab" aria-controls="tab-2917" aria-selected="false">최신</a>
+              <a class="u-active-black u-border-3 u-border-active-palette-5-base u-border-no-bottom u-border-no-left u-border-no-right u-button-style u-radius-50 u-tab-link u-text-active-white u-text-body-color u-text-hover-grey-75 u-tab-link-2" id="link-tab-2917" href="#tab-2917" role="tab" aria-controls="tab-2917" aria-selected="false" style="text-decoration: none;">최신</a>
             </li>
           </ul>
           <div class="u-tab-content">
@@ -140,20 +144,20 @@ header {
                 </div>
                 <div class="u-list u-list-2">
                   <div class="u-repeater u-repeater-2">
-                  <c:forEach var="vo" items="${list }">
+                  <c:forEach var="vo" items="${list2 }">
                     <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle u-white u-list-item-6" style="box-shadow: none;">
                     <!-- <div class="u-border-2 u-border-white u-container-style u-grey-5 u-list-item u-radius-20 u-repeater-item  u-shape-round u-list-item-6" style="border: solid 1px #d9d9d9; background-color:white; height:471px;"> -->
                       <div class="u-container-layout u-similar-container u-container-layout-7">
                       <a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img class="u-expanded-width u-image u-image-round u-radius-27 u-image-1" alt="" data-image-width="571" data-image-height="713" src="${vo.img }" alt=""></a>
                       <span class="u-file-icon u-icon u-text-palette-5-base u-white u-icon-1" style="margin: 12px auto 0 6px;"><img src="../images/style/64572.png" alt=""></span>
-                      <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-6">${fn:substringBefore(vo.email,'@')}</h6>
+                      <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-6"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${fn:substringBefore(vo.email,'@')}</a></h6>
                         <input type="hidden" name=style_id value="${vo.style_id }">
                         <div style="clear: both;"></div>
                         <p class="u-align-left u-small-text u-text u-text-variant u-text-7" style="margin: 15px 16px 0;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }">${vo.content }</a><br></p>
-                        <p class="u-small-text u-text u-text-default u-text-variant u-text-8">12&nbsp;</p>
-                        <p class="u-small-text u-text u-text-default u-text-variant u-text-9" style="margin: -19px auto 0 85px;">${vo.rcount }&nbsp;</p>
-                        <span class="u-file-icon u-icon u-icon-2"><img src="../images/style/heart.png" alt=""></span>
-                        <span class="u-file-icon u-icon u-icon-3" style="margin: -24px auto 0 58px; width: 25px; height: 24px;"><img src="../images/style/chat.png" alt=""></span>
+                        <p class="u-small-text u-text u-text-default u-text-variant u-text-8"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.bookmark }&nbsp;</a></p>
+                        <p class="u-small-text u-text u-text-default u-text-variant u-text-9" style="margin: -19px auto 0 85px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.rcount }&nbsp;</a></p>
+                        <span class="u-file-icon u-icon u-icon-2"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img src="../images/style/heart.png" alt=""></a></span>
+                        <span class="u-file-icon u-icon u-icon-3" style="margin: -24px auto 0 58px; width: 25px; height: 24px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img src="../images/style/chat.png" alt=""></a></span>
                       </div>
                     </div>
                     </c:forEach>
@@ -170,14 +174,14 @@ header {
                     <div class="u-container-layout u-similar-container u-container-layout-12">
                     <a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img class="u-expanded-width u-image u-image-round u-radius-27 u-image-5" alt="" data-image-width="571" data-image-height="713" src="${vo.img }" alt=""></a>
                     <span class="u-file-icon u-icon u-text-palette-5-base u-white u-icon-13"><img src="../images/style//64572.png" alt=""></span>
-                      <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-22">shoe_style</h6>
+                      <h6 class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-22"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${fn:substringBefore(vo.email,'@')}</a></h6>
                       <input type="hidden" name=style_id value="${vo.style_id }">
                       <div style="clear: both;"></div>
-                        <p class="u-align-left u-small-text u-text u-text-variant u-text-23"><a href="#">${vo.content }</a><br></p>
-                        <p class="u-small-text u-text u-text-default u-text-variant u-text-24" style=" margin: 14px auto 0 40px;">12&nbsp;</p>
-                        <p class="u-small-text u-text u-text-default u-text-variant u-text-25" style="font-size: 0.75rem; margin: -19px auto 0 90px;">${vo.rcount }&nbsp;</p>
-                        <span class="u-file-icon u-icon u-icon-14"><img src="../images/style/heart.png" alt="" style="width: 21px; height: 20px"></span>
-                        <span class="u-file-icon u-icon u-icon-15"><img src="../images/style/chat.png" alt="" style="margin-top: -3px; width: 25px; height: 24px;"></span>
+                        <p class="u-align-left u-small-text u-text u-text-variant u-text-23"><a href="../style/style_detail_before.do?style_id=${vo.style_id }">${vo.content }</a><br></p>
+                        <p class="u-small-text u-text u-text-default u-text-variant u-text-24" style=" margin: 14px auto 0 40px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.bookmark }&nbsp;</a></p>
+                        <p class="u-small-text u-text u-text-default u-text-variant u-text-25" style="font-size: 0.75rem; margin: -19px auto 0 90px;"><a href="../style/style_detail_before.do?style_id=${vo.style_id }" style="color:black;">${vo.rcount }&nbsp;</a></p>
+                        <span class="u-file-icon u-icon u-icon-14"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img src="../images/style/heart.png" alt="" style="width: 21px; height: 20px"></a></span>
+                        <span class="u-file-icon u-icon u-icon-15"><a href="../style/style_detail_before.do?style_id=${vo.style_id }"><img src="../images/style/chat.png" alt="" style="margin-top: -3px; width: 25px; height: 24px;"></a></span>
                     </div>
                   </div>
                 </c:forEach>

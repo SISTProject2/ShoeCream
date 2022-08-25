@@ -16,6 +16,12 @@ USER_ID  NOT NULL NUMBER
     FROM (SELECT /*+ INDEX_ASC(style_2 pk_style_2)*/ style_id, img, content, rgdate, bookmark, u_id, rcount
     FROM style_2 ORDER BY style_id desc)) WHERE num BETWEEN #{start} AND #{end} ORDER BY style_id desc
   </select>
+  <select id="styleListDataPop" resultType="StyleVO" parameterType="hashmap">
+    SELECT style_id, img, content, TO_CHAR(rgdate, 'YYYY-MM-DD HH24:MI:SS') as dbday, bookmark, (SELECT email FROM user_2 WHERE user_id = u_id ) as email, rcount, num
+    FROM (SELECT style_id, img, content, rgdate, bookmark, u_id, rcount, rownum as num
+    FROM (SELECT /*+ INDEX_ASC(style_2 pk_style_2)*/ style_id, img, content, rgdate, bookmark, u_id, rcount
+    FROM style_2 ORDER BY bookmark desc, rcount desc)) WHERE num BETWEEN #{start} AND #{end}
+  </select>
   
   <!-- 페이징 -->
   <select id="styleTotalPage" resultType="int">
@@ -89,6 +95,10 @@ USER_ID  NOT NULL NUMBER
   <!-- 삭제 -->
   <delete id="styleDelete" parameterType="int">
     DELETE FROM style_2
+    WHERE style_id=#{style_id}
+  </delete>
+  <delete id="styleDelete2" parameterType="int">
+    DELETE FROM style_likes_2
     WHERE style_id=#{style_id}
   </delete>
   

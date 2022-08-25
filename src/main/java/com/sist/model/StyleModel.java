@@ -34,6 +34,7 @@ public class StyleModel {
 		map.put("end", end);
 		
 		List<StyleVO> list=StyleDAO.styleListData(map);
+		List<StyleVO> list2=StyleDAO.styleListDataPop(map);
 		int totalpage=StyleDAO.styleTotalPage(map);
 		
 		final int BLOCK = 5;
@@ -48,6 +49,7 @@ public class StyleModel {
 		request.setAttribute("endPage", endPage);
 		
 		request.setAttribute("list", list);
+		request.setAttribute("list2", list2);
 		request.setAttribute("main_jsp", "../nav/nav_style.jsp");
 		
 		

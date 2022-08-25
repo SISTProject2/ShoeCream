@@ -40,6 +40,22 @@ public class StyleDAO {
 		return list;
 	}
 	
+	public static List<StyleVO> styleListDataPop(Map map) {
+		List<StyleVO> list = null;
+		SqlSession session=null;
+		try {
+			session=ssf.openSession();
+			list=session.selectList("styleListDataPop", map);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if(session!=null)
+				session.close();
+		}
+		
+		return list;
+	}
+	
 	public static int styleTotalPage(Map map) {
 		int total=0;
 		SqlSession session=null;
@@ -198,6 +214,7 @@ public class StyleDAO {
 		SqlSession session=null;
 		try {
 			session=ssf.openSession();
+			session.delete("styleDelete2",style_id);
 			session.delete("styleDelete",style_id);
 			session.commit();
 		} catch(Exception ex) {
