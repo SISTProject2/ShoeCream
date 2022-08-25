@@ -76,11 +76,10 @@ public class StyleReplyModel {
 		try {
 			request.setCharacterEncoding("UTF-8");
 		} catch(Exception ex) {}
-		String sid=request.getParameter("sid");	// 게시물 번호 => detail로 이동시
-		String sreply_id=request.getParameter("sreply_id"); // 댓글 번호 => delete시 사용
+		String sid=request.getParameter("sid");	
+		String sreply_id=request.getParameter("sreply_id"); 
 		String content=request.getParameter("content");
 		
-		// DAO연동
 		StyleReplyVO vo=new StyleReplyVO();
 		vo.setSreply_id(Integer.parseInt(sreply_id));
 		vo.setContent(content);
@@ -92,15 +91,24 @@ public class StyleReplyModel {
 	
 	@RequestMapping("stylereply/reply_delete.do")
 	public String reply_delete(HttpServletRequest request, HttpServletResponse response) {
-		String sid=request.getParameter("sid");	// 게시물 번호 => detail로 이동시
-		String sreply_id=request.getParameter("sreply_id"); // 댓글 번호 => delete시 사용
+		String sid=request.getParameter("sid");	
+		String sreply_id=request.getParameter("sreply_id"); 
 		String group_id=request.getParameter("group_id");
 		
-		// 삭제 => DAO
 		StyleReplyDAO.styleReplyDelete(Integer.parseInt(sreply_id), Integer.parseInt(group_id));
 		
-		return "redirect:../style/detail.do?style_id="+sid;	// .do는 데이터 넘어가지 x
+		return "redirect:../style/detail.do?style_id="+sid;	
 	}
 	 
+	@RequestMapping("mypage/reply_delete.do")
+	public String mypage_reply_delete(HttpServletRequest request, HttpServletResponse response) {
+		String sid=request.getParameter("sid");	
+		String sreply_id=request.getParameter("sreply_id"); 
+		String group_id=request.getParameter("group_id");
+		
+		StyleReplyDAO.styleReplyDelete(Integer.parseInt(sreply_id), Integer.parseInt(group_id));
+		
+		return "redirect:../mypage/mypage_style.do";	
+	}
 	
 }

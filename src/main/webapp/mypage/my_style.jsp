@@ -195,10 +195,10 @@ header {
 							          </td>
 							          <td style="border-right: 0px solid; font-size: 16px;"><a href="../style/style_detail_before.do?style_id=${vo.sid}" style="color:black;">${vo.content }</a></td>
 							          <td rowspan="3" style="border-bottom: 1px solid #e5e5e5; ">
-							            <input type="button" value="수정" style="padding: 4px 10px; background-color: #e8ebef; color: #3f5e7a; border-radius: 5px; font-size: 14px; border: 0px; font-weight: 600;">
+							            <input type="button" onclick="location.href='../style/style_detail_before.do?style_id=${vo.sid }' " value="수정" style="cursor:pointer; padding: 4px 10px; background-color: #e8ebef; color: #3f5e7a; border-radius: 5px; font-size: 14px; border: 0px; font-weight: 600;">
 							            <!--#59758f-->
 							            <span>&nbsp;&nbsp;</span>
-							            <input type="button" value="삭제" style="padding: 4px 10px; background-color: #e8ebef; color: #a56567; border-radius: 5px; font-size: 14px; border: 0px; font-weight: 600;">
+							            <input type="button" onclick="location.href='../mypage/reply_delete.do?sreply_id=${vo.sreply_id }&sid=${vo.sid}&group_id=${vo.group_id}'" value="삭제" style="padding: 4px 10px; background-color: #e8ebef; color: #a56567; border-radius: 5px; font-size: 14px; border: 0px; font-weight: 600; cursor:pointer;">
 							          </td>
 							        </tr>
 							        <tr>
