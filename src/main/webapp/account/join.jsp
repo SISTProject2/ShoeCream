@@ -143,7 +143,7 @@
 					</p>
 					<div class="pwd_eye">
 						<input class="eye" type="password"
-							placeholder="비밀번호 (영문, 숫자 조합 최소 8자)" id="eye" name="pwd">
+							placeholder="비밀번호 (영문, 숫자, 특수문자 조합 최소 8자)" id="eye" name="pwd">
 						<div>
 							<img class="eye_i" src="../images/eye.png" alt="" id="eye_i">
 						</div>
@@ -168,7 +168,8 @@
 						id="check_1" class="normal"> <label for="check_1">서비스
 						이용약관에 동의합니다. (필수)</label><br> <input type="checkbox" id="check_2"
 						class="normal"> <label for="check_2">개인정보 수집 및 이용에
-						동의합니다. (필수)</label><br> <!-- input type="checkbox" id="check_3"
+						동의합니다. (필수)</label><br> 
+						<!-- input type="checkbox" id="check_3"
 						class="normal"> <label for="check_3">마케팅 수신 동의.
 						(선택)</label><br -->
 
