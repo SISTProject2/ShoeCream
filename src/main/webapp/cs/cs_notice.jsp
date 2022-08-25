@@ -40,7 +40,7 @@
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-palette-5-dark-2 u-header" id="sec-355c"><div class="u-clearfix u-sheet u-sheet-1"></div></header>
+  <body class="u-body u-xl-mode" data-lang="en">
     <section class="u-align-center u-clearfix u-section-1" id="carousel_042d">
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1"></div>
@@ -330,22 +330,5 @@
     
     
     
-    
-    
-    
-    <footer class="u-align-center u-clearfix u-footer u-palette-5-dark-2 u-footer" id="sec-a9f8"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the Text Element.</p>
-      </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
   
 </body></html>
