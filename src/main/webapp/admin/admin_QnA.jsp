@@ -91,7 +91,7 @@
           <div class="u-container-layout u-container-layout-3">
             <div class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-container-style u-group u-shape-rectangle u-white u-group-2">
               <div class="u-container-layout u-container-layout-4">
-                <h3 class="u-text u-text-default u-text-6">상품관리</h3>
+                <h3 class="u-text u-text-default u-text-6">1:1문의</h3>
               </div>
             </div>
             <div class="u-container-style u-group u-shape-rectangle u-group-3">
