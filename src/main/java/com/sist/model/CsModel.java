@@ -90,9 +90,9 @@ public class CsModel {
 	@RequestMapping("cs/save_QnA.do")
 	public String save_QnA(HttpServletRequest request, HttpServletResponse response) {
 
-			UserVO userVO = (UserVO) request.getSession().getAttribute("email");
+			UserVO userVO = (UserVO) request.getSession().getAttribute("user");
 			if (userVO == null) {
-				return "../account/join.jsp";
+				return "../account/login.jsp";
 			}
 		
 		try {
