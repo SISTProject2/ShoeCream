@@ -15,8 +15,11 @@ import com.sist.controller.RequestMapping;
 import com.sist.dao.MypageDAO;
 import com.sist.dao.NavDAO;
 import com.sist.dao.ShoesDAO;
+import com.sist.dao.StyleDAO;
+import com.sist.dao.StyleReplyDAO;
 import com.sist.vo.LikesVO;
 import com.sist.vo.ShoesVO;
+import com.sist.vo.StyleReplyVO;
 import com.sist.vo.StyleVO;
 import com.sist.vo.UserVO;
 
@@ -29,6 +32,9 @@ public class NavModel {
 	      
 	      String no = request.getParameter("no");
 	      String goods_id = request.getParameter("goods_id");
+	      
+	      //HttpSession session = request.getSession();
+	      //System.out.println(session.getAttribute("user_id"));
 
 	      String column = "";
 	      
@@ -39,11 +45,11 @@ public class NavModel {
 	         no = "1";
 	      
 	      if(Integer.parseInt(no) == 1)
-	         column = "bookmark DESC";      
+	         column = "bookmark DESC NULLS LAST";      
 	      if(Integer.parseInt(no) == 2)
-	         column = "im_buy DESC";
+	         column = "im_buy DESC NULLS LAST";
 	      if(Integer.parseInt(no) == 3)
-	         column = "im_buy ASC";
+	         column = "im_buy ASC NULLS LAST";
 	      
 	      int curpage = Integer.parseInt(page);
 	      Map map = new HashMap();
@@ -83,32 +89,42 @@ public class NavModel {
 	      try 
 	      {
 	         LikesVO jvo = new LikesVO();
-	          jvo.setGoods_id(Integer.parseInt(goods_id));
+	         jvo.setGoods_id(Integer.parseInt(goods_id));
 	          
-	          HttpSession session = request.getSession();
-	          String user_id = (String)session.getAttribute("user_id");
+	         HttpSession session = request.getSession();
+	         int user_id = (int)session.getAttribute("user_id");
 	         
-	          jvo.setUser_id(Integer.parseInt(user_id));
+	         jvo.setUser_id(user_id);
 	          
-	          int jcount = 0;
-	          if(user_id != null)
-	          {
-	            jcount = NavDAO.likesCount(jvo);
-	          }  
-	          request.setAttribute("jcount", jcount);
+	         int jcount = 0;
+	         if(user_id != 0)
+	         {
+	           jcount = NavDAO.likesCount(jvo);
+	         }  
+	         request.setAttribute("jcount", jcount);
 	          
 	      }catch(Exception ex){}
 	      
-	       
-	       
-	     //=================== 마이페이지 최근 본 상품
-	      
-	      // 쿠키
-	      Cookie[] cookies = request.getCookies();
-	      List<ShoesVO> cList = new ArrayList<ShoesVO>();
-	      
-	      return "../main/main.jsp";   
-	   }
+	         
+	         
+	        return "../main/main.jsp";   
+	      }
+	   
+	@RequestMapping("shoes/shoes_detail_before.do")
+	public String nav_detail_before(HttpServletRequest request, HttpServletResponse response) {
+		
+		String goods_id = request.getParameter("goods_id");
+		
+		Cookie cookie = new Cookie("shoes" + goods_id, goods_id);
+		
+		cookie.setPath("/");
+		cookie.setMaxAge(60*60*24);	
+		response.addCookie(cookie);
+		
+		return "redirect:../shoes/shoes_detail.do?goods_id=" + goods_id;	
+	}
+	
+	   
 
 	
 	@RequestMapping("nav/nav_men.do")
@@ -128,15 +144,15 @@ public class NavModel {
 			no = "1";
 		
 		if(Integer.parseInt(no) == 1)
-			column = "bookmark DESC";		
+			column = "bookmark DESC NULLS LAST";		
 		if(Integer.parseInt(no) == 2)
-			column = "im_buy DESC";
+			column = "im_buy DESC NULLS LAST";
 		if(Integer.parseInt(no) == 3)
-			column = "im_buy ASC";
+			column = "im_buy ASC NULLS LAST";
 		if(Integer.parseInt(no) == 4)
-			column = "release_date DESC";
+			column = "release_date DESC NULLS LAST";
 		if(Integer.parseInt(no) == 5)
-			column = "release_date";
+			column = "release_date NULLS LAST";
 		
 		
 		int curpage = Integer.parseInt(page);
@@ -193,15 +209,15 @@ public class NavModel {
 			no = "1";
 		
 		if(Integer.parseInt(no) == 1)
-			column = "bookmark DESC";		
+			column = "bookmark DESC NULLS LAST";		
 		if(Integer.parseInt(no) == 2)
-			column = "im_buy DESC";
+			column = "im_buy DESC NULLS LAST";
 		if(Integer.parseInt(no) == 3)
-			column = "im_buy ASC";
+			column = "im_buy NULLS LAST";
 		if(Integer.parseInt(no) == 4)
-			column = "release_date DESC";
+			column = "release_date DESC NULLS LAST";
 		if(Integer.parseInt(no) == 5)
-			column = "release_date ASC";
+			column = "release_date ASC NULLS LAST";
 		
 		int curpage = Integer.parseInt(page);
 		Map map = new HashMap();
@@ -247,15 +263,15 @@ public class NavModel {
 			no = "1";
 		
 		if(Integer.parseInt(no) == 1)
-			column = "bookmark DESC";		
+			column = "bookmark DESC NULLS LAST";		
 		if(Integer.parseInt(no) == 2)
-			column = "im_buy DESC";
+			column = "im_buy DESC NULLS LAST";
 		if(Integer.parseInt(no) == 3)
-			column = "im_buy ASC";
+			column = "im_buy ASC NULLS LAST";
 		if(Integer.parseInt(no) == 4)
-			column = "release_date DESC";
+			column = "release_date DESC NULLS LAST";
 		if(Integer.parseInt(no) == 5)
-			column = "release_date ASC";
+			column = "release_date ASC NULLS LAST";
 		
 		Map map = new HashMap();
 		map.put("no", no); 
@@ -271,16 +287,6 @@ public class NavModel {
 		
 		return "../main/main.jsp";	
 	}
-	
-//	@RequestMapping("nav/nav_style.do")
-//	public String nav_style(HttpServletRequest request, HttpServletResponse response) {
-//		
-//		List<StyleVO> list = NavDAO.navStyleList();
-//		request.setAttribute("list", list);
-//		request.setAttribute("main_jsp", "../nav/nav_style.jsp");
-//		
-//		return "../main/main.jsp";	
-//	}
 	
 	
 	@RequestMapping("nav/nav_calendar.do")
@@ -390,12 +396,12 @@ public class NavModel {
       String goods_id = request.getParameter("goods_id");
       
       HttpSession session = request.getSession();
-      String user_id = (String)session.getAttribute("user_id");
+      int user_id = (int)session.getAttribute("user_id");
       
       LikesVO vo = new LikesVO();
       
       vo.setGoods_id(Integer.parseInt(goods_id));
-      vo.setUser_id(Integer.parseInt(user_id)); 
+      vo.setUser_id(user_id); 
       
       NavDAO.likesInsert(vo);
       

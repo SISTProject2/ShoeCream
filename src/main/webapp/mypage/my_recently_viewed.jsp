@@ -12,6 +12,21 @@
     <title>my_recently_viewed</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="my_recently_viewed.css" media="screen">
+<style>
+#textButton{
+    background:none; 
+    border:none;     
+}
+
+.u-text-4 {
+      width:600px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      display:inline-block;
+  }
+
+</style>
     <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.15.11, nicepage.com">
@@ -70,34 +85,46 @@
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
                     <h3 class="u-text u-text-default u-text-12">최근 본 상품</h3>
-                    <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-2">상품</a>
                     <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-3"> 즉시 구매가</a>
                   </div>
                 </div>
                 <div class="u-align-left u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-2 u-container-style u-group u-opacity u-opacity-20 u-shape-rectangle u-white u-group-3">
                   <div class="u-container-layout u-container-layout-5">
                     <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-4">
-                      <div class="u-container-layout u-container-layout-6">
-                        <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                        <h3 class="u-text u-text-default u-text-13">
-                          <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                          </span>
-                        </h3>
-                        <h3 class="u-text u-text-default u-text-14">
-                          <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                          </span>
-                        </h3>
-                        <h3 class="u-text u-text-default u-text-15">
-                          <span style="font-size: 20px;">999,999,999</span>
-                        </h3>
-                        <h3 class="u-text u-text-default u-text-16">
-                          <span style="font-size: 20px; font-weight: normal;">
-                            <span class="u-text-grey-40">name_kor</span>
-                            <span class="u-text-grey-40"></span>
-                            <span style="font-weight: 700;"></span>
-                          </span>
-                        </h3>
-                      </div>
+                      
+                      
+	                      <div class="u-container-layout u-container-layout-6">
+	                      <c:forEach var="vo" items="${cList }">
+	                        <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-image u-image-default u-preserve-proportions u-image-1" src="${vo.img }" alt="" data-image-width="525" data-image-height="525"></a>
+	                        <h3 class="u-text u-text-default u-text-13">
+	                          <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black; text-decoration: underline; font-weight: bold;"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+	                          </span>
+	                        </h3>
+	                        <h3 class="u-text u-text-default u-text-14">
+	                          <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
+	                        </h3>
+	                        <h3 class="u-text u-text-default u-text-15"> 
+	                         <c:if test="${vo.im_buy!=0}">
+				              	<a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
+				              </c:if>
+				              <c:if test="${vo.im_buy==0}">
+				              	<a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }">입찰 준비 중</a>
+				              </c:if>
+
+	                        
+	                        
+	                        <h3 class="u-text u-text-default u-text-16">
+	                          <span style="font-size: 20px; font-weight: normal;">
+	                            <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_kor }</a></p>
+	                            <span class="u-text-grey-40"></span>
+	                            <span style="font-weight: 700;"></span>
+	                          </span>
+	                        </h3>
+	                        <p>
+	                        </c:forEach>
+	                      </div>
+                      
+                      
                     </div>
                     <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-white u-group-5">
                       <div class="u-container-layout u-container-layout-7">

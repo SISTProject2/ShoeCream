@@ -77,7 +77,7 @@
                             <div class="u-container-layout u-container-layout-2">
                                 <h1 class="u-text u-text-default u-text-1">
                                     <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1"
-                                       data-page-id="1289201052">관리자 페이지</a>
+                                       data-page-id="1289201052" style="margin-top: -250px">관리자 페이지</a>
                                 </h1>
                                 <h3 class="u-text u-text-default u-text-2"><a href="../admin/admin_user.do">회원관리</h3>
                                 <h3 class="u-text u-text-default u-text-3"><a href="../admin/admin_goods.do">상품관리</h3>

@@ -33,15 +33,15 @@ public class CategoryModel {
 			no = "1";
 		
 		if(Integer.parseInt(no) == 1)
-			column = "bookmark DESC";		
+			column = "bookmark DESC NULLS LAST";		
 		if(Integer.parseInt(no) == 2)
-			column = "im_buy DESC";
+			column = "im_buy DESC NULLS LAST";
 		if(Integer.parseInt(no) == 3)
-			column = "im_buy";
+			column = "im_buy NULLS LAST";
 		if(Integer.parseInt(no) == 4)
-			column = "release_date DESC";
+			column = "release_date DESC NULLS LAST";
 		if(Integer.parseInt(no) == 5)
-			column = "release_date";
+			column = "release_date NULLS LAST";
 		
 		int curpage = Integer.parseInt(page);
 		Map map = new HashMap();
@@ -100,15 +100,15 @@ public class CategoryModel {
 			no = "1";
 		
 		if(Integer.parseInt(no) == 1)
-			column = "bookmark DESC";		
+			column = "bookmark DESC NULLS LAST";		
 		if(Integer.parseInt(no) == 2)
-			column = "im_buy DESC";
+			column = "im_buy DESC NULLS LAST";
 		if(Integer.parseInt(no) == 3)
-			column = "im_buy";
+			column = "im_buy NULLS LAST";
 		if(Integer.parseInt(no) == 4)
-			column = "release_date DESC";
+			column = "release_date DESC NULLS LAST";
 		if(Integer.parseInt(no) == 5)
-			column = "release_date";
+			column = "release_date NULLS LAST";
 		
 		int curpage = Integer.parseInt(page);
 		Map map = new HashMap();

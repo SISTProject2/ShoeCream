@@ -124,26 +124,26 @@ public class UserVO {
 		this.msg = msg;
 	}
 	
-//	@Override
-//	public String toString() {
-//		return "UserVO{" +
-//				"user_id=" + user_id +
-//				", email='" + email + '\'' +
-//				", pwd='" + pwd + '\'' +
-//				", name='" + name + '\'' +
-//				", tel='" + tel + '\'' +
-//				", gender='" + gender + '\'' +
-//				", zipcode='" + zipcode + '\'' +
-//				", adress='" + adress + '\'' +
-//				", s_size='" + s_size + '\'' +
-//				", img='" + img + '\'' +
-//				", bankname='" + bankname + '\'' +
-//				", accno='" + accno + '\'' +
-//				", accholder='" + accholder + '\'' +
-//				", birthday=" + birthday + '\'' +
-//				", msg=" + msg +
-//				'}';
-//	}
+	@Override
+	public String toString() {
+		return "UserVO{" +
+				"user_id=" + user_id +
+				", email='" + email + '\'' +
+				", pwd='" + pwd + '\'' +
+				", name='" + name + '\'' +
+				", tel='" + tel + '\'' +
+				", gender='" + gender + '\'' +
+				", zipcode='" + zipcode + '\'' +
+				", adress='" + adress + '\'' +
+				", s_size='" + s_size + '\'' +
+				", img='" + img + '\'' +
+				", bankname='" + bankname + '\'' +
+				", accno='" + accno + '\'' +
+				", accholder='" + accholder + '\'' +
+				", birthday=" + birthday + '\'' +
+				", msg=" + msg +
+				'}';
+	}
 
 }
 

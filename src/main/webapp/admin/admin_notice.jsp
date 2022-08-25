@@ -146,7 +146,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="#carousel_4797" class="u-border-2 u-border-black u-btn u-button-style u-dialog-link u-hover-black u-none u-text-hover-white u-btn-15">공지작성</a>
+                <div style="margin-top: -250px"><a href="#carousel_4797" class="u-border-2 u-border-black u-btn u-button-style u-dialog-link u-hover-black u-none u-text-hover-white u-btn-15">공지작성</a></div>
               </div>
             </div>
           </div>

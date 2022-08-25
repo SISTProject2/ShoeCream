@@ -162,6 +162,24 @@ header #NOTICE {
 		"name": "",
 		"logo": "images/default-logo.png"
 }</script>
+<script type="text/javascript">
+function abbreviateNumber(value) {
+    var newValue = value;
+    if (value >= 1000) {
+        var suffixes = ["", "k", "m", "b","t"];
+        var suffixNum = Math.floor( (""+value).length/3 );
+        var shortValue = '';
+        for (var precision = 2; precision >= 1; precision--) {
+            shortValue = parseFloat( (suffixNum != 0 ? (value / Math.pow(1000,suffixNum) ) : value).toPrecision(precision));
+            var dotLessShortValue = (shortValue + '').replace(/[^a-zA-Z 0-9]+/g,'');
+            if (dotLessShortValue.length <= 2) { break; }
+        }
+        if (shortValue % 1 != 0)  shortValue = shortValue.toFixed(1);
+        newValue = shortValue+suffixes[suffixNum];
+    }
+    return newValue;
+}
+</script>
 <meta name="theme-color" content="#478ac9">
 <meta property="og:title" content="Home">
 <meta property="og:type" content="website">
@@ -175,45 +193,36 @@ header #NOTICE {
        	<c:if test="${s.index>=0 && s.index<12 }">
        	  <div class="u-container-style u-list-item u-repeater-item" style="height: 400px;">
             <div class="u-container-layout u-similar-container u-container-layout-1">
-              <a href="../shoes/shoes_list.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" style="height: 320px;" data-image-width="400" data-image-height="400"></a>
+              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" style="height: 320px;" data-image-width="400" data-image-height="400"></a>
               <span class="u-icon u-text-palette-1-base u-icon-1" style="width: 26px; height: 26px; margin: -305px 14px 0 auto;   padding: 0;">
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-96b0">
                   </use>
                 </svg>
-                <svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-96b0" style="enable-background:new 0 0 51.997 51.997;">
-                  <g><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
-								c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
-								c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
-								C52.216,18.553,51.97,16.611,51.911,16.242z M49.521,21.261c-0.984,4.172-3.265,7.973-6.59,10.985L25.855,47.481L9.072,32.25
-								c-3.331-3.018-5.611-6.818-6.596-10.99c-0.708-2.997-0.417-4.69-0.416-4.701l0.015-0.101C2.725,9.139,7.806,3.826,14.158,3.826
-								c4.687,0,8.813,2.88,10.771,7.515l0.921,2.183l0.921-2.183c1.927-4.564,6.271-7.514,11.069-7.514
-								c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"></path></g>
-                </svg>
+                
+                
               </span>
               <p class="u-text u-text-default u-text-3" style="margin: 292px auto -18px 10px; font-size: 0.95rem; ">
-              <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><span style="text-decoration: underline !important;">${vo.brand }<br></span></a>
+              <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black"><span style="text-decoration: underline !important;">${vo.brand }<br></span></a>
               <br>
               </p>
               <p class="u-text u-text-default u-text-4" style="font-size: 0.825rem;"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
               <p class="u-text u-text-default u-text-4" style="font-size: 0.825rem;"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_kor }</a></p>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-6" style="font-size: 0.85rem;"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
               <p class="u-text u-text-default u-text-7" style="font-size: 0.825rem;">즉시 구매가</p>
-              <p class="u-text u-text-default u-text-8" style="margin: 9px auto 0 36px; font-size: 0.825rem;"><fmt:formatNumber pattern="#,###" value="${vo.bookmark }"/></p>
+
+				<!-- bookmark -->
+				
+				<p>
+            	<img src="../images/like.png" width="12px" height="12px"><span style="font-size: 8.5pt; font-weight: bold; font-style: oblique">
+            <fmt:formatNumber pattern="#,###" value="${vo.bookmark }" /></span> 
+
               <span class="u-icon u-text-palette-1-base u-icon-2" style="width: 18px;  height: 18px; margin: -19px auto 0 10px;" >
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-3069">
                   </use>
                 </svg>
-                <svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-3069" style="enable-background:new 0 0 51.997 51.997;">
-                <g><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
-						c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
-						c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
-						C52.216,18.553,51.97,16.611,51.911,16.242z M49.521,21.261c-0.984,4.172-3.265,7.973-6.59,10.985L25.855,47.481L9.072,32.25
-						c-3.331-3.018-5.611-6.818-6.596-10.99c-0.708-2.997-0.417-4.69-0.416-4.701l0.015-0.101C2.725,9.139,7.806,3.826,14.158,3.826
-						c4.687,0,8.813,2.88,10.771,7.515l0.921,2.183l0.921-2.183c1.927-4.564,6.271-7.514,11.069-7.514
-						c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"></path></g>
-                </svg>
+                
               </span>
             </div>
        	  </div>

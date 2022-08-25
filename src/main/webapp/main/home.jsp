@@ -108,9 +108,7 @@ $(function(){
             <div class="u-container-layout u-similar-container u-container-layout-1">
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265" ></a>
               <span class="u-icon u-text-palette-1-base u-icon-1">
-                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-46bd"></use>
-                </svg>
+                
                 <svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-46bd" style="enable-background:new 0 0 51.997 51.997;">
                   <g><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
 							c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
@@ -122,7 +120,7 @@ $(function(){
 				  </path></g>
 			    </svg>
               </span>
-              <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+              <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
               <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
               <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>
@@ -155,7 +153,7 @@ $(function(){
 				  </path></g>
 			    </svg>
               </span>
-              <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+              <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
               <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
               <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>
@@ -346,9 +344,7 @@ $(function(){
             <div class="u-container-layout u-similar-container u-container-layout-1">
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
                 <span class="u-icon u-text-palette-1-base u-icon-1">
-                  <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-46bd"></use>
-                  </svg>
+ 
                   <svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-46bd" style="enable-background:new 0 0 51.997 51.997;">
                     <g><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
 								c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
@@ -359,7 +355,7 @@ $(function(){
 								c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"></path></g>
                   </svg>
                 </span>
-                <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+                <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
                 <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
                 <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
                 <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>
@@ -392,7 +388,7 @@ $(function(){
 				  </path></g>
 			    </svg>
               </span>
-              <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+              <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
               <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
               <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>
@@ -417,9 +413,7 @@ $(function(){
             <div class="u-container-layout u-similar-container u-container-layout-1">
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-expanded-width u-image u-image-default u-image-1" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
               <span class="u-icon u-text-palette-1-base u-icon-1">
-                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 51.997 51.997" style="">
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-46bd"></use>
-                </svg>
+
                 <svg class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-46bd" style="enable-background:new 0 0 51.997 51.997;">
                   <g><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
 								c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
@@ -430,7 +424,7 @@ $(function(){
 								c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"></path></g>
                 </svg>
               </span>
-              <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+              <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
               <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
               <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>
@@ -491,7 +485,7 @@ $(function(){
 				  </path></g>
 			    </svg>
               </span>
-              <a href="../shoes/shoes_list.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+              <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
               <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></a>
               <p class="u-text u-text-default u-text-6"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:#A6A6A6">즉시구매가</a><br></p>

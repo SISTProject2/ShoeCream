@@ -4,10 +4,13 @@ package com.sist.model;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sist.dao.MypageDAO;
+import com.sist.dao.ShoesDAO;
+import com.sist.vo.ShoesVO;
 import com.sist.vo.UserVO;
 
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,7 +22,9 @@ import com.sist.controller.RequestMapping;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 
 @Controller
@@ -32,12 +37,13 @@ public class MyPageModel {
        if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
+
         return "../mypage/my_mypage.jsp";
     }
     
     @RequestMapping("mypage/my_purchase_list.do")
     public String my_purchase_list(HttpServletRequest request, HttpServletResponse response) {
-        if (request.getSession().getAttribute("user") == null) {
+        if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         return "../mypage/my_purchase_list.jsp";
@@ -45,7 +51,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/my_sell_list.do")
     public String my_sell_list(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         return "../mypage/my_sell_list.jsp";
@@ -53,7 +59,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/my_bookmark.do")
     public String my_bookmark(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         return "../mypage/my_bookmark.jsp";
@@ -61,9 +67,33 @@ public class MyPageModel {
 
     @RequestMapping("mypage/my_recently_viewed.do")
     public String my_recently_viewed(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
+       
+       ShoesDAO dao = new ShoesDAO();
+       
+       // 쿠키
+       Cookie[] cookies = request.getCookies();
+       List<ShoesVO> cList = new ArrayList<ShoesVO>();
+       
+       if(cookies != null)
+       {
+          for(int i=cookies.length-1; i>=0; i--)
+          {
+             if(cookies[i].getName().startsWith("shoes"))
+             {
+          	  cookies[i].setPath("/");
+                String goods_id2 = cookies[i].getValue();
+                ShoesVO vo = ShoesDAO.shoesDetailData(Integer.parseInt(goods_id2));
+                
+                cList.add(vo);
+             }
+          }
+       }
+       
+       request.setAttribute("cList", cList);
+       
         return "../mypage/my_recently_viewed.jsp";
     }
 
@@ -74,7 +104,7 @@ public class MyPageModel {
             return "../account/login.jsp";
         }
         HttpSession session = request.getSession();
-        UserVO userVO = (UserVO) session.getAttribute("user");
+        UserVO userVO = (UserVO) session.getAttribute("email");
         System.out.println("result = " + userVO);
         String nickname = userVO.getEmail().split("@")[0];
         request.setAttribute("userProfile", userVO);
@@ -84,7 +114,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/update_address.do")
     public String update_address(HttpServletRequest request, HttpServletResponse response) {
-        UserVO userVO = (UserVO) request.getSession().getAttribute("user");
+        UserVO userVO = (UserVO) request.getSession().getAttribute("email");
         if (userVO == null) {
             return "../account/login.jsp";
         }
@@ -102,7 +132,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/update_account.do")
     public String update_account(HttpServletRequest request, HttpServletResponse response) {
-        UserVO userVO = (UserVO) request.getSession().getAttribute("user");
+        UserVO userVO = (UserVO) request.getSession().getAttribute("email");
         if (userVO == null) {
             return "../account/login.jsp";
         }
@@ -125,7 +155,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/delete_account.do")
     public String delete_account(HttpServletRequest request, HttpServletResponse response) {
-        UserVO userVO = (UserVO) request.getSession().getAttribute("user");
+        UserVO userVO = (UserVO) request.getSession().getAttribute("email");
         if (userVO == null) {
             return "../account/login.jsp";
         }
@@ -144,7 +174,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/delete_address.do")
     public String delete_address(HttpServletRequest request, HttpServletResponse response) {
-        UserVO userVO = (UserVO) request.getSession().getAttribute("user");
+        UserVO userVO = (UserVO) request.getSession().getAttribute("email");
         if (userVO == null) {
             return "../account/login.jsp";
         }
@@ -160,7 +190,7 @@ public class MyPageModel {
     }
     @RequestMapping("mypage/update_password.do")
     public String update_password(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         try {
@@ -179,7 +209,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/update_size.do")
     public String update_size(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         try {
@@ -198,7 +228,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/update_tel.do")
     public String update_tel(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         try {
@@ -217,7 +247,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/update_profileImage.do")
     public String update_profileImage(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         try {
@@ -243,7 +273,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/delete_profileImage.do")
     public String delete_profileImage(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         HttpSession session = request.getSession();
@@ -256,7 +286,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/my_addressbook.do")
     public String my_addressbook(HttpServletRequest request, HttpServletResponse response) {
-        UserVO user = (UserVO) request.getSession().getAttribute("user");
+        UserVO user = (UserVO) request.getSession().getAttribute("email");
         if (user == null) {
             return "../account/login.jsp";
         }
@@ -266,7 +296,7 @@ public class MyPageModel {
 
     @RequestMapping("mypage/secession.do")
     public String secession(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         try {
@@ -285,11 +315,11 @@ public class MyPageModel {
 
     @RequestMapping("mypage/profile_image.do")
     public void profile_image(HttpServletRequest request, HttpServletResponse response) throws FileNotFoundException {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
            return;
         }
         HttpSession session = request.getSession();
-        UserVO userVO = (UserVO) session.getAttribute("user");
+        UserVO userVO = (UserVO) session.getAttribute("email");
         String imgName = userVO.getImg();
         String fullFilePath = fileDir + imgName;
         File file = new File(fullFilePath);
@@ -317,19 +347,19 @@ public class MyPageModel {
 
     @RequestMapping("mypage/my_pay_account.do")
     public String my_pay_account(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
 
         HttpSession session = request.getSession();
-        UserVO userVO = (UserVO) session.getAttribute("user");
+        UserVO userVO = (UserVO) session.getAttribute("email");
         request.setAttribute("userProfile", userVO);
         return "../mypage/my_pay_account.jsp";
     }
 
     @RequestMapping("mypage/my_style.do")
     public String my_style(HttpServletRequest request, HttpServletResponse response) {
-       if (request.getSession().getAttribute("user") == null) {
+       if (request.getSession().getAttribute("email") == null) {
             return "../account/login.jsp";
         }
         return "../mypage/my_style.jsp";

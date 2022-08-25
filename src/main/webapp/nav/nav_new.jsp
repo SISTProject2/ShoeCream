@@ -216,7 +216,7 @@ header #NOTICE {
 	      </div>
       
       <div style="bottom: 80px">
-      <!-- 필터 버튼 -->
+      
       <!-- 필터 버튼 -->
       <div class="container" style="margin-top: 250px">
 	 	 <a href="../nav/nav_new.do?no=1"><img src="../images/pop.png" width="108px" height="38px"></a> 
@@ -232,7 +232,7 @@ header #NOTICE {
         <c:if test="${s.index>=0 && s.index<12 }">
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-14">
-              <a href="../shoes/shoes_list.do?goods_id=${vo.goods_id }"><img class="u-align-center u-image u-image-default u-image-2" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
+              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-align-center u-image u-image-default u-image-2" src="${vo.img }" alt="" data-image-width="400" data-image-height="265"></a>
               <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black; font-size: 13pt; font-weight: bold"><span style="text-decoration: underline !important;">${vo.brand }<br></span></a>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black; font-size: 13pt">${vo.name_eng }</a><br>
               <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black; font-size: 14pt">${vo.name_kor }</a>
@@ -247,7 +247,7 @@ header #NOTICE {
               </c:if>
               
               <!-- 좋아요 -->
-			<c:if test="${sessionScope.email != null }">
+			<!--<c:if test="${sessionScope.user.user_id != null }">
                  <c:choose>
                    <c:when test="${jcount != 0 }">
                     <a href="../nav/likes.do?no=${no }&page=${curpage }&goods_id=${vo.goods_id }"><img src="../images/heartbf.png" style="width: 50px; height: 50px"></a>LIKE
@@ -256,13 +256,18 @@ header #NOTICE {
                   <img src="../images/heartaf.png" style="width: 50px; height: 50px">LIKE
                  </c:otherwise>
                 </c:choose>
-            </c:if>   
-
-		       
-              
+            </c:if>-->
+            
+            <p>
+            <img src="../images/like.png" width="19px" height="19px"><span style="font-size: 12pt; font-weight: bold; font-style: oblique">
+            <fmt:formatNumber pattern="#,###" value="${vo.bookmark }" /></span>
+               
             </div>
           </div>
          </c:if>
+         
+         
+         
       </c:forEach>
    		
    		<div style= "margin-top:50px"></div>
