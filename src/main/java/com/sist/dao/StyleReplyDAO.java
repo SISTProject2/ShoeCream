@@ -72,6 +72,31 @@ public class StyleReplyDAO {
 		 } 
 	}
 	 
-
+	 public static void styleReplyUpdate(StyleReplyVO vo) {
+			SqlSession session=null;
+			try {
+				session=ssf.openSession(true);
+				session.update("styleReplyUpdate",vo);
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			} finally {
+				if(session!=null)
+					session.close();
+			}
+	 }
+	 
+	 public static void styleReplyDelete(int sreply_id, int group_id) {
+			SqlSession session=null;
+			try {
+				session=ssf.openSession(true);
+				session.delete("styleReplyDelete2",group_id);
+				session.delete("styleReplyDelete",sreply_id);
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			} finally {
+				if(session!=null)
+					session.close();
+			}
+	}
 	 
 }

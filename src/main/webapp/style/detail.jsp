@@ -80,6 +80,23 @@ $(function(){
 			
 		})
 	})
+	
+	// 댓글 수정
+	let u=0;
+	$('.up').click(function(){
+		$('.updates').hide();	
+		let id=$(this).attr("data-no");
+		console.log(id);
+		if(u==0) {
+			$('#update'+id).show();
+			$('#up'+id).text("취소")
+			u=1;
+		} else {
+			$('#update'+id).hide();
+			$('#up'+id).text("수정")
+			u=0;
+		}
+	})
 }) 
 
 
@@ -205,9 +222,20 @@ $(function(){
               <tr>
                 <td width="70%" class="re" data-no="${svo.sreply_id }">
                   <c:if test="${svo.group_tab==1 && sessionScope.user_id==svo.user_id }">
-                      <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default  u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; margin-left:10px; font-weight: 800; color: #425465">수정</a>
-		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default  u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #a97275">삭제</a>
+                      <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default  u-text-3 up" onclick="return false" id="up${svo.sreply_id }" data-no="${svo.sreply_id }" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; margin-left:10px; font-weight: 800; color: #425465">수정</a>
+		              <a href="../stylereply/reply_delete.do?sreply_id=${svo.sreply_id }&sid=${vo.style_id}&group_id=${svo.group_id}" class="u-custom-font u-font-source-sans-pro u-text u-text-default  u-text-3" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #a97275">삭제</a>
                    </div>
+                     <tr>
+			            <td colspan="3" width=100%; style="display:none" id="update${svo.sreply_id }" class="updates">
+			             <form method=post action="../stylereply/reply_update.do">
+			               <input type=hidden name=sid value="${vo.style_id }">
+			               <input type=hidden name=type value="1">
+			               <input type=hidden name=sreply_id value="${svo.sreply_id }">
+			               <textarea id="message-6797" name="content" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-input-1" required="required" rows="1" style="font-size: 0.875rem; width: 470px; margin-left: 45px; border: 1px solid lightgrey">${svo.content }</textarea>
+                    		<input type="submit" class="u-black u-border-none u-btn u-btn-submit u-button-style u-btn-1" value="수정" id="writeBtn${svo.sreply_id }" data-no="${svo.sreply_id }" style="background-image: none; font-size: 0.875rem; padding: 8px 10px; margin-top: -53px; margin-left: 550px;">
+			              </form>
+			            </td>
+			          </tr>
                   </c:if>
                   <c:if test="${svo.group_tab==0 }">
                     <c:if test="${sessionScope.user_id!=null }">
@@ -215,8 +243,19 @@ $(function(){
 		              &nbsp;
 		            </c:if>  
 		            <c:if test="${sessionScope.user_id==svo.user_id}"><%-- 본인이면 --%>  
-		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #425465">수정</a>
-		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-3" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #a97275"">삭제</a>
+		              <a href="#" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-3  up" id="up${svo.sreply_id }" data-no="${svo.sreply_id }" onclick="return false" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #425465">수정</a>
+		              <a href="../stylereply/reply_delete.do?sreply_id=${svo.sreply_id }&sid=${vo.style_id}&group_id=${svo.group_id}" class="u-custom-font u-font-source-sans-pro u-text u-text-default u-text-3" style=" font-weight: 400; font-size: 0.75rem; margin-top:5px; display: inline; font-weight: 800; color: #a97275"">삭제</a>
+                      <tr>
+			            <td colspan="3" width=100%; style="display:none" id="update${svo.sreply_id }" class="updates">
+			             <form method=post action="../stylereply/reply_update.do">
+			               <input type=hidden name=sid value="${vo.style_id }">
+			               <input type=hidden name=type value="1">
+			               <input type=hidden name=sreply_id value="${svo.sreply_id }">
+			               <textarea id="message-6797" name="content" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-input-1" required="required" rows="1" style="font-size: 0.875rem; width: 470px; margin-left: 45px; border: 1px solid lightgrey">${svo.content }</textarea>
+                    		<input type="submit" class="u-black u-border-none u-btn u-btn-submit u-button-style u-btn-1" value="수정" id="writeBtn${svo.sreply_id }" data-no="${svo.sreply_id }" style="background-image: none; font-size: 0.875rem; padding: 8px 10px; margin-top: -53px; margin-left: 550px;">
+			              </form>
+			            </td>
+			          </tr>
                     </c:if>
                   </c:if>
                 </td> 

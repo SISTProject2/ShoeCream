@@ -55,14 +55,31 @@
   <selectKey keyProperty="sreply_id" resultType="int" order="BEFORE">
     SELECT NVL(MAX(sreply_id)+1,1) as sreply_id FROM style_reply_2
   </selectKey>
-  INSERT INTO style_reply_2(sreply_id, sid, name, content, regdate, group_id, group_step, group_tab, root) VALUES (
-  #{sreply_id}, #{sid}, #{name}, #{content}, SYSDATE, #{group_id}, #{group_step}+1, #{group_tab}+1, #{root})
+  INSERT INTO style_reply_2(sreply_id, sid, name, content, regdate, group_id, group_step, group_tab, root, user_id) VALUES (
+  #{sreply_id}, #{sid}, #{name}, #{content}, SYSDATE, #{group_id}, #{group_step}+1, #{group_tab}+1, #{root}, (SELECT user_id FROM user_2 WHERE email=#{email}))
 </insert>
 <update id="depthIncrement" parameterType="StyleReplyVO">
   UPDATE style_reply_2 SET
   depth=depth+1
   WHERE sreply_id=#{sreply_id}
 </update>
+
+<!-- 수정 -->
+<update id="styleReplyUpdate" parameterType="StyleReplyVO" >
+  UPDATE style_reply_2 SET
+  content=#{content}
+  WHERE sreply_id=#{sreply_id}
+</update>
+
+<!-- 삭제 -->
+<delete id="styleReplyDelete" parameterType="int">
+  DELETE FROM style_reply_2
+  WHERE sreply_id=#{sreply_id}
+</delete>
+<delete id="styleReplyDelete2" parameterType="int">
+  DELETE FROM style_reply_2
+  WHERE group_id=#{group_id} AND group_tab='1'
+</delete>
 					
 
 </mapper>
