@@ -98,7 +98,9 @@ body {
     border-radius: 4px;
     border: none;
     font-weight: 800;
-    margin-bottom: 8px;
+    margin: 8px 0;
+    cursor: pointer;
+
 }
 
 .join_submit_k {
@@ -109,7 +111,7 @@ body {
     border-radius: 4px;
     border: none;
     font-weight: 800;
-
+    cursor: pointer;
     background-image: url("../images/kakao.png");
     background-repeat: no-repeat;/*이미지 반복 없이 한 개만 출력*/
     background-size: 18px;

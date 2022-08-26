@@ -59,23 +59,23 @@ $(function(){
       <li data-u-target="#carousel_1d20" class="u-active u-grey-30" data-u-slide-to="2" style="cursor:pointer;"></li>
       <li data-u-target="#carousel_1d20" class="u-active u-grey-30" data-u-slide-to="3" style="cursor:pointer;"></li>
     </ol>
-    <div class="u-carousel-inner" role="listbox" style="height: 555px;">
-      <div class="u-active u-carousel-item u-effect-fade u-gallery-item u-carousel-item-1" style="margin-top: -45px;">
+    <div class="u-carousel-inner" role="listbox" style="height: 580px;">
+      <div class="u-active u-carousel-item u-effect-fade u-gallery-item u-carousel-item-1" style="margin-top: -20px;">
         <div class="u-clearfix u-sheet u-sheet-1">
           <img src="../images/banner_01.png" style="width: 100%; height: 500px; object-fit: fill;">
         </div>
       </div>
-      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2" style="margin-top: -35px;">
+      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2" style="margin-top: -12px;">
         <div class="u-clearfix u-sheet u-sheet-1">
           <img src="../images/banner_02.png" style="width: 100%; height: 500px; object-fit: fill;">
         </div>
       </div>
-      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-3" style="margin-top: -35px;">
+      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-3" style="margin-top: -7px;">
         <div class="u-clearfix u-sheet u-sheet-1">
           <img src="../images/banner_03.png" style="width: 100%; height: 500px; object-fit: fill;">
         </div>
       </div>
-      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-4" style="margin-top: -40px;">
+      <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-4" style="margin-top: -8px;">
         <div class="u-clearfix u-sheet u-sheet-1">
           <img src="../images/banner_04.png" style="width: 100%; height: 500px; object-fit: fill;">
         </div>
@@ -112,7 +112,6 @@ $(function(){
   </section>
   
   <div  class="home_margin" >
-  <div style= "margin-top:100px"></div>
   <section class="u-clearfix u-section-2" id="sec-9192">
     <div class="u-clearfix u-sheet u-sheet-1">
     

@@ -95,7 +95,7 @@ public class StyleReplyModel {
 		String sreply_id=request.getParameter("sreply_id"); 
 		String group_id=request.getParameter("group_id");
 		
-		StyleReplyDAO.styleReplyDelete(Integer.parseInt(sreply_id), Integer.parseInt(group_id));
+		StyleReplyDAO.styleReplyDelete(Integer.parseInt(sreply_id), Integer.parseInt(group_id), Integer.parseInt(sid));
 		
 		return "redirect:../style/detail.do?style_id="+sid;	
 	}
@@ -106,7 +106,7 @@ public class StyleReplyModel {
 		String sreply_id=request.getParameter("sreply_id"); 
 		String group_id=request.getParameter("group_id");
 		
-		StyleReplyDAO.styleReplyDelete(Integer.parseInt(sreply_id), Integer.parseInt(group_id));
+		StyleReplyDAO.styleReplyDelete(Integer.parseInt(sreply_id), Integer.parseInt(group_id), Integer.parseInt(sid));
 		
 		return "redirect:../mypage/mypage_style.do";	
 	}

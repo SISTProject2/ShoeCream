@@ -85,12 +85,17 @@ public class StyleReplyDAO {
 			}
 	 }
 	 
-	 public static void styleReplyDelete(int sreply_id, int group_id) {
+	 public static void styleReplyDelete(int sreply_id, int group_id, int sid) {
 			SqlSession session=null;
+			int group_tab=styleReplyGroup_tab(sreply_id);
+			System.out.println("group_tab="+group_tab);
 			try {
 				session=ssf.openSession(true);
-				session.delete("styleReplyDelete2",group_id);
+				if (group_tab==0) {
+					session.delete("styleReplyDelete2",group_id);
+				}
 				session.delete("styleReplyDelete",sreply_id);
+				session.update("countDecrement",sid);
 			} catch(Exception ex) {
 				ex.printStackTrace();
 			} finally {
@@ -98,5 +103,21 @@ public class StyleReplyDAO {
 					session.close();
 			}
 	}
+	 
+	 public static int styleReplyGroup_tab(int sreply_id) {
+		 	int group_tab=0;
+			SqlSession session=null;
+			try {
+				session=ssf.openSession();
+				group_tab=session.selectOne("styleReplyGroup_tab", sreply_id);
+			} catch(Exception ex) {
+				ex.printStackTrace();
+			} finally {
+				if(session!=null)
+					session.close();
+			}
+			
+			return group_tab;
+	 }
 	 
 }

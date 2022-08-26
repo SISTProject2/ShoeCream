@@ -80,6 +80,14 @@
   DELETE FROM style_reply_2
   WHERE group_id=#{group_id} AND group_tab='1'
 </delete>
+<select id="styleReplyGroup_tab" resultType="int" parameterType="int">
+  SELECT group_tab FROM style_reply_2 WHERE sreply_id=#{sreply_id}
+</select>
+<update id="countDecrement" parameterType="int">
+  UPDATE style_2 SET
+  rcount=rcount-1
+  WHERE style_id=#{sid}
+</update>
 					
 
 </mapper>

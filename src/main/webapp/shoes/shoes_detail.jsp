@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +12,12 @@
 </head>
 <link rel="stylesheet" href="../css/shoes_detail.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<!-- jQuery -->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <script>
 	//팝업 열기
 	$(document).on("click", "btn-open", function(e) {
@@ -25,11 +31,57 @@
 			LayerPopup.removeClass("show");
 		}
 	})
+
+	//문서가 준비되면 제일 먼저 실행
+	$(document).ready(function() {
+		$("#iamportPayment").click(function() {
+			payment(); //버튼 클릭하면 호출 
+		});
+	})
+
+	//버튼 클릭하면 실행
+	function payment(data) {
+		IMP.init('imp15433307');//아임포트 관리자 콘솔에서 확인한 '가맹점 식별코드' 입력
+		IMP.request_pay({// param
+			pg : "kakaopay.TC0ONETIME", //pg사명 or pg사명.CID (잘못 입력할 경우, 기본 PG사가 띄워짐)
+			pay_method : "card", //지불 방법
+			merchant_uid : "iamport_test_id", //가맹점 주문번호 (아임포트를 사용하는 가맹점에서 중복되지 않은 임의의 문자열을 입력)
+			name : "${vo.name_kor }", //결제창에 노출될 상품명
+			amount : ${vo.im_sell }, //금액
+			buyer_email : "emmail",
+			buyer_name : "name",
+			buyer_tel : "tel"
+		}, function(rsp) { // callback
+			if (rsp.success) {
+				alert("완료 -&gt; imp_uid : " + rsp.imp_uid
+						+ " / merchant_uid(orderKey) : " + rsp.merchant_uid);
+			} else {
+				alert("실패 : 코드(" + rsp.error_code + ") / 메세지(" + rsp.error_msg
+						+ ")");
+			}
+		});
+	}
 </script>
 
 <body>
 	<main class="wrapper">
-		<!--p class="category_location">HOME > MEN > 스니커즈</p -->
+		<p class="category_location">
+			<a href="../main/main.do">HOME</a> >
+
+			<c:if test="${vo.type=='남자'}">
+				<a href="../nav/nav_men.do">MEN</a>
+			</c:if>
+			<c:if test="${vo.type=='여자'}">
+				<a href="../nav/nav_women.do">WOMEN</a>
+			</c:if>
+			<c:if test="${vo.type=='키즈'}">
+				<a href="../nav/nav_kids.do">KIDS</a>
+			</c:if>
+			> ${vo.category_id}
+
+
+
+		</p>
 		<article class="detail_top">
 			<section class="detail_img">
 				<div>
@@ -54,7 +106,13 @@
 					<div>
 						<div class="detail_size">
 							<sapn>사이즈</sapn>
-							<sapn class="d_size" id="modal_btn">모든 사이즈 ▼</sapn>
+							<sapn class="d_size" id="modal_btn"> <select
+								class="size_select">
+								<option value="" disabled selected>사이즈 선택</option>
+								<c:forEach var="i" begin="220" end="330" step="5">
+									<option><c:out value="${i}" /></option>
+								</c:forEach>
+							</select> </sapn>
 
 							<!-- 모달창-->
 							<!-- <a href="#layer-popup" class="btn-open">팝업 열기</a>
@@ -87,18 +145,15 @@
 							</c:if>
 
 						</div>
-						
+
 						<c:if test="${vo.variance!=null}">
-						<div class="variance">
-						<c:if test="${vo.variance== }">
+							<div class="variance">${vo.variance }</div>
 						</c:if>
-						
-						▲ ${vo.variance }</div>
-										</c:if>
 						<c:if test="${vo.variance==null}">
-						<div class="variance"><div class="variance">-</div>
+							<div class="variance">
+								<div class="variance">-</div>
 						</c:if>
-						
+
 					</div>
 
 					<div class="detail_amount">
@@ -109,28 +164,47 @@
 									<smail>즉시 구매가</smail>
 								</div>
 							</div>
-							<div class="dpb">1,348,000원</div>
+							<div class="dpb">
+								<fmt:formatNumber pattern="#,###" value="${vo.im_buy }" />
+								원
+							</div>
 
 							<!-- <div>
                                 모달창
                             </div> -->
 						</div>
-						<div class="d_price_button">
+						<div class="d_price_button" id="iamportPayment">
 							<div class="dpb_title">
 								<div class="dpb">
 									<b>SELL</b><br>
 									<smail>즉시 판매가</smail>
 								</div>
 							</div>
-							<div class="dpb">1,348,000원</div>
+							<div class="dpb">
+								<fmt:formatNumber pattern="#,###" value="${vo.im_sell }" />
+								원
+							</div>
+
 
 							<!-- <div>
                                 모달창
                             </div> -->
 						</div>
 						<div class="detail_like">
-							<img src="../images/shoes_detail/like_g.png" alt="">
-							<div>12000</div>
+						
+						<!-- 좋아요 버튼 -->
+						<c:if test="${sessionScope.user_id != null }">
+					     <c:if test="${jcount == 0 }">
+					        	<a href="../nav/likes.do?goods_id=${vo.goods_id }"><img src="../images/shoes_detail/like_g.png"></a>
+					     </c:if>
+					     <c:if test="${jcount != 0 }">
+					      		<img src="../images/shoes_detail/like_r.png">
+					     </c:if>
+				    </c:if>
+						
+						
+						
+						
 						</div>
 					</div>
 					<div class="goods_info">
@@ -140,9 +214,41 @@
 								모델 번호<br> 출시일<br> 컬러<br> 발매가<br> 배송 정보
 							</div>
 							<div class="GI_contents">
-								<strong>DM7866-162</strong><br> 22/07/21<br>
-								SAIL/UNIVERSITY RED-RIDGEROCK<br> 189,100원<br> 3,000원<span>
-									| 검수 후 배송 5-7일 내 도착 예정</span>
+
+								<c:if test="${vo.sku!=null}">
+									<strong>${vo.sku }</strong>
+									<br>
+								</c:if>
+								<c:if test="${vo.sku==null}">
+								-<br>
+								</c:if>
+
+								<c:if test="${vo.release_date!=null}">
+									<fmt:formatDate value="${vo.release_date }"
+										pattern="yyyy-MM-dd" />
+								</c:if>
+								<c:if test="${vo.release_date==null}">
+								-
+								</c:if>
+								<br>
+
+								<c:if test="${vo.color!=null}">
+								${vo.color }<br>
+								</c:if>
+
+								<c:if test="${vo.color==null}">
+								-<br>
+								</c:if>
+
+								<c:if test="${vo.release_price!=null}">
+								${vo.release_price }<br>
+								</c:if>
+
+								<c:if test="${vo.release_price==null}">
+								-<br>
+								</c:if>
+
+								3,000원<span> | 검수 후 배송 5-7일 내 도착 예정</span>
 							</div>
 						</div>
 					</div>
@@ -192,31 +298,33 @@
 			</section>
 		</article>
 
-		<hr>
+		<!--hr>
 
 		<article>
-			<h1>
-				style <a>349</a>
-			</h1>
+			<div class="goods_h1">style <a>349</a></div>
 			<article>
 				<img src="" alt="">
 			</article>
 			<button>MORE</button>
-		</article>
+		</article-->
 
 		<hr>
 
 		<article>
-			<h1>이런 상품은 어때요</h1>
+			<div class="goods_h1">이런 상품은 어때요</div>
 			<section>
-				<img src="" alt="">
+
+
+
+
+
 			</section>
 		</article>
 
 		<hr>
 
 		<article>
-			<h1>다른 고객들이 함께 찾는 상품</h1>
+			<div class="goods_h1">다른 고객들이 함께 찾는 상품</div>
 			<section>
 				<img src="" alt="">
 			</section>
