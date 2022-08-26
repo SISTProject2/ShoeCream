@@ -150,15 +150,7 @@
     </section>
     
 
- <style type="text/css">
-@charset "UTF-8";
-
-.search {
-        display: none;
-}
-.search input {
-        display: none;
-}
-</style> 
+    <jsp:include page="../main/header.jsp" />
+    <jsp:include page="../main/nav.jsp" />
   </main>
 </body></html>
