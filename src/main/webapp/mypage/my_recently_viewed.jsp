@@ -69,7 +69,7 @@
                     <h3 class="u-text u-text-default u-text-2">쇼핑 정보</h3>
                     <h3 class="u-text u-text-default u-text-3"><a href="../mypage/my_purchase_list.do">구매 내역</a></h3>
                     <h3 class="u-text u-text-default u-text-4"><a href="../mypage/my_sell_list.do">판매 내역</a></h3>
-                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/my_bookmark.do">관심 상품</a></h3>
+                    <h3 class="u-text u-text-default u-text-5"><a href="../mypage/likes.do">관심 상품</a></h3>
                     <h3 class="u-text u-text-default u-text-6"><a href="../mypage/my_recently_viewed.do">최근 본 상품</a></h3>
                     <h3 class="u-text u-text-default u-text-7">내 정보</h3>
                     <h3 class="u-text u-text-default u-text-8"><a href="../mypage/my_profile.do">프로필 정보</a></h3>
@@ -84,10 +84,11 @@
               <div class="u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-2 u-container-layout u-container-layout-3">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
-                    <h3 class="u-text u-text-default u-text-12">최근 본 상품</h3>
-                    <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-3"> 즉시 구매가</a>
+                    <h3 class="u-text u-text-default u-text-12">최근 본 상품</h3> 
+                    <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-3"> 즉시 구매가</a>                
                   </div>
                 </div>
+                <a href="../shoes/shoes_detail_after.do" style="font-size: 13pt; z-index: 6; left: 60%">전체삭제</a>
                 <div class="u-align-left u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-2 u-container-style u-group u-opacity u-opacity-20 u-shape-rectangle u-white u-group-3">
                   <div class="u-container-layout u-container-layout-5">
                     <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-4">

@@ -87,6 +87,10 @@ public class MyPageModel {
        
        ShoesDAO dao = new ShoesDAO();
        
+       // 세션
+       HttpSession session = request.getSession();
+	   int user_id = (int)session.getAttribute("user_id");
+       
        // 쿠키
        Cookie[] cookies = request.getCookies();
        List<ShoesVO> cList = new ArrayList<ShoesVO>();
@@ -95,7 +99,7 @@ public class MyPageModel {
        {
           for(int i=cookies.length-1; i>=0; i--)
           {
-             if(cookies[i].getName().startsWith("shoes"))
+             if(cookies[i].getName().startsWith(user_id + "shoes"))
              {
           	  cookies[i].setPath("/");
                 String goods_id2 = cookies[i].getValue();

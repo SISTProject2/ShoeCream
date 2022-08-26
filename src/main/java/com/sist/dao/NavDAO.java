@@ -307,12 +307,12 @@ public class NavDAO {
 	}
 	
 	// 2. <select id="likesGetGoodsId" resultType="int" parameterType="String">
-	public static List<Integer> likesGetGoodsId(String user_id)
+	public static List<Integer> likesGetGoodsId(int user_id)
 	{
 		List<Integer> list = null;
 		SqlSession session = null;
 		
-		try
+	try
 	{
 		session = ssf.openSession();
 		list = session.selectList("likesGetGoodsId", user_id);

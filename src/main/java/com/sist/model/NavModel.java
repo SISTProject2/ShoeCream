@@ -84,39 +84,18 @@ public class NavModel {
 	      request.setAttribute("list", list);
 	      request.setAttribute("main_jsp", "../nav/nav_new.jsp");
 	      
-	      // ============= 좋아요 jcount =================
-	      
-	      try 
-	      {
-	         LikesVO jvo = new LikesVO();
-	         jvo.setGoods_id(Integer.parseInt(goods_id));
-	          
-	         HttpSession session = request.getSession();
-	         int user_id = (int)session.getAttribute("user_id");
-	         
-	         jvo.setUser_id(user_id);
-	          
-	         int jcount = 0;
-	         if(user_id != 0)
-	         {
-	           jcount = NavDAO.likesCount(jvo);
-	         }  
-	         request.setAttribute("jcount", jcount);
-	          
-	      }catch(Exception ex){}
-	      
-	         
-	         
+     
 	        return "../main/main.jsp";   
 	      }
 	   
 	@RequestMapping("shoes/shoes_detail_before.do")
 	public String nav_detail_before(HttpServletRequest request, HttpServletResponse response) {
 		
+		// 세션
+        HttpSession session = request.getSession();
+	    int user_id = (int)session.getAttribute("user_id");
 		String goods_id = request.getParameter("goods_id");
-		
-		Cookie cookie = new Cookie("shoes" + goods_id, goods_id);
-		
+		Cookie cookie = new Cookie(user_id + "shoes" + goods_id, goods_id);
 		cookie.setPath("/");
 		cookie.setMaxAge(60*60*24);	
 		response.addCookie(cookie);
@@ -383,75 +362,5 @@ public class NavModel {
 		return "../main/main.jsp";	
 	}
 	
-	// ==================== 좋아요 =============================
 	
-	
-	
-	@RequestMapping("nav/likes.do")
-	public String shoes_likes(HttpServletRequest request, HttpServletResponse response)
-	{
-      
-      String no = request.getParameter("no");
-      String page = request.getParameter("page");
-      String goods_id = request.getParameter("goods_id");
-      
-      HttpSession session = request.getSession();
-      int user_id = (int)session.getAttribute("user_id");
-      
-      LikesVO vo = new LikesVO();
-      
-      vo.setGoods_id(Integer.parseInt(goods_id));
-      vo.setUser_id(user_id); 
-      
-      NavDAO.likesInsert(vo);
-      
-      // 좋아요 클릭하고 되돌아가는 링크
-      return "redirect:../nav/nav_new.do?no=" + no + "&page=" + page + "&goods_id=" + goods_id;  
-    }
-
-	
-	// ============== 마이페이지 좋아요 ==================
-	
-	// 마이페이지에 좋아요 목록 출력
-	@RequestMapping("nav/nav_list.do")
-	public String likes_list(HttpServletRequest request, HttpServletResponse response)
-	{
-		HttpSession session = request.getSession();
-		String user_id = (String)session.getAttribute("user_id");
-		
-		List<Integer> list = NavDAO.likesGetGoodsId(user_id);
-		List<ShoesVO> fList = new ArrayList<ShoesVO>(); 
-		
-		for(int goods_id: list)
-		{
-			ShoesVO vo = NavDAO.likesListData(goods_id); 
-			fList.add(vo); 
-		}
-		
-		request.setAttribute("fList", fList); // 좋아요한 게시글의 모든 데이터(*)
-		
-		request.setAttribute("my_mypage_jsp", "../mypage/my_bookmark.jsp");
-		request.setAttribute("main_jsp", "../mypage/my_mypage.jsp");
-		
-		return "../main/main.jsp";
-	}
-	
-	// 좋아요 취소
-	@RequestMapping("nav/likes_cancel.do")
-	public String likes_cancel(HttpServletRequest request, HttpServletResponse response)
-	{
-		String goods_id = request.getParameter("goods_id");
-		
-		HttpSession session = request.getSession();
-		int user_id = (int)session.getAttribute("user_id");
-		
-		LikesVO vo = new LikesVO();
-		vo.setUser_id(user_id);
-		vo.setGoods_id(Integer.parseInt(goods_id));
-		
-		// DAO 연동
-		NavDAO.likesDelete(vo);
-		
-		return "redirect:../mypage/my_mypage_list.do";
-	}
 }

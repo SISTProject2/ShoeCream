@@ -191,8 +191,20 @@
                             </div> -->
 						</div>
 						<div class="detail_like">
-							<img src="../images/shoes_detail/like_g.png" alt="">
-							<div>12000</div>
+						
+						<!-- 좋아요 버튼 -->
+						<c:if test="${sessionScope.user_id != null }">
+					     <c:if test="${jcount == 0 }">
+					        	<a href="../nav/likes.do?goods_id=${vo.goods_id }"><img src="../images/shoes_detail/like_g.png" style="width: 65px; height: 45px"></a>
+					     </c:if>
+					     <c:if test="${jcount != 0 }">
+					      		<img src="../images/shoes_detail/like_r.png" style="width: 65px; height: 45px">
+					     </c:if>
+				    </c:if>
+						
+						
+						
+						
 						</div>
 					</div>
 					<div class="goods_info">

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
@@ -12,6 +12,21 @@
     <title>my_bookmark</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="my_bookmark.css" media="screen">
+<style type="text/css">
+#textButton{
+    background:none; 
+    border:none;     
+}
+
+.u-text-4 {
+      width:600px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      display:inline-block;
+  }
+
+</style>
     <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.15.11, nicepage.com">
@@ -34,6 +49,7 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-355c"><div class="u-clearfix u-sheet u-sheet-1"></div></header>
+    <main class="wrapper">
     <section class="u-align-center u-clearfix u-section-1" id="carousel_042d">
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1"></div>
@@ -43,13 +59,13 @@
       </div>
       <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
-          <div class="u-layout-row" style="margin-top: 100px;">
+          <div class="u-layout-row">
             <div class="u-align-left u-container-style u-layout-cell u-size-12 u-layout-cell-1">
               <div class="u-container-layout u-valign-top u-container-layout-1">
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-1">
                   <div class="u-container-layout u-container-layout-2">
                     <h1 class="u-text u-text-default u-text-1">
-                      <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="my_mypage..do" data-page-id="1289201052">마이 페이지</a>
+                      <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="my_mypage.do" data-page-id="1289201052">마이 페이지</a>
                     </h1>
                     <h3 class="u-text u-text-default u-text-2">쇼핑 정보</h3>
                     <h3 class="u-text u-text-default u-text-3"><a href="../mypage/my_purchase_list.do">구매 내역</a></h3>
@@ -70,7 +86,6 @@
                 <div class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-container-style u-group u-shape-rectangle u-white u-group-2">
                   <div class="u-container-layout u-container-layout-4">
                     <h3 class="u-text u-text-default u-text-12">관심 상품</h3>
-                    <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-2">상품</a>
                     <a href="https://nicepage.online" class="u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-none u-text-active-palette-5-dark-3 u-text-hover-palette-5-dark-2 u-text-palette-5-dark-2 u-btn-3"> 즉시 구매가</a>
                   </div>
                 </div>
@@ -78,30 +93,43 @@
                   <div class="u-container-layout u-container-layout-5">
                     <div class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-light-1 u-container-style u-expanded-width u-group u-shape-rectangle u-group-4">
                       
-                      <c:forEach var="vo" items="${fLlist }">
+                      
 	                      <div class="u-container-layout u-container-layout-6">
-	                        <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-	                        <h3 class="u-text u-text-default u-text-13">
-	                          <span style="font-size: 20px; font-weight: bold; text-decoration: underline">${vo.brand }<span style="font-weight: 700;"></span>
-	                          </span>
-	                        </h3>
-	                        <h3 class="u-text u-text-default u-text-14">
-	                          <span style="font-size: 20px; font-weight: normal;">${vo.name_eng }<span style="font-weight: 700;"></span>
-	                          </span>
-	                        </h3>
-	                        <h3 class="u-text u-text-default u-text-15">
-	                          <span style="font-size: 20px;">${vo.im_buy }</span>
-	                        </h3>
-	                        <h3 class="u-text u-text-default u-text-16">
-	                          <span style="font-size: 20px; font-weight: normal;">
-	                            <span style="font-size: 20px; font-weight: normal;">${vo.name_kor }<span style="font-weight: 700;"></span>
-	                          </span>
-	                            <span class="u-text-grey-40"></span>
-	                            <span style="font-weight: 700;"></span>
-	                          </span>
-	                        </h3>
+	                      	<c:forEach var="vo" items="${fList }">
+		                        <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-image u-image-default u-preserve-proportions u-image-1" src="${vo.img }" alt="" data-image-width="525" data-image-height="525"></a>
+		                        <h3 class="u-text u-text-default u-text-13">
+		                          <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="color:black; text-decoration: underline; font-weight: bold;"><p class="u-text u-text-default u-text-3">${vo.brand }<br></p></a>
+		                        </h3>
+		                        <h3 class="u-text u-text-default u-text-14">
+		                          <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_eng }</a></p>
+		                        </h3>
+		                        
+		                        <h3 class="u-text u-text-default u-text-15"> 
+		                         <c:if test="${vo.im_buy!=0}">
+					              	<span style="color:black"><p class="u-text u-text-default u-text-5"><fmt:formatNumber pattern="#,###" value="${vo.im_buy }"/>원<br></p></span>
+					              </c:if>
+					              <c:if test="${vo.im_buy==0}">
+					              	입찰 준비 중
+					              </c:if>
+		                        
+		                        
+		                        <h3 class="u-text u-text-default u-text-16">
+		                          <span style="font-size: 20px; font-weight: normal;">
+		                            <p class="u-text u-text-default u-text-4"><a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black">${vo.name_kor }</a></p>
+		                            <span class="u-text-grey-40"></span>
+		                            <span style="font-weight: 700;"></span>
+		                          </span>
+		                        </h3>
+		                       
+		                       <a href="../nav/likes_cancel.do?goods_id=${vo.goods_id }" style="float: right; font-size: 16pt; z-index:6">취소</a> 
+		                        
+	                        </c:forEach>
 	                      </div>
-                      </c:forEach>
+	                      
+	                      
+	                      
+	                      
+                      
                       
                     </div>
                     <div class="u-container-style u-expanded-width u-group u-shape-rectangle u-white u-group-5">
@@ -121,19 +149,16 @@
       </div>
     </section>
     
-    
-    
-    
-    
-    
-    
-    <jsp:include page="../main/header.jsp" />
-    <jsp:include page="../main/nav.jsp" />
-	<jsp:include page="../main/footer.jsp" />
-<style type="text/css">
-#nav{
-	margin-top: -1940px;
+
+ <style type="text/css">
+@charset "UTF-8";
+
+.search {
+        display: none;
 }
-</style>	
-  
+.search input {
+        display: none;
+}
+</style> 
+  </main>
 </body></html>

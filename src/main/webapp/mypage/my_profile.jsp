@@ -60,7 +60,7 @@
                                     내역</a></h3>
                                 <h3 class="u-text u-text-default u-text-4"><a href="../mypage/my_sell_list.do">판매 내역</a>
                                 </h3>
-                                <h3 class="u-text u-text-default u-text-5"><a href="../mypage/my_bookmark.do">관심 상품</a>
+                                <h3 class="u-text u-text-default u-text-5"><a href="../mypage/likes.do">관심 상품</a>
                                 </h3>
                                 <h3 class="u-text u-text-default u-text-6"><a href="../mypage/my_recently_viewed.do">최근
                                     본 상품</a></h3>
