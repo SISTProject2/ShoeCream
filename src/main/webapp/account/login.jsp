@@ -165,10 +165,10 @@ function kakaoLogout() {
 
 				</div>
 
-				<div class="login_check">
+				<!-- div class="login_check">
 					<span><input type="checkbox">로그인 상태 유지하기 </span> <span><a
 						href="">아이디/비밀먼호 찾기</a></span>
-				</div>
+				</div -->
 				<div>
 					<button class="join_submit" type="button" id="login" name="login">로그인</button>
 				</div>
