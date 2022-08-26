@@ -11,6 +11,7 @@
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!-- script src="../js/join.js"></script-->
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
 	//비밀번호 보이기
 	$(function() {
@@ -116,6 +117,45 @@
 		})
 	})
 </script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('966c92656503c959734f1d6315fc15f6'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+      Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+        	console.log(response)
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+      Kakao.Auth.setAccessToken(undefined)
+    }
+  }  
+</script>
 </head>
 
 <body>
@@ -178,8 +218,8 @@
 					<input class="join_submit" type="submit" value="회원가입" id="joinBtn">
 				</div>
 				<div>
-					<input class="join_submit_k" class="kakao" type="submit"
-						value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카카오로 시작하기">
+					<input class="join_submit_k" onclick="kakaoLogin();" class="kakao" type="submit"
+						value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카카오로 시작하기">
 				</div>
 			</form>
 		</div>

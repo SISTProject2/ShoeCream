@@ -9,6 +9,7 @@
 
 <script type="text/javascript"
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script>
 	//input 미입력시 
@@ -91,8 +92,51 @@
 		})
 	})
 </script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('966c92656503c959734f1d6315fc15f6'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+      Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+        	console.log(response)
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+      Kakao.Auth.setAccessToken(undefined)
+    }
+  }  
+</script>
 </head>
+<jsp:include page="../main/header.jsp"></jsp:include>
+<jsp:include page="../main/nav.jsp"></jsp:include>
 <body>
+
+
 	<div class="wrapper">
 		<div class="join_container">
 			<div class="join_title">
@@ -129,7 +173,7 @@
 					<button class="join_submit" type="button" id="login" name="login">로그인</button>
 				</div>
 				<div>
-					<button class="join_submit_k" class="kakao"
+					<button class="join_submit_k" class="kakao" onclick="kakaoLogin();"
 						type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카카오로 로그인</button>
 				</div>
 				<div class="join_member">
@@ -140,5 +184,7 @@
 		</div>
 
 	</div>
+
 </body>
+	<jsp:include page="../main/footer.jsp"></jsp:include>
 </html>
