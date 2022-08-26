@@ -195,10 +195,10 @@
 						<!-- 좋아요 버튼 -->
 						<c:if test="${sessionScope.user_id != null }">
 					     <c:if test="${jcount == 0 }">
-					        	<a href="../nav/likes.do?goods_id=${vo.goods_id }"><img src="../images/shoes_detail/like_g.png" style="width: 65px; height: 45px"></a>
+					        	<a href="../nav/likes.do?goods_id=${vo.goods_id }"><img src="../images/shoes_detail/like_g.png"></a>
 					     </c:if>
 					     <c:if test="${jcount != 0 }">
-					      		<img src="../images/shoes_detail/like_r.png" style="width: 65px; height: 45px">
+					      		<img src="../images/shoes_detail/like_r.png">
 					     </c:if>
 				    </c:if>
 						
