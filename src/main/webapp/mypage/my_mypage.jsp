@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <title>my_mypage</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="my_mypage.css" media="screen">
+
     <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
     <meta name="generator" content="Nicepage 4.15.11, nicepage.com">
@@ -81,7 +83,7 @@
                     <h3 class="u-text u-text-default u-text-13">
                       <span style="font-size: 20px; font-weight: normal;">${userProfile.email}</span>
                     </h3>
-                    <a href="https://nicepage.review" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-2">프로필 수정</a>
+                    <a href="../mypage/my_profile.do" class="u-border-2 u-border-hover-palette-5-base u-border-palette-5-base u-btn u-btn-round u-button-style u-hover-palette-5-base u-none u-radius-15 u-text-body-color u-btn-2">프로필 수정</a>
                   </div>
                 </div>
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-3">
@@ -140,112 +142,57 @@
                   <div class="u-container-layout u-container-layout-7">
                     <h3 class="u-text u-text-default u-text-30">관심 상품</h3>
                     <h3 class="u-text u-text-default u-text-palette-5-dark-1 u-text-31">
-                      <span style="font-weight: normal;">더보기 〉</span>
+                      <a href="../mypage/likes.do" style="font-weight: normal;">더보기 〉</a>
                     </h3>
-                    <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <img class="u-image u-image-default u-preserve-proportions u-image-3" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <img class="u-image u-image-default u-preserve-proportions u-image-4" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <img class="u-image u-image-default u-preserve-proportions u-image-5" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <h3 class="u-text u-text-default u-text-32">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-33">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-34">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-35">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-36">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-37">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-38">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-39">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-40">
-                      <span style="font-size: 20px; font-weight: normal;">price</span>
-                    </h3>
-                    <h3 class="u-text u-text-41">
-                      <span style="font-size: 20px; font-weight: normal;">price</span>
-                    </h3>
-                    <h3 class="u-text u-text-42">
-                      <span style="font-size: 20px; font-weight: normal;">price</span>
-                    </h3>
-                    <h3 class="u-text u-text-43">
-                      <span style="font-size: 20px; font-weight: normal;">price</span>
-                    </h3>
+                    <div class="u-list u-list-3">
+                      <div class="u-repeater u-repeater-3">
+                      <c:forEach var="vo" items="${fList2 }" varStatus="s">
+                      	<c:if test="${s.index >=0 && s.index < 4 }">
+	                        <div class="u-container-style u-list-item u-repeater-item">
+	                          <div class="u-container-layout u-similar-container u-container-layout-11">
+	                            <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-image u-image-default u-preserve-proportions u-image-5" src="${vo.img }" alt="" data-image-width="525" data-image-height="525"></a>
+	                            <h3 class="u-text u-text-default u-text-41">
+	                              <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="font-size: 20px; font-weight: normal; color:black; text-decoration: underline; font-weight: bold;">${vo.brand }<span style="font-weight: 700;"></a>
+	                              </span>
+	                            </h3>
+	                            <h3 class="u-text u-text-default u-text-42">
+	                              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black; font-size: 15pt; font-weight: normal">${vo.name_kor }</a>
+	                            </h3>
+	                          </div>
+	                        </div>
+                        </c:if>
+                     </c:forEach>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="u-container-style u-group u-shape-rectangle u-white u-group-6">
-                  <div class="u-container-layout u-container-layout-8">
-                    <h3 class="u-text u-text-default u-text-44">최근 본 상품</h3>
+                  <div class="u-container-layout u-container-layout-12">
+                    <h3 class="u-text u-text-44">최근 본 상품</h3>
                     <h3 class="u-text u-text-default u-text-palette-5-dark-1 u-text-45">
-                      <span style="font-weight: normal;">더보기 〉</span>
+                      <a href="../mypage/my_recently_viewed.do" style="font-weight: normal;">더보기 〉</a>
                     </h3>
-                    <img class="u-image u-image-default u-preserve-proportions u-image-6" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <img class="u-image u-image-default u-preserve-proportions u-image-7" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <img class="u-image u-image-default u-preserve-proportions u-image-8" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <img class="u-image u-image-default u-preserve-proportions u-image-9" src="images/12345.webp" alt="" data-image-width="525" data-image-height="525">
-                    <h3 class="u-text u-text-default u-text-46">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-47">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-48">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-49">
-                      <span style="font-size: 20px; font-weight: normal;">brand<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-50">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-51">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-52">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-default u-text-53">
-                      <span style="font-size: 20px; font-weight: normal;">name_eng<span style="font-weight: 700;"></span>
-                      </span>
-                    </h3>
-                    <h3 class="u-text u-text-54">
-                      <span style="font-size: 20px; font-weight: normal;">price</span>
-                    </h3>
-                    <h3 class="u-text u-text-55">
-                      <span style="font-size: 20px; font-weight: normal;">price</span>
-                    </h3>
-                    <h3 class="u-text u-text-56">
-                      <span style="font-size: 20px; font-weight: normal;">price</span>
-                    </h3>
-                    <h3 class="u-text u-text-57">
-                      <span style="font-size: 20px; font-weight: normal;">price</span>
-                    </h3>
+                    <div class="u-list u-list-4">
+                      <div class="u-repeater u-repeater-4">
+                      <c:forEach var="vo" items="${cList2 }" varStatus="s">
+                      	<c:if test="${s.index >= 0 && s.index < 4 }">
+	                        <div class="u-container-style u-list-item u-repeater-item">
+	                          <div class="u-container-layout u-similar-container u-container-layout-13">
+	                            <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }"><img class="u-image u-image-default u-preserve-proportions u-image-5" src="${vo.img }" alt="" data-image-width="525" data-image-height="525"></a>
+	                            <h3 class="u-text u-text-default u-text-46">
+	                              <a href="../shoes/shoes_brand.do?brand=${vo.brand }" style="font-size: 20px; font-weight: normal; color:black; text-decoration: underline; font-weight: bold;">${vo.brand }<span style="font-weight: 700;"></a>
+	                              </span>
+	                            </h3>
+	                            <h3 class="u-text u-text-default u-text-47">
+	                              <a href="../shoes/shoes_detail_before.do?goods_id=${vo.goods_id }" style="color:black; font-size: 15pt; font-weight: normal">${vo.name_kor }</a>
+	                              </span>
+	                            </h3>
+	                          </div>
+	                        </div>
+                        </c:if>
+                       </c:forEach>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -255,16 +202,7 @@
       </div>
     </section>
     
-    
-    
-    
-    <jsp:include page="../main/header.jsp" />
-    <jsp:include page="../main/nav.jsp" />
-	<jsp:include page="../main/footer.jsp" />
-<style type="text/css">
-#nav{
-	margin-top: -1940px;
-}
-</style>	  
+<jsp:include page="../main/header.jsp" />
+<jsp:include page="../main/nav.jsp" />
   
 </body></html>

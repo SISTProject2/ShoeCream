@@ -4,8 +4,11 @@ package com.sist.model;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sist.dao.MypageDAO;
+import com.sist.dao.NavDAO;
 import com.sist.dao.ShoesDAO;
+import com.sist.dao.StyleDAO;
 import com.sist.vo.ShoesVO;
+import com.sist.vo.StyleVO;
 import com.sist.vo.UserVO;
 
 
@@ -40,14 +43,61 @@ public class MyPageModel {
     			return "../account/login.jsp";
     		}
     		HttpSession session = request.getSession();
+    		
     		UserVO userVO = (UserVO) session.getAttribute("user");
+    		
     		session.setAttribute("user", userVO);
+    		
     		String nickname = userVO.getEmail().split("@")[0];
     		System.out.println(nickname);
     		System.out.println(userVO);
-
+    		
     		request.setAttribute("userProfile", userVO);
     		request.setAttribute("nickname", nickname);
+    		
+    		/////////// 관심 상품
+			int user_id = (int)session.getAttribute("user_id");
+			
+			List<Integer> list = NavDAO.likesGetGoodsId(user_id);
+			List<ShoesVO> fList2 = new ArrayList<ShoesVO>(); 
+			
+			for(int goods_id: list)
+			{
+				ShoesVO vo = NavDAO.likesListData(goods_id); 
+				fList2.add(vo); 
+			}
+			
+			request.setAttribute("fList2", fList2);
+			
+			
+			//////////// 최근 본 상품
+			
+			ShoesDAO dao = new ShoesDAO();
+		       
+	       
+	       // 쿠키
+	       Cookie[] cookies = request.getCookies();
+	       List<ShoesVO> cList2 = new ArrayList<ShoesVO>();
+	       
+	       if(cookies != null)
+	       {
+	          for(int i=cookies.length-1; i>=0; i--)
+	          {
+	             if(cookies[i].getName().startsWith(user_id + "shoes"))
+	             {
+	          	  cookies[i].setPath("/");
+	                String goods_id2 = cookies[i].getValue();
+	                ShoesVO vo = ShoesDAO.shoesDetailData(Integer.parseInt(goods_id2));
+	                
+	                cList2.add(vo);
+	             }
+	          }
+	       }
+	       
+	       request.setAttribute("cList2", cList2);
+		
+
+    		
     	}catch(Exception e ) {
     		e.printStackTrace();
     	}
